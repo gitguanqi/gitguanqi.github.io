@@ -20,9 +20,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="雅虎前端规范,网站性能优化">
+    <meta name="keywords" content="雅虎军规,前端规范,性能优化">
     <meta name="description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
-<meta name="keywords" content="雅虎前端规范,网站性能优化">
+<meta name="keywords" content="雅虎军规,前端规范,性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="雅虎军规总结">
 <meta property="og:url" content="https://gitguanqi.github.io/2018-11-18/yahoo-rules/index.html">
@@ -52,15 +52,15 @@
 <meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules20.png">
 <meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules21.png">
 <meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules22.png">
-<meta property="og:updated_time" content="2019-01-16T01:43:06.167Z">
+<meta property="og:updated_time" content="2019-01-16T02:58:31.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雅虎军规总结">
 <meta name="twitter:description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
 <meta name="twitter:image" content="https://gitguanqi.github.io/img/blogimg/yh_logo.jpg">
     
-        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/blog/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
@@ -77,10 +77,10 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
-        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/blog/img/avatar.jpg">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">GuanQi</h5>
@@ -92,28 +92,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/blog/">
+              <a href="/">
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/blog/archives">
+              <a href="/archives">
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/blog/tags">
+              <a href="/tags">
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/blog/categories">
+              <a href="/categories">
                 <i class="icon icon-lg icon-th-list"></i>
                 categories
               </a>
@@ -167,7 +167,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/前端性能/">前端性能</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端规范/">前端规范</a></li></ul>
 
             
         </h5>
@@ -184,7 +184,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-尽可能的减少http请求数"><span class="post-toc-number">2.</span> <span class="post-toc-text">1.尽可能的减少http请求数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-使用CDN（内容分发网络）"><span class="post-toc-number">3.</span> <span class="post-toc-text">2.使用CDN（内容分发网络）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-添加Expire-Cache-Control头"><span class="post-toc-number">4.</span> <span class="post-toc-text">3.添加Expire/Cache-Control头</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-启用Gzip压缩"><span class="post-toc-number">5.</span> <span class="post-toc-text">4.启用Gzip压缩</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-将css放在页面最上面"><span class="post-toc-number">6.</span> <span class="post-toc-text">5.将css放在页面最上面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-将script放在页面最下面"><span class="post-toc-number">7.</span> <span class="post-toc-text">6.将script放在页面最下面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-避免在CSS中使用Expressions"><span class="post-toc-number">8.</span> <span class="post-toc-text">7.避免在CSS中使用Expressions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-把js和css文件放到外部文件中"><span class="post-toc-number">9.</span> <span class="post-toc-text">8.把js和css文件放到外部文件中</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-减少DNS查询"><span class="post-toc-number">10.</span> <span class="post-toc-text">9.减少DNS查询</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-压缩JavaScript和Css"><span class="post-toc-number">11.</span> <span class="post-toc-text">10.压缩JavaScript和Css</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#11-避免重定向"><span class="post-toc-number">12.</span> <span class="post-toc-text">11.避免重定向</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#12-移除重复的脚步"><span class="post-toc-number">13.</span> <span class="post-toc-text">12.移除重复的脚步</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#13-配置实体标签（ETag）"><span class="post-toc-number">14.</span> <span class="post-toc-text">13.配置实体标签（ETag）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#14-使用Ajax缓存"><span class="post-toc-number">15.</span> <span class="post-toc-text">14.使用Ajax缓存</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">16.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-尽可能的减少http请求数"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.尽可能的减少http请求数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-使用CDN（内容分发网络）"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.使用CDN（内容分发网络）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-添加Expire-Cache-Control头"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.添加Expire/Cache-Control头</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-启用Gzip压缩"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.启用Gzip压缩</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-将css放在页面最上面"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.将css放在页面最上面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-将script放在页面最下面"><span class="post-toc-number">6.</span> <span class="post-toc-text">6.将script放在页面最下面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-避免在CSS中使用Expressions"><span class="post-toc-number">7.</span> <span class="post-toc-text">7.避免在CSS中使用Expressions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-把js和css文件放到外部文件中"><span class="post-toc-number">8.</span> <span class="post-toc-text">8.把js和css文件放到外部文件中</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-减少DNS查询"><span class="post-toc-number">9.</span> <span class="post-toc-text">9.减少DNS查询</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-压缩JavaScript和Css"><span class="post-toc-number">10.</span> <span class="post-toc-text">10.压缩JavaScript和Css</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#11-避免重定向"><span class="post-toc-number">11.</span> <span class="post-toc-text">11.避免重定向</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#12-移除重复的脚步"><span class="post-toc-number">12.</span> <span class="post-toc-text">12.移除重复的脚步</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#13-配置实体标签（ETag）"><span class="post-toc-number">13.</span> <span class="post-toc-text">13.配置实体标签（ETag）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#14-使用Ajax缓存"><span class="post-toc-number">14.</span> <span class="post-toc-text">14.使用Ajax缓存</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">15.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -197,7 +197,7 @@
             <time class="post-time" title="2018-11-18 22:16:21" datetime="2018-11-18T14:16:21.000Z" itemprop="datePublished">2018-11-18</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/前端性能/">前端性能</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端规范/">前端规范</a></li></ul>
 
 
 
@@ -219,22 +219,6 @@
                 </div>
                 <div class="image-caption">http</div>
             </figure>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li>1.尽可能的减少http请求数</li>
-<li>2.使用CDN（内容分发网络）</li>
-<li>3.添加Expire/Cache-Control头</li>
-<li>4.启用Gzip压缩</li>
-<li>5.将css放在页面最上面</li>
-<li>6.将script放在页面最下面</li>
-<li>7.避免在CSS中使用Expressions</li>
-<li>8.把js和css文件放到外部文件中</li>
-<li>9.减少DNS查询</li>
-<li>10.压缩JavaScript和Css</li>
-<li>11.避免重定向</li>
-<li>12.移除重复的脚步</li>
-<li>13.配置实体标签（ETag）</li>
-<li>14.使用Ajax缓存</li>
-</ul>
 <h1 id="1-尽可能的减少http请求数"><a href="#1-尽可能的减少http请求数" class="headerlink" title="1.尽可能的减少http请求数"></a>1.尽可能的减少http请求数</h1><p><strong>HTTP</strong>：从客户端到服务器端的请求消息。包括消息首行中，对资源的请求方法资源的标识符以及使用的协议。</p>
 <p><strong>请求过程</strong>：当你打开网页的时候，你所看到的文字，图片，多媒体，这一切内容，都是你从服务器获取的，每一个内容的获取，就是一个http请求。</p>
 <figure class="image-bubble">
@@ -405,7 +389,7 @@
                 <div class="image-caption">避免重定向</div>
             </figure>
 <h1 id="12-移除重复的脚步"><a href="#12-移除重复的脚步" class="headerlink" title="12.移除重复的脚步"></a>12.移除重复的脚步</h1><p>例子:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>移除重复的脚步<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var number = 0;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 引用1次 正常 1 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 引用2次 不正常 2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>移除重复的脚步<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> number = <span class="number">0</span>;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 引用1次 正常 1 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 引用2次 不正常 2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js dom</span></span><br><span class="line">number++;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).value = number;</span><br></pre></td></tr></table></figure>
 <h1 id="13-配置实体标签（ETag）"><a href="#13-配置实体标签（ETag）" class="headerlink" title="13.配置实体标签（ETag）"></a>13.配置实体标签（ETag）</h1><p><strong>定义</strong>：使用特殊的字符串来标识某个请求资源版本。</p>
 <figure class="image-bubble">
@@ -452,18 +436,18 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-16T01:43:06.167Z" itemprop="dateUpdated">2019-01-16 09:43:06</time>
+    Last updated: <time datetime="2019-01-16T02:58:31.663Z" itemprop="dateUpdated">2019-01-16 10:58:31</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2018-11-18/yahoo-rules/" target="_blank" rel="external">https://gitguanqi.github.io/2018-11-18/yahoo-rules/</a>
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2018-11-18/yahoo-rules/" target="_blank" rel="external">https://gitguanqi.github.io/2018-11-18/yahoo-rules/</a>
         
     </div>
     
     <footer>
         <a href="https://gitguanqi.github.io">
-            <img src="/blog/img/avatar.jpg" alt="GuanQi">
+            <img src="/img/avatar.jpg" alt="GuanQi">
             GuanQi
         </a>
     </footer>
@@ -478,7 +462,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/网站性能优化/">网站性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/雅虎前端规范/">雅虎前端规范</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端规范/">前端规范</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/雅虎军规/">雅虎军规</a></li></ul>
 
 
             
@@ -533,6 +517,26 @@
     </div>
 
     
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018-11-24/markdown-use/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">markdown使用笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018-11-18/git-config/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">git配置教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
 
 
     
@@ -565,11 +569,11 @@
     <div class="reward-content">
         
         <div class="reward-code">
-            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
         </div>
         
         <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
             <div class="reward-toggle-ctrol">
                 <span class="reward-toggle-item wechat">微信</span>
                 <span class="reward-toggle-label"></span>
@@ -599,7 +603,7 @@
 
         <p>
             
-                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
             <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
@@ -667,7 +671,7 @@
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 </script>
@@ -702,23 +706,6 @@ var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
 
 
 

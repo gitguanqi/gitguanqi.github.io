@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>node.js常用命令 | 观奇笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="nodejs,node命令">
+    <meta name="description" content="安装node验证是否安装node12$node -v$npm -v npm node package manager ,Node 的包管理器  安装 包12# 安装到当前目录$ npm install &amp;lt;包名&amp;gt; 出现error network 重新安装 搜索包1$npm search &amp;lt;包名&amp;gt; 安装指定版本在cmd中: 12$ npm install &amp;lt;包名&amp;gt;@">
+<meta name="keywords" content="nodejs,node命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js常用命令">
+<meta property="og:url" content="https://gitguanqi.github.io/2017-12-21/node-command/index.html">
+<meta property="og:site_name" content="观奇笔记">
+<meta property="og:description" content="安装node验证是否安装node12$node -v$npm -v npm node package manager ,Node 的包管理器  安装 包12# 安装到当前目录$ npm install &amp;lt;包名&amp;gt; 出现error network 重新安装 搜索包1$npm search &amp;lt;包名&amp;gt; 安装指定版本在cmd中: 12$ npm install &amp;lt;包名&amp;gt;@">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-16T03:03:24.802Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js常用命令">
+<meta name="twitter:description" content="安装node验证是否安装node12$node -v$npm -v npm node package manager ,Node 的包管理器  安装 包12# 安装到当前目录$ npm install &amp;lt;包名&amp;gt; 出现error network 重新安装 搜索包1$npm search &amp;lt;包名&amp;gt; 安装指定版本在cmd中: 12$ npm install &amp;lt;包名&amp;gt;@">
+    
+        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">GuanQi</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">node.js常用命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">node.js常用命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-21T07:27:21.000Z" itemprop="datePublished" class="page-time">
+  2017-12-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node/">node</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#npm"><span class="post-toc-number">2.</span> <span class="post-toc-text">npm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-包"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包"><span class="post-toc-number">4.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装指定版本"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装指定版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的版本信息"><span class="post-toc-number">6.</span> <span class="post-toc-text">查看包的版本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的包列表"><span class="post-toc-number">7.</span> <span class="post-toc-text">查看安装的包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新包"><span class="post-toc-number">8.</span> <span class="post-toc-text">更新包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包"><span class="post-toc-number">9.</span> <span class="post-toc-text">卸载包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#init-初始化"><span class="post-toc-number">10.</span> <span class="post-toc-text">init 初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装并添加依赖"><span class="post-toc-number">11.</span> <span class="post-toc-text">安装并添加依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装"><span class="post-toc-number">12.</span> <span class="post-toc-text">全局安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">13.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的信息"><span class="post-toc-number">14.</span> <span class="post-toc-text">查看包的信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包-1"><span class="post-toc-number">15.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包列表"><span class="post-toc-number">16.</span> <span class="post-toc-text">包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包-1"><span class="post-toc-number">17.</span> <span class="post-toc-text">卸载包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后"><span class="post-toc-number">18.</span> <span class="post-toc-text">最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node-command" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">node.js常用命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-21 15:27:21" datetime="2017-12-21T07:27:21.000Z" itemprop="datePublished">2017-12-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node/">node</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>验证是否安装node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$node -v</span><br><span class="line">$npm -v</span><br></pre></td></tr></table></figure></p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><blockquote>
+<p>node package manager ,<br>Node 的包管理器</p>
+</blockquote>
+<h3 id="安装-包"><a href="#安装-包" class="headerlink" title="安装 包"></a>安装 包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装到当前目录</span><br><span class="line">$ npm install &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<p>出现error network 重新安装</p>
+<h3 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm search &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="安装指定版本"><a href="#安装指定版本" class="headerlink" title="安装指定版本"></a>安装指定版本</h3><p>在cmd中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;包名&gt;@版本号</span><br><span class="line">$ npm install jquery@1.12.4</span><br></pre></td></tr></table></figure>
+<h3 id="查看包的版本信息"><a href="#查看包的版本信息" class="headerlink" title="查看包的版本信息"></a>查看包的版本信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm list &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看安装的包列表"><a href="#查看安装的包列表" class="headerlink" title="查看安装的包列表"></a>查看安装的包列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm ls</span><br></pre></td></tr></table></figure>
+<h3 id="更新包"><a href="#更新包" class="headerlink" title="更新包"></a>更新包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm update &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall jquery</span><br></pre></td></tr></table></figure>
+<h3 id="init-初始化"><a href="#init-初始化" class="headerlink" title="init 初始化"></a>init 初始化</h3><p><code>npm init</code> 会生成一个packagejson的文件，项目的配置信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;day06&quot;, //项目名</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;, //版本号</span><br><span class="line">  &quot;description&quot;: &quot;this is a npm project&quot;, //项目的描述</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;, //程序的入口文件</span><br><span class="line">  &quot;dependencies&quot;: &#123; //项目依赖的包!!!重要的</span><br><span class="line">    &quot;jquery&quot;: &quot;^1.12.4&quot;</span><br><span class="line">    &quot;zepto&quot;: &quot;^1.2.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;&#125;, //开发阶段依赖的包!!!重要的</span><br><span class="line">  &quot;scripts&quot;: &#123; //命令</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [ //关键词</span><br><span class="line">    &quot;npm&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;author&quot;: &quot;guanqi&quot;, //作者</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot; //协议</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装并添加依赖"><a href="#安装并添加依赖" class="headerlink" title="安装并添加依赖"></a>安装并添加依赖</h3><p><code>$ npm install &lt;包名&gt; --save</code> 会将当前目录下的安装包，并将包的信息，<br>添加到package.json中的<strong>dependencies</strong>选项中</p>
+<p><code>$ npm install &lt;包名&gt; --save-dev</code>安装开发阶段用的工具包，并不是项目必须有的。这个命令会将包安装到当前目录下的安装包，并将包的版本信息，<br>添加到package.json中的<strong>devDependencies</strong>选项中</p>
+<h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><p><code>$ npm install &lt;包&gt; -g</code> , -g代表全局安装，不会在package.json中看到</p>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p><code>$ bower install &lt;包名&gt; --save</code>,在当前目录安装包，并将版本信息添加到bower.json中</p>
+<p><code>$ bower install &lt;包名&gt;@版本号</code>，安装指定的版本号</p>
+<h3 id="查看包的信息"><a href="#查看包的信息" class="headerlink" title="查看包的信息"></a>查看包的信息</h3><p><code>$ bower info &lt;包名&gt;</code> 查看包的详细信息</p>
+<h3 id="搜索包-1"><a href="#搜索包-1" class="headerlink" title="搜索包"></a>搜索包</h3><p><code>$ bower search &lt;包名&gt;</code></p>
+<h3 id="包列表"><a href="#包列表" class="headerlink" title="包列表"></a>包列表</h3><p><code>$ bower list</code></p>
+<h3 id="卸载包-1"><a href="#卸载包-1" class="headerlink" title="卸载包"></a>卸载包</h3><p><code>$ bower uninstall &lt;包名&gt;</code></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>心动不如行动，快练习一下巩固知识。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-16T03:03:24.802Z" itemprop="dateUpdated">2019-01-16 11:03:24</time>
+</span><br>
+
+
+        
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2017-12-21/node-command/" target="_blank" rel="external">https://gitguanqi.github.io/2017-12-21/node-command/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://gitguanqi.github.io">
+            <img src="/img/avatar.jpg" alt="GuanQi">
+            GuanQi
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node命令/">node命令</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2017-12-21/node-command/&title=《node.js常用命令》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2017-12-21/node-command/&title=《node.js常用命令》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2017-12-21/node-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node.js常用命令》 — 观奇笔记&url=https://gitguanqi.github.io/2017-12-21/node-command/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2017-12-21/node-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018-02-18/front-talk-two/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">初识vue</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017-12-10/node-introduction/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node.js简介</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>GuanQi &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2017-12-21/node-command/&title=《node.js常用命令》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2017-12-21/node-command/&title=《node.js常用命令》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2017-12-21/node-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node.js常用命令》 — 观奇笔记&url=https://gitguanqi.github.io/2017-12-21/node-command/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2017-12-21/node-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aORbCMAxFUfa/6dDS4PwhcI7l54oig28KIUt6veR1faxnr/+8xn2LvWDAgLEt41qu9QvWr/z2BGXpe4MBA8Y5DGUTSlhcv8y9S9kbDBgwYOgkfYvr7cKAAQNGz8g29y1Yr0M5DBgwYDQbWt/bf44fnsVhwICxIUOvuv//90/6GzBgwNiKkRXr12lc1pK8igUDBozZDD3ANcnfOilsRjRgwIBxGiMLuO5ohRuyjWQRBgwYoxl6QNQ33bRCq4EPGDBgDGXoobMZztDHMrJPCQMGjNkM5YioJ3lNUuiOgBg5LwwYMLZlZCUwPQQ3H8Uow8GAAWM0o9loM87lFtqk4AsDBoyhDDeBc8N0llbasRQGDBijGW4f0C3x60U39xBr9GZhwICxOUN/ZdYkcMv6YYiHAQPGAYymldgU3dyuxU2GCwMGjAMYbmNSH85wm6buvTBgwJjNcLebBV+9MeCmiTd5LgwYMAYxms31QxJZI9OYH4EBA8YIRt+kzPK3rMR2878BAwaM0Qy9MdBvMSvG3TwZBgwYBzD0lmQzQmFnrNn/BgwYMAYxLnO5LQQXE4Z7GDBgjGb0/UE9ZWwKcE81SmHAgLEvww2y+mBENkLhPh8GDBjnMLLhCTc0N4fYGyQMGDBgmAdXZZjDbQY8PC0CAwaM0Qz9enfkqxm8gAEDxgkM5RCbpYMuJkxPYcCAMZqhHx2Vg6g7lqGPWeihHwYMGIMYb/KYk2HA0WjJAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

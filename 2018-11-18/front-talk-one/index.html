@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前端杂谈 | 观奇笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端杂谈">
+    <meta name="description" content="一.故事简介1.起源今天，我想讲一讲有关前端的一些趣事。首先介绍一下我吧，我叫观奇笔记，内容更新其实不算多，主要是是我工作比较忙，没有时间去更新。 2.行业态势前端技术，作为一门新兴的技术，已经火了好几年了，现在已经进入了一个瓶颈期，就是需求量还是会不断地增加，但是要求肯定会提高的，不会是以前的蛮荒时代，见一个前端就招进去了，而是会不断的筛选，淘汰技术差的，留下技术好的，一个大浪淘沙的时代。 二.">
+<meta name="keywords" content="前端杂谈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端杂谈">
+<meta property="og:url" content="https://gitguanqi.github.io/2018-11-18/front-talk-one/index.html">
+<meta property="og:site_name" content="观奇笔记">
+<meta property="og:description" content="一.故事简介1.起源今天，我想讲一讲有关前端的一些趣事。首先介绍一下我吧，我叫观奇笔记，内容更新其实不算多，主要是是我工作比较忙，没有时间去更新。 2.行业态势前端技术，作为一门新兴的技术，已经火了好几年了，现在已经进入了一个瓶颈期，就是需求量还是会不断地增加，但是要求肯定会提高的，不会是以前的蛮荒时代，见一个前端就招进去了，而是会不断的筛选，淘汰技术差的，留下技术好的，一个大浪淘沙的时代。 二.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-16T03:19:00.242Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端杂谈">
+<meta name="twitter:description" content="一.故事简介1.起源今天，我想讲一讲有关前端的一些趣事。首先介绍一下我吧，我叫观奇笔记，内容更新其实不算多，主要是是我工作比较忙，没有时间去更新。 2.行业态势前端技术，作为一门新兴的技术，已经火了好几年了，现在已经进入了一个瓶颈期，就是需求量还是会不断地增加，但是要求肯定会提高的，不会是以前的蛮荒时代，见一个前端就招进去了，而是会不断的筛选，淘汰技术差的，留下技术好的，一个大浪淘沙的时代。 二.">
+    
+        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">GuanQi</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前端杂谈</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前端杂谈</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-18T13:16:21.000Z" itemprop="datePublished" class="page-time">
+  2018-11-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端杂谈/">前端杂谈</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-故事简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">一.故事简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-起源"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.起源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-行业态势"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.行业态势</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-播种期"><span class="post-toc-number">2.</span> <span class="post-toc-text">二.播种期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-高中时代"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.高中时代</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-讲课感受"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.讲课感受</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三-萌芽期"><span class="post-toc-number">3.</span> <span class="post-toc-text">三.萌芽期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-无缘计算机"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.无缘计算机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-冲破牢笼"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.冲破牢笼</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四-写在最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">四.写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-talk-one" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前端杂谈</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-18 21:16:21" datetime="2018-11-18T13:16:21.000Z" itemprop="datePublished">2018-11-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端杂谈/">前端杂谈</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="一-故事简介"><a href="#一-故事简介" class="headerlink" title="一.故事简介"></a>一.故事简介</h2><h3 id="1-起源"><a href="#1-起源" class="headerlink" title="1.起源"></a>1.起源</h3><p>今天，我想讲一讲有关前端的一些趣事。首先介绍一下我吧，我叫观奇笔记，内容更新其实不算多，主要是是我工作比较忙，没有时间去更新。</p>
+<h3 id="2-行业态势"><a href="#2-行业态势" class="headerlink" title="2.行业态势"></a>2.行业态势</h3><p>前端技术，作为一门新兴的技术，已经火了好几年了，现在已经进入了一个瓶颈期，就是需求量还是会不断地增加，但是要求肯定会提高的，不会是以前的蛮荒时代，见一个前端就招进去了，而是会不断的筛选，淘汰技术差的，留下技术好的，一个大浪淘沙的时代。</p>
+<h2 id="二-播种期"><a href="#二-播种期" class="headerlink" title="二.播种期"></a>二.播种期</h2><p>好了，开始言归正传。我来讲一讲我的前端生涯之路，也算是对之前的一些总结吧。</p>
+<h3 id="1-高中时代"><a href="#1-高中时代" class="headerlink" title="1.高中时代"></a>1.高中时代</h3><p>我现在脑海中清晰的记得，我上高三的时候，我们的微机课老师在教室的黑板上写了一段代码。我还能回忆起来，大概就是以下这段。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>表格<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-讲课感受"><a href="#2-讲课感受" class="headerlink" title="2.讲课感受"></a>2.讲课感受</h3><p>我就被这个神奇的代码所吸引住了，当时老师还边说，边讲，边在黑板上用白色粉笔头画着，其实就是用粉笔头写代码。我当时就感觉这玩意真好，我要了解它，学会它。自此，想要学习html代码的种子便在我心中种下了，直到以后它生根，发芽，开花，直到结果。</p>
+<h2 id="三-萌芽期"><a href="#三-萌芽期" class="headerlink" title="三.萌芽期"></a>三.萌芽期</h2><h3 id="1-无缘计算机"><a href="#1-无缘计算机" class="headerlink" title="1.无缘计算机"></a>1.无缘计算机</h3><p>上了大学以后，本来说是想报考计算机专业，但是没想到人招满了，我便被安排到了第二个志愿–电子商务，我感觉电子商务还可以，就是做购物网站的，还可以继续我的代码编写，我就欣然接受了这个专业，但是学开就后悔了，里面教的html少，也就是学习Dreamweaver（现在想想真是感觉太搞笑了，哈哈！），asp，商务一类的课程非常多，比如市场营销，商务谈判，管理学，经营企业，不管怎么不好，还是学点，以后会用到的。</p>
+<h3 id="2-冲破牢笼"><a href="#2-冲破牢笼" class="headerlink" title="2.冲破牢笼"></a>2.冲破牢笼</h3><p>我后来就是自己买书，一点一点的学习web前端，其实那时候还不能叫前端，只能算作一个网页开发师。写一些简单的网页结构，一些简单的样式。自己没有电脑，就去学校的机房学习，打开电脑，打开记事本，就可以学习了，按照书上的，网上的教程学习，一点点的学习。每练习一个例子，就用记事本保存起来，存成Unicode格式或者utf-8格式的，可以在游览器显示的那种，后缀就是.html或者.htm就可以了，最后，在游览器里面查看效果，看到自己写的代码能够被游览器引擎解析然后展现在游览器的窗口里面，顿时感觉心中非常开心。</p>
+<h2 id="四-写在最后"><a href="#四-写在最后" class="headerlink" title="四.写在最后"></a>四.写在最后</h2><p>好了，今天就讲到这里，以后陆续会和大家分享我的前端成长之路的。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-16T03:19:00.242Z" itemprop="dateUpdated">2019-01-16 11:19:00</time>
+</span><br>
+
+
+        
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2018-11-18/front-talk-one/" target="_blank" rel="external">https://gitguanqi.github.io/2018-11-18/front-talk-one/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://gitguanqi.github.io">
+            <img src="/img/avatar.jpg" alt="GuanQi">
+            GuanQi
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端杂谈/">前端杂谈</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2018-11-18/front-talk-one/&title=《前端杂谈》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2018-11-18/front-talk-one/&title=《前端杂谈》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2018-11-18/front-talk-one/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端杂谈》 — 观奇笔记&url=https://gitguanqi.github.io/2018-11-18/front-talk-one/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2018-11-18/front-talk-one/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018-11-18/git-config/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">git配置教程</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018-09-25/git-tool-command/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">git工具命令使用教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>GuanQi &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2018-11-18/front-talk-one/&title=《前端杂谈》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2018-11-18/front-talk-one/&title=《前端杂谈》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2018-11-18/front-talk-one/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端杂谈》 — 观奇笔记&url=https://gitguanqi.github.io/2018-11-18/front-talk-one/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2018-11-18/front-talk-one/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aO3LDMAwFwNz/0k6bmUTMA0gVglaVx6YtrgqY+Hx9xdfnx1V9//enV99drz9wYWBgPJbxWV75mt4vr9mF+2JgYLyAcbWJqzVJGM3Za8Z6bxgYGBhXr/NbVreLgYGBcZaRJKW9bBQDAwOjl8T2imXrNUnwPZyLY2BgPJCxEwTvfn1LfwMDA+NRjE/xqrY5e98t7woDA2M041SZrJd2JiW8wvAHBgbGUEbeXMzblju8JA0uPGMMDIxBjOoxrhDLtz+NmhMYGBijGb1AvD+ckRfakgFZDAyM9zDytmWeiFbHMppjFhgYGKMZ1cGI/TR4Z1zjcicYGBgvY/TCca/pmA9Y/POAMDAwRjOS4JuEy+qIarXxUPgzwMDAGMrIj3d5mb66fudAiYGBMZvRK3udHXutNjL/eAcDA2M0I69WrcG9kL2z9QNzuBgYGI9iJME0Tzv3Q23vsWJgYMxm5MMQO+vzJkGznYmBgTGakYfd5IBYvWU+Cpa3EDAwMOYx7mg35uX+3gO6rB1iYGCMZlSHJHrHuFNty0InFgMDYxxjp1Wwc9TrNTijfiwGBsbDGftjE8lhbqepGT1cDAyM0YxTLcZqy7NXgOsdWzEwMGYwqi3GaqpZKJkVBy8wMDDexugFvh5g59h3+csYGBgYh4r71UC8Pmg2b4yBgfECRo5J0tektBcNnGFgYLyA0RtU7SW9OeaWchsGBsYDGXnqmBzyqpvIkdVDKgYGxgjGN/MWLLrL/bgWAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
