@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>js中对象详解 | 观奇笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Javascript,对象">
+    <meta name="description" content="今天说一下有关对象操作方法的文章。  什么是对象？在js中数据类型分为两类，一个是基本数据类型，另一个是引用数据类型。基本数据类型包括文本字符串string、布尔boolean、数字number、未定义nudefined、空值null,而引用数据类型就是对象，包括普通的Object、数组Array、函数function、日期Date、正则表达式RegExp、字符串对象String、数字对象Num">
+<meta name="keywords" content="Javascript,对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中对象详解">
+<meta property="og:url" content="https://gitguanqi.github.io/2019-01-16/js-object-use/index.html">
+<meta property="og:site_name" content="观奇笔记">
+<meta property="og:description" content="今天说一下有关对象操作方法的文章。  什么是对象？在js中数据类型分为两类，一个是基本数据类型，另一个是引用数据类型。基本数据类型包括文本字符串string、布尔boolean、数字number、未定义nudefined、空值null,而引用数据类型就是对象，包括普通的Object、数组Array、函数function、日期Date、正则表达式RegExp、字符串对象String、数字对象Num">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-16T13:53:13.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js中对象详解">
+<meta name="twitter:description" content="今天说一下有关对象操作方法的文章。  什么是对象？在js中数据类型分为两类，一个是基本数据类型，另一个是引用数据类型。基本数据类型包括文本字符串string、布尔boolean、数字number、未定义nudefined、空值null,而引用数据类型就是对象，包括普通的Object、数组Array、函数function、日期Date、正则表达式RegExp、字符串对象String、数字对象Num">
+    
+        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">GuanQi</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">js中对象详解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">js中对象详解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-16T13:16:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Javascript/">Javascript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#什么是对象？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是对象？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接量创建"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">直接量创建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用new运算符创建"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">使用new运算符创建</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对象的属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">对象的属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义一个对象"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">定义一个对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加一个对象的属性和值"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">增加一个对象的属性和值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改一个对象的属性和值"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">修改一个对象的属性和值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#循环对象的属性和值"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">循环对象的属性和值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检测对象的属性是否存在"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">检测对象的属性是否存在</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除对象的属性和属性值"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">删除对象的属性和属性值</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#作为关联数组的对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">作为关联数组的对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Object的属性和方法"><span class="post-toc-number">5.</span> <span class="post-toc-text">Object的属性和方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#constructor属性"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">constructor属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#instanceof运算符"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">instanceof运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#toString-方法"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">toString()方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#toLocaleString-方法"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">toLocaleString()方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hasOwnProperty-方法"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">hasOwnProperty()方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#valueOf-方法"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">valueOf()方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#最后总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">最后总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-js-object-use" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">js中对象详解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-16 21:16:21" datetime="2019-01-16T13:16:21.000Z" itemprop="datePublished">2019-01-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Javascript/">Javascript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>今天说一下有关对象操作方法的文章。</p>
+</blockquote>
+<h1 id="什么是对象？"><a href="#什么是对象？" class="headerlink" title="什么是对象？"></a>什么是对象？</h1><p>在js中数据类型分为两类，一个是基本数据类型，另一个是引用数据类型。基本数据类型包括文本字符串string、布尔boolean、数字number、未定义nudefined、空值null,而引用数据类型就是对象，包括普通的Object、数组Array、函数function、日期Date、正则表达式RegExp、字符串对象String、数字对象Number、布尔对象Boolean。今天要说的就是Object,普通的对象。</p>
+<p>你可以把它当成一种无序的属性的集合，每个属性都有自己的名字和值，这个值可以是数组，也可以是对象，其他的也可以。</p>
+<h1 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h1><p>创建对象有很多种方法，今天介绍常见的几种方法。</p>
+<h2 id="直接量创建"><a href="#直接量创建" class="headerlink" title="直接量创建"></a>直接量创建</h2><p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用new运算符创建"><a href="#使用new运算符创建" class="headerlink" title="使用new运算符创建"></a>使用<code>new</code>运算符创建</h2><p>例如:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure></p>
+<h1 id="对象的属性"><a href="#对象的属性" class="headerlink" title="对象的属性"></a>对象的属性</h1><p>对象有很多的的属性和属性的值，属性用<code>.</code>来表示。在<code>.</code>左边的是要访问其属性的对象的引用名，它不能是字符串或者是表达式；在<code>.</code>右边的是属性名。</p>
+<h2 id="定义一个对象"><a href="#定义一个对象" class="headerlink" title="定义一个对象"></a>定义一个对象</h2><p>直接量定义简单方便，直接在一个花括号里面写属性和值，属性之间用逗号隔开。</p>
+<p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> name = obj.name;</span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// 'guan'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="增加一个对象的属性和值"><a href="#增加一个对象的属性和值" class="headerlink" title="增加一个对象的属性和值"></a>增加一个对象的属性和值</h2><p>直接在对象里面添加属性即可，或者使用<code>.</code>定义一个新的属性值。</p>
+<p>例如：直接拿上面的示例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span>,</span><br><span class="line">  address: <span class="string">'浙江杭州'</span></span><br><span class="line">&#125;;</span><br><span class="line">obj.telephone = <span class="string">'0571-12340001'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="修改一个对象的属性和值"><a href="#修改一个对象的属性和值" class="headerlink" title="修改一个对象的属性和值"></a>修改一个对象的属性和值</h2><p>使用<code>.</code>可以改变一个新的属性值。</p>
+<p>例如：直接拿上面的示例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line">obj.name = <span class="string">'mark'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="循环对象的属性和值"><a href="#循环对象的属性和值" class="headerlink" title="循环对象的属性和值"></a>循环对象的属性和值</h2><p>在js中,使用<code>for/in</code>方法可以遍历对象的属性和属性值。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">'='</span> + obj[key]); <span class="comment">//name=guan age=21 sex=man</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="检测对象的属性是否存在"><a href="#检测对象的属性是否存在" class="headerlink" title="检测对象的属性是否存在"></a>检测对象的属性是否存在</h2><p>用<code>in</code>或者<code>undefined</code>判断，但是in运算符不常用，如果差不多会返回<code>undefined</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 1. 用in</span></span><br><span class="line"><span class="keyword">if</span> (<span class="string">'name'</span> <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  obj.name = <span class="string">'lee'</span>; <span class="comment">//lee</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.用判断</span></span><br><span class="line"><span class="keyword">if</span> (obj.name !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">  obj.name = <span class="string">'lee'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//lee</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除对象的属性和属性值"><a href="#删除对象的属性和属性值" class="headerlink" title="删除对象的属性和属性值"></a>删除对象的属性和属性值</h2><p>可以用<code>delete</code>运算符删除对象的属性，实际上是彻底从对象中删除这个属性，删除以后<code>for/in</code>方法和<code>in</code>运算符都不会找到该属性，如果打印该属性，会的到一个<code>undefined</code>。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">delete</span> obj.name;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="作为关联数组的对象"><a href="#作为关联数组的对象" class="headerlink" title="作为关联数组的对象"></a>作为关联数组的对象</h1><p>在js中，数组是一种特殊的对象，所以也可以用对象来关联数组。</p>
+<p>以下表示方法是相等的:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">object.property</span><br><span class="line">object[<span class="string">'property'</span>]</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = obj[<span class="string">'name'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name == name); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h1 id="Object的属性和方法"><a href="#Object的属性和方法" class="headerlink" title="Object的属性和方法"></a>Object的属性和方法</h1><p>在js中，所有的对象都继承自Object类，所以它们都有通用的方法和属性。</p>
+<h2 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h2><p>在js中，每一个对象都有一个<code>constructor</code>属性,所以可以根据这个来检测某个数据是否属于对象。</p>
+<p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.constructor == <span class="built_in">Array</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//还可以这样判断</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> arr == <span class="string">'object'</span> &amp;&amp; arr.constructor == <span class="built_in">Array</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'arr is array'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">isArray(arr); <span class="comment">//arr is array</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="instanceof运算符"><a href="#instanceof运算符" class="headerlink" title="instanceof运算符"></a><code>instanceof</code>运算符</h2><p><code>instanceof</code>运算符可以检查<code>constructor</code>的值</p>
+<p>因此上面可以写成。</p>
+<p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> == <span class="built_in">Array</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//还可以这样判断</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> arr == <span class="string">'object'</span> &amp;&amp; arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'arr is array'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">isArray(arr); <span class="comment">//arr is array</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h2><p>这个方法没有参数，可以把对象转换为一个字符串。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">x</span>:<span class="number">1</span>,<span class="attr">y</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> str = obj.toString();</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// [object Object]</span></span><br></pre></td></tr></table></figure>
+<h2 id="toLocaleString-方法"><a href="#toLocaleString-方法" class="headerlink" title="toLocaleString()方法"></a>toLocaleString()方法</h2><p>这个方法返回对象的一个本地化的字符串。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> str = now.toLocaleString();</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">//  2019/1/16 下午9:45:55</span></span><br></pre></td></tr></table></figure>
+<h2 id="hasOwnProperty-方法"><a href="#hasOwnProperty-方法" class="headerlink" title="hasOwnProperty()方法"></a><code>hasOwnProperty()</code>方法</h2><p>这个方法是检测对象的某个属性是否是自身的属性，而不是继承的属性。</p>
+<p>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'guan'</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  sex: <span class="string">'man'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'name'</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">'address'</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="valueOf-方法"><a href="#valueOf-方法" class="headerlink" title="valueOf()方法"></a>valueOf()方法</h2><p>这个方法把对象转化为某个基本数据类型，也就是一个数字，而不是字符串的时候才会调用的方法。</p>
+<h1 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h1><p>对象的使用方法就是这些，最常用也是最基本的属性和方法。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-16T13:53:13.659Z" itemprop="dateUpdated">2019-01-16 21:53:13</time>
+</span><br>
+
+
+        
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2019-01-16/js-object-use/" target="_blank" rel="external">https://gitguanqi.github.io/2019-01-16/js-object-use/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://gitguanqi.github.io">
+            <img src="/img/avatar.jpg" alt="GuanQi">
+            GuanQi
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对象/">对象</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-01-16/js-object-use/&title=《js中对象详解》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-01-16/js-object-use/&title=《js中对象详解》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-01-16/js-object-use/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中对象详解》 — 观奇笔记&url=https://gitguanqi.github.io/2019-01-16/js-object-use/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-01-16/js-object-use/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-01-16/demo-list/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Demo列表</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>GuanQi &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-01-16/js-object-use/&title=《js中对象详解》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-01-16/js-object-use/&title=《js中对象详解》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-01-16/js-object-use/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中对象详解》 — 观奇笔记&url=https://gitguanqi.github.io/2019-01-16/js-object-use/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-01-16/js-object-use/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHElEQVR42u3au5KDMAwF0Pz/T7PtNjhXEimwD1WGMNiHQmM9Pp/4uv5d6zt3//be+fCFgYHxWsa1vO6eSba+fkNv3VsqBgbGAYy7CHb3zPpOvnzCWO8NAwMDo/pMfmcdmjEwMDAmjOqS1TdjYGBgTJLYJGhWj3qT1BcDA+McxjxE/u73T/obGBgYr2L0ivVPJaiP7QoDA2NrRu/V+QFxcgSs7gcDA+McRt5iXC/ZK5ytP0Hz9IqBgfFyRu/Y91iIjHfyBYyBgbE1o5dAThZI/s1DLQYGxjmMX2yiNy5WHQEpnzExMDBeyJiMNUxKbzmvcBDEwMDYmpEnkNVyf7W1WT3P3nZiMTAwNmLki02OcdUEuLcrDAyMXRm9Itq8PdkLr1/GLDAwMDZl5Dlgdflqg7M6bIGBgYHRK/0noTMv0pUbGBgYGAcwclKvPVkN03mAxsDA2JuRbHEeRueFtigXx8DA2JTRC6DzNue8xIaBgXEyo7rwU4Wz9edLPiIGBsY5jF5Cmw9nlBuT+UfBwMA4gJGnr5Nxil5ZLdonBgbGpoyreFUL/eUeRau1iYGBsTejF+ySgv6kSZk3EsowDAyM1zLyIDvZ0DzgRuU2DAyMrRnzwFc9Sk5GwaLJEQwMjOMZ+Xhrtc1ZbYJiYGBg5AMZk23ln+ZLEouBgbE1Iz/eVUtv1WGLaiKNgYFxAmPSaKyOYuRBtppOY2BgbMr4AwxeslBBR+9zAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
