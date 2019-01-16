@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitguanqi.github.io/"/>
-  <updated>2019-01-16T13:53:13.659Z</updated>
+  <updated>2019-01-16T14:18:07.430Z</updated>
   <id>https://gitguanqi.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>案例列表</title>
+    <link href="https://gitguanqi.github.io/2019-01-16/example-list/"/>
+    <id>https://gitguanqi.github.io/2019-01-16/example-list/</id>
+    <published>2019-01-16T13:30:21.000Z</published>
+    <updated>2019-01-16T14:18:07.430Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>之前我做了许多的案例，包括当当网pc、哔哩哔哩h5，今天介绍这两个案例。</p></blockquote><h1 id="当当网pc"><a href="#当当网pc" class="headerlink" title="当当网pc"></a>当当网pc</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitguanqi.github.io/img/demoimg/dd.jpg" alt="当当网pc" title="">                </div>                <div class="image-caption">当当网pc</div>            </figure><p>当当网是初学前端时候做的一个案例，这个案例包括登录，注册，首页，二级页，详情页，购物车页面这几个部分。</p><p>你可以先注册，然后登录，到首页看看，二级页看看，再到详情页添加商品到购物车（有待完善），最后在购物车结算。</p><p><strong>建议</strong>在电脑上游览，点击这里<a href="https://gitguanqi.github.io/demo/ddw">预览</a>一下效果吧！</p><h1 id="哔哩哔哩h5"><a href="#哔哩哔哩h5" class="headerlink" title="哔哩哔哩h5"></a>哔哩哔哩h5</h1><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gitguanqi.github.io/img/demoimg/bl.jpg" alt="哔哩哔哩h5" title="">                </div>                <div class="image-caption">哔哩哔哩h5</div>            </figure><p>当当网是初学前端时候做的一个案例，这个案例包括登录，注册，首页，二级页，详情页，搜索页页面这几个部分。</p><p>你可以看频道内容，也可以看排行榜，还可以登录，注册（完善中），也可以看详情页视频。</p><p><strong>建议</strong>在手机上游览，点击这里<a href="https://gitguanqi.github.io/demo/blw">预览</a>一下效果吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;之前我做了许多的案例，包括当当网pc、哔哩哔哩h5，今天介绍这两个案例。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;当当网pc&quot;&gt;&lt;a href=&quot;#当当网pc&quot; class=&quot;headerlink&quot; title=&quot;当当网pc&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+      <category term="案例" scheme="https://gitguanqi.github.io/categories/%E6%A1%88%E4%BE%8B/"/>
+    
+    
+      <category term="案例" scheme="https://gitguanqi.github.io/tags/%E6%A1%88%E4%BE%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>js中对象详解</title>
@@ -538,35 +566,6 @@
       <category term="es6" scheme="https://gitguanqi.github.io/tags/es6/"/>
     
       <category term="babel" scheme="https://gitguanqi.github.io/tags/babel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用hexo+coding搭建个人博客</title>
-    <link href="https://gitguanqi.github.io/2017-09-21/hexo-coding-config/"/>
-    <id>https://gitguanqi.github.io/2017-09-21/hexo-coding-config/</id>
-    <published>2017-09-21T07:16:21.000Z</published>
-    <updated>2019-01-16T02:58:03.990Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-检测node和npm"><a href="#1-检测node和npm" class="headerlink" title="1.检测node和npm"></a>1.检测node和npm</h2><p>先检测一下有没有<strong><em>node.js</em></strong>和<strong><em>npm</em></strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">//如果有，说明node.js安装成功！</span><br><span class="line">$ node -v</span><br><span class="line">v8.4.0</span><br><span class="line">//如果有，说明npm安装成功！</span><br><span class="line">$npm -v</span><br><span class="line">$ npm -v</span><br><span class="line">5.3.0</span><br></pre></td></tr></table></figure><h2 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2.安装hexo"></a>2.安装hexo</h2><p>在git-bash中运行以下命令安装hexo</p><h3 id="安装hexo全局"><a href="#安装hexo全局" class="headerlink" title="安装hexo全局"></a>安装hexo全局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h3 id="建立文件夹"><a href="#建立文件夹" class="headerlink" title="建立文件夹"></a>建立文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><p>然后运行<br><code>$ npm install</code> </p><p>就能够建立起一个本地的服务器，端口是4000，打开浏览器 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就能访问属于你自己的博客了。</p><h2 id="3-切换主题"><a href="#3-切换主题" class="headerlink" title="3.切换主题"></a>3.切换主题</h2><h3 id="主题代码拷贝"><a href="#主题代码拷贝" class="headerlink" title="主题代码拷贝"></a>主题代码拷贝</h3><p>主题的拷贝也是直接使用 git 即可，首先进入到你博客的根目录，再打开 git-bash 运行</p><p><code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p><h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>在博客根目录下找到 _config.yml 文件，找到里面的 theme，改为</p><p>theme: next</p><p>这时再运行一次 hexo s ，看看主题有没有生效吧。</p><h2 id="4-发布到coding"><a href="#4-发布到coding" class="headerlink" title="4.发布到coding"></a>4.发布到coding</h2><p>前提是你先注册一个<a href="https://coding.net" target="_blank" rel="noopener">coding</a>账号</p><p>hexo 提供了一个部署命令 hexo deploy，首先需要安装一下 hexo-deployer-git插件</p><p><code>npm install hexo-deployer-git --save</code></p><p>然后配置一下_config.yml 文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repoistory: https://git.coding.net/codinggq/problog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>预览效果</p><p>在 coding 上建立一个私人仓库，找到代码的 coding 地址，填好上面的配置，然后直接执行</p><p><code>hexo deploy</code></p><p>不出意外的话会让你填写 coding 的用户名和密码完成上传操作。如果你有配置 ssh 方式的话就更加方便了。</p><p>这个时候再到 coding 对应的项目里面打开 pages 服务，根据 coding 建议，因为不是 jekyll 项目，所以需要再新建一个.nojekyll 文件（空文件就行，其实不建立也行），等上一会就能够访问自己的博客了。</p><p>最后运行以下命令上传到coding</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><blockquote><p>如果不行用git,输入以下命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir problog</span><br><span class="line">cd problog</span><br><span class="line">git init</span><br><span class="line">echo &quot;# problog&quot; &gt;&gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://git.coding.net/codinggq/problog.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h2 id="5-写在最后"><a href="#5-写在最后" class="headerlink" title="5.写在最后"></a>5.写在最后</h2><p>今天的hexo+coding配置免费博客就到这里，赶快体验一下吧！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1-检测node和npm&quot;&gt;&lt;a href=&quot;#1-检测node和npm&quot; class=&quot;headerlink&quot; title=&quot;1.检测node和npm&quot;&gt;&lt;/a&gt;1.检测node和npm&lt;/h2&gt;&lt;p&gt;先检测一下有没有&lt;strong&gt;&lt;em&gt;node.js&lt;/e
-      
-    
-    </summary>
-    
-      <category term="搭建博客" scheme="https://gitguanqi.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="hexo" scheme="https://gitguanqi.github.io/tags/hexo/"/>
-    
-      <category term="coding" scheme="https://gitguanqi.github.io/tags/coding/"/>
-    
-      <category term="blog" scheme="https://gitguanqi.github.io/tags/blog/"/>
     
   </entry>
   
