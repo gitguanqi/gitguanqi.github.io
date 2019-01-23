@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>es6之set命令 | 观奇笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6,set">
+    <meta name="description" content="学习setset是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。 例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;#125;">
+<meta name="keywords" content="es6,set">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6之set命令">
+<meta property="og:url" content="https://gitguanqi.github.io/2019-01-22/es6-set/index.html">
+<meta property="og:site_name" content="观奇笔记">
+<meta property="og:description" content="学习setset是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。 例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;#125;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-23T13:20:42.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6之set命令">
+<meta name="twitter:description" content="学习setset是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。 例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;#125;">
+    
+        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">GuanQi</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">es6之set命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">es6之set命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-22T10:30:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/es6/">es6</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习set"><span class="post-toc-number">1.</span> <span class="post-toc-text">学习set</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#set的属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">set的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#set的方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">set的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#set的操作方法"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">set的操作方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#set的遍历方法"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">set的遍历方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用"><span class="post-toc-number">2.</span> <span class="post-toc-text">应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算符"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">...运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#map方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">map方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#filter方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">filter方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Array-from"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Array.from</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小案例"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">小案例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习WeakSet"><span class="post-toc-number">3.</span> <span class="post-toc-text">学习WeakSet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WeakSet的方法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">WeakSet的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WeakSet的属性"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">WeakSet的属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-es6-set" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">es6之set命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-22 18:30:21" datetime="2019-01-22T10:30:21.000Z" itemprop="datePublished">2019-01-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/es6/">es6</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="学习set"><a href="#学习set" class="headerlink" title="学习set"></a>学习set</h2><p>set是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>].forEach( <span class="function"><span class="params">x</span> =&gt;</span> set.add(x) );</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> set) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="set的属性"><a href="#set的属性" class="headerlink" title="set的属性"></a>set的属性</h3><p>set的属性包括constructor（set原型）和size（用来记录set的大小）。</p>
+<p>用法：<code>Set.prototype.constructor</code>,<code>Set.prototype.size</code>。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">34</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">523</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(set.constructor); <span class="comment">// ƒ Set() &#123; [native code] &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(set.size); <span class="comment">// 7</span></span><br></pre></td></tr></table></figure>
+<h3 id="set的方法"><a href="#set的方法" class="headerlink" title="set的方法"></a>set的方法</h3><h4 id="set的操作方法"><a href="#set的操作方法" class="headerlink" title="set的操作方法"></a>set的操作方法</h4><ul>
+<li>add(val); 添加某个值</li>
+<li>delete(val); // 删除某个值，返回布尔值，表示结果。</li>
+<li>has(val); // 判断该值是否存在于Set中。</li>
+<li>clear(); // 清楚所有的值</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line"><span class="comment">//1.add();</span></span><br><span class="line">set.add(<span class="number">12</span>).add(<span class="number">32</span>);</span><br><span class="line"><span class="built_in">console</span>.log(set); <span class="comment">// Set(2) &#123;12, 32&#125;</span></span><br><span class="line"><span class="comment">// 2.delete(val);</span></span><br><span class="line">set.delete(<span class="number">32</span>);</span><br><span class="line"><span class="built_in">console</span>.log(set); <span class="comment">// Set(1) &#123;12&#125;</span></span><br><span class="line"><span class="comment">//3.has(val);</span></span><br><span class="line"><span class="built_in">console</span>.log(set.has(<span class="number">88</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="comment">//4.clear();</span></span><br><span class="line">set.clear();</span><br><span class="line"><span class="built_in">console</span>.log(set); <span class="comment">// Set(0) &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="set的遍历方法"><a href="#set的遍历方法" class="headerlink" title="set的遍历方法"></a>set的遍历方法</h4><p><code>set</code>的键和值是同一个值。</p>
+<ul>
+<li>keys() 返回键名的方法</li>
+<li>values() 返回键值的方法</li>
+<li>entries() 返回键值对的方法</li>
+<li>forEach() 用回调函数遍历各个元素的方法</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">34</span>,<span class="number">45</span>,<span class="number">33</span>,<span class="number">23</span>,<span class="number">32</span>]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> set.keys()) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item); <span class="comment">// // 2 1 5 34 45 33 23 32</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> set.values()) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item); <span class="comment">// // 2 1 5 34 45 33 23 32</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> set.entries()) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item); <span class="comment">// [2, 2] [1, 1] [5, 5] [34, 34] [45, 45] [33, 33] [23, 23] [32, 32]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set.forEach(<span class="function">(<span class="params">value,key</span>) =&gt;</span> <span class="built_in">console</span>.log(key+ <span class="string">'='</span> +value)); <span class="comment">// 2=2 1=1 5=5 34=34 45=45 33=33 23=23 32=32</span></span><br></pre></td></tr></table></figure>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p><code>...</code>运算符和<code>Array.from</code>以及<code>map</code>和<code>filter</code>都可以遍历set结构。</p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="...运算符"></a><code>...</code>运算符</h3><p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(<span class="string">'123456654321'</span>);</span><br><span class="line"><span class="built_in">console</span>.log([...set]); <span class="comment">// ["1", "2", "3", "4", "5", "6"]</span></span><br></pre></td></tr></table></figure>
+<p><code>...</code>和数组加起来可以去重</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> removeRepeat = [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line"><span class="built_in">console</span>.log(removeRepeat); <span class="comment">//[1, 2, 3, 4, 6]</span></span><br></pre></td></tr></table></figure>
+<h3 id="map方法"><a href="#map方法" class="headerlink" title="map方法"></a><code>map</code>方法</h3><p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>([...set].map(<span class="function"><span class="params">x</span> =&gt;</span> x*<span class="number">2</span>))); <span class="comment">// &#123;2, 4, 6, 8&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="filter方法"><a href="#filter方法" class="headerlink" title="filter方法"></a><code>filter</code>方法</h3><p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>([...set].filter(<span class="function"><span class="params">x</span> =&gt;</span> x%<span class="number">2</span> === <span class="number">0</span>))); <span class="comment">// &#123;2, 4&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a><code>Array.from</code></h3><p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(<span class="built_in">Array</span>.from(set, x =&gt; x*<span class="number">2</span>))); <span class="comment">// &#123;2, 4, 6, 8&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="小案例"><a href="#小案例" class="headerlink" title="小案例"></a>小案例</h3><p>使用这个<code>set</code>可以实现数学中的交集，并集效果。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numa = <span class="keyword">new</span> <span class="built_in">Set</span>([...a,...b]);</span><br><span class="line"><span class="built_in">console</span>.log(numa); <span class="comment">// &#123;1, 2, 3, 4, 5&#125;</span></span><br><span class="line"><span class="comment">//并集</span></span><br><span class="line"><span class="keyword">let</span> numb = <span class="keyword">new</span> <span class="built_in">Set</span>([...a].filter(<span class="function"><span class="params">x</span> =&gt;</span> b.has(x)));</span><br><span class="line"><span class="built_in">console</span>.log(numb); <span class="comment">// &#123;3&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="学习WeakSet"><a href="#学习WeakSet" class="headerlink" title="学习WeakSet"></a>学习WeakSet</h2><p>WeakSet和Set类似，也是没有重复的值。注意的是，它里面的成员只能是对象，其他数据类型不接受。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ws = <span class="keyword">new</span> <span class="built_in">WeakSet</span>(<span class="number">1</span>); <span class="comment">// Uncaught TypeError: number 1 is not iterable (cannot read property Symbol(Symbol.iterator))</span></span><br><span class="line"><span class="keyword">let</span> wsa = <span class="keyword">new</span> <span class="built_in">WeakSet</span>(<span class="string">'1'</span>); <span class="comment">// Uncaught TypeError: Invalid value used in weak set</span></span><br><span class="line"><span class="keyword">let</span> wsb = <span class="keyword">new</span> <span class="built_in">WeakSet</span>(&#123;<span class="attr">x</span>:<span class="number">1</span>&#125;); <span class="comment">// Uncaught TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))</span></span><br><span class="line"><span class="keyword">let</span> wsc = <span class="keyword">new</span> <span class="built_in">WeakSet</span>([<span class="number">1</span>,<span class="number">3</span>]); <span class="comment">// Uncaught TypeError: Invalid value used in weak set</span></span><br><span class="line"><span class="keyword">let</span> wsc = <span class="keyword">new</span> <span class="built_in">WeakSet</span>([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]]);</span><br><span class="line"><span class="built_in">console</span>.log(wsc); <span class="comment">// WeakSet &#123;Array(2), Array(2)&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>结论：</strong>从上面的例子中，可以看出1.<code>WeakSet</code>构造函数的参数不接受字符串，数字，普通对象，数组（数组中的参数必须是对象）；接受数组（数组中的参数是对象的数组）。</p>
+<h3 id="WeakSet的方法"><a href="#WeakSet的方法" class="headerlink" title="WeakSet的方法"></a>WeakSet的方法</h3><ul>
+<li><code>WeakSet.prototype.add(val)</code>添加一个值;</li>
+<li><code>WeakSet.prototype.delete(val)</code>删除一个值;</li>
+<li><code>WeakSet.prototype.has(val)</code>是否有这个值;</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> wset = <span class="keyword">new</span> <span class="built_in">WeakSet</span>([[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">23</span>,<span class="number">4</span>,<span class="number">52</span>,<span class="number">2</span>]]);</span><br><span class="line"><span class="comment">//1.添加值</span></span><br><span class="line">wset.add([<span class="number">12</span>,<span class="number">33</span>,<span class="number">23</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(wset); <span class="comment">// WeakSet &#123;Array(3), Array(4), Array(3)&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.删除值</span></span><br><span class="line">wset.delete([<span class="number">12</span>,<span class="number">33</span>,<span class="number">23</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(wset); <span class="comment">// WeakSet &#123;Array(4), Array(3)&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.是否有这个值</span></span><br><span class="line"><span class="built_in">console</span>.log(wset.has([<span class="number">12</span>,<span class="number">33</span>,<span class="number">23</span>])); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="WeakSet的属性"><a href="#WeakSet的属性" class="headerlink" title="WeakSet的属性"></a>WeakSet的属性</h3><p>由于WeakSet中的值都是弱属性，随时可能消失，被垃圾回收，遍历机制无法保证值是否还存在，所以不能用<code>size</code>和<code>forEach()</code>。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> wset = <span class="keyword">new</span> <span class="built_in">WeakSet</span>([[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">23</span>,<span class="number">4</span>,<span class="number">52</span>,<span class="number">2</span>]]);</span><br><span class="line"><span class="built_in">console</span>.log(wset.size); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;wset.length;i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(wset[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>Set和WeakSet就介绍到这里，赶快用起来吧！</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-23T13:20:42.569Z" itemprop="dateUpdated">2019-01-23 21:20:42</time>
+</span><br>
+
+
+        
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2019-01-22/es6-set/" target="_blank" rel="external">https://gitguanqi.github.io/2019-01-22/es6-set/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://gitguanqi.github.io">
+            <img src="/img/avatar.jpg" alt="GuanQi">
+            GuanQi
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/set/">set</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-01-22/es6-set/&title=《es6之set命令》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-01-22/es6-set/&title=《es6之set命令》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-01-22/es6-set/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6之set命令》 — 观奇笔记&url=https://gitguanqi.github.io/2019-01-22/es6-set/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-01-22/es6-set/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-01-23/es6-block/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">es6之块级作用域</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-01-19/es6-let/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">es6之let命令</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>GuanQi &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-01-22/es6-set/&title=《es6之set命令》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-01-22/es6-set/&title=《es6之set命令》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-01-22/es6-set/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6之set命令》 — 观奇笔记&url=https://gitguanqi.github.io/2019-01-22/es6-set/&via=https://gitguanqi.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-01-22/es6-set/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOUlEQVR42u3aS27DMAxFUe9/0+40QBDlPtIuYupqFASppeMBy4+OA6/zZb1+8/6b99+//5L81XHHkiFDxmMZ53Ktj7U+BPmGPH99NhkyZOzDIKGww14HU/KavpxZhgwZMvCjecAlz5chQ4aMGoOXtevf10plGTJk7MwgqV6t05U25m6vxWXIkPFABu+6///nW+YbMmTIeBTjDFfaxK8dKz6VDBkyRjP4NunliXU62Lmc8XEXGTJkjGbUytE7Gmf8FVwQs2XIkPEoRq1Nlm7DL1ukFz5kyJAxm5Fe1eLNsvRCBkkfP74+GTJkbMNIR4OtGB++puI1CxkyZIxjdApRXpTykUOxuSZDhoxxjDSxI+GVDxXSfb8kjjJkyNiA0dlgvU3t6gYJ/TJkyNiBwYvYziCzVjAHIwQZMmSMZqRHSUeP5NWkg8wvTTcZMmQMZfSba2nYrQ0vUcIqQ4aMcYz08gS5NMbb/ZcNIWTIkDGaUSsg0zKVDzXTpPOoKWXIkPFYBg+4aYgkYTpNQGXIkLEbIx0P8MOlz6nxZMiQsQ/j2tZ/Wo4Wx5Z3TzBkyJDxw4z+6LF2zas1hJAhQ8ZQxhmua7t6tQHDQapkGTJkDGLw1X9op1Tmpa8MGTKmMvjokX++rzyOu4YyZMgYxOCBj4S/2rWwWuCWIUOGDN6yJ+ljmiAGRbIMGTJkhAG3kwiSFPOf/m/IkCHjxxgkdPaHjjzIxummDBkyRjN46cjTxPXGPEFMG3wyZMgYx/gDsTSdO2l8EAMAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
