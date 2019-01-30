@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>js中Cookie的属性和用法 | 观奇笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js,DOM,cookie">
+    <meta name="description" content="今天，说一下这个cookie的属性和用法，包括设置cookie,获取cookie,删除cookie。cookie是Document对象的一个属性，可以使js方便的把一些数据放在在本地进行存取操作。cookie还用于客户端脚本化，是http协议的一个标准扩展。  cookie的概念cookie是Web游览器存储的少量命名数据，它作用于某个特定的网页或者网站。它可以在客户端和服务器之间的传递数据，位">
+<meta name="keywords" content="js,DOM,cookie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中Cookie的属性和用法">
+<meta property="og:url" content="https://tech.guanqi.xyz/2019-01-30/js-cookie/index.html">
+<meta property="og:site_name" content="观奇笔记">
+<meta property="og:description" content="今天，说一下这个cookie的属性和用法，包括设置cookie,获取cookie,删除cookie。cookie是Document对象的一个属性，可以使js方便的把一些数据放在在本地进行存取操作。cookie还用于客户端脚本化，是http协议的一个标准扩展。  cookie的概念cookie是Web游览器存储的少量命名数据，它作用于某个特定的网页或者网站。它可以在客户端和服务器之间的传递数据，位">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-30T10:52:08.282Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js中Cookie的属性和用法">
+<meta name="twitter:description" content="今天，说一下这个cookie的属性和用法，包括设置cookie,获取cookie,删除cookie。cookie是Document对象的一个属性，可以使js方便的把一些数据放在在本地进行存取操作。cookie还用于客户端脚本化，是http协议的一个标准扩展。  cookie的概念cookie是Web游览器存储的少量命名数据，它作用于某个特定的网页或者网站。它可以在客户端和服务器之间的传递数据，位">
+    
+        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">GuanQi</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">js中Cookie的属性和用法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">js中Cookie的属性和用法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-30T09:33:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie的概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">cookie的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检测是否支持"><span class="post-toc-number">2.</span> <span class="post-toc-text">检测是否支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie的属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">cookie的属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#名字和值"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">名字和值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最大期限"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">最大期限</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#path"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">path</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#domain"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">domain</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#secure"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">secure</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie的方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">cookie的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置cookie"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">设置cookie</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#读取cookie"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">读取cookie</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除cookie"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">删除cookie</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-js-cookie" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">js中Cookie的属性和用法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-30 17:33:21" datetime="2019-01-30T09:33:21.000Z" itemprop="datePublished">2019-01-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>今天，说一下这个cookie的属性和用法，包括设置cookie,获取cookie,删除cookie。cookie是Document对象的一个属性，可以使js方便的把一些数据放在在本地进行存取操作。cookie还用于客户端脚本化，是http协议的一个标准扩展。</p>
+</blockquote>
+<h2 id="cookie的概念"><a href="#cookie的概念" class="headerlink" title="cookie的概念"></a>cookie的概念</h2><p>cookie是Web游览器存储的少量命名数据，它作用于某个特定的网页或者网站。它可以在客户端和服务器之间的传递数据，位于服务器端的脚本可以读取到客户端的cookie。</p>
+<p>常用的使用场景有以下几个：</p>
+<ul>
+<li>用户登录，服务器记录下用户的登录信息，以便验证下次是否重新登录；</li>
+<li>电商网站的购物车，记录下用户的购物车购买东西喜好，以便下次推广相关的产品；</li>
+<li>网络广告主和网络广告服务商的广告推广，对于不同网站进行用户广告的推送。</li>
+</ul>
+<p><em>温馨提示：</em>由于cookie是http协议的标准扩展，所以要在http协议下的网站和页面才可以使用cookie。不要使用在游览器中打开（类似于：<code>file:///D:/test.html</code>），建议开启http服务（<code>http://localhost:2009/test.html</code>）。</p>
+<h2 id="检测是否支持"><a href="#检测是否支持" class="headerlink" title="检测是否支持"></a>检测是否支持</h2><p>由于用户登录或者购物车需要记录cookie的有关信息，所以首先要检测用户的游览器是否开启了cookie，没有开启要提示用户开启cookie后在操作。</p>
+<p>下面是检测游览器的cookie是否开启的方法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"cookieTips"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//isOpenCookie这个方法需要传一个id用来给用户显示提示语。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOpenCookie</span>(<span class="params">id</span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">var</span> cookieTips = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">  <span class="keyword">var</span> result = <span class="built_in">window</span>.navigator.cookieEnabled;</span><br><span class="line">  <span class="keyword">if</span> (result) &#123;</span><br><span class="line">    cookieTips.style.color = <span class="string">'#269d26'</span>;</span><br><span class="line">    cookieTips.style.fontSize = <span class="string">'18px'</span>;</span><br><span class="line">    cookieTips.innerHTML = <span class="string">'您的cookie已激活!'</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    cookieTips.style.color = <span class="string">'#f00'</span>;</span><br><span class="line">    cookieTips.style.fontSize = <span class="string">'18px'</span>;</span><br><span class="line">    cookieTips.innerHTML = <span class="string">'您的cookie未激活，可能不能享受好的服务!'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(isOpenCookie(<span class="string">'cookieTips'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="cookie的属性"><a href="#cookie的属性" class="headerlink" title="cookie的属性"></a>cookie的属性</h2><p>cookie的属性有名字和值，最大期限，当前可以访问cookie信息的文件路径，可以访问cookie的网站域名，还有安全性属性，下面一一介绍。</p>
+<h3 id="名字和值"><a href="#名字和值" class="headerlink" title="名字和值"></a>名字和值</h3><p>这个就是name和value属性了，name是你要存的数据的名字，value是你要存的名字对应的值。</p>
+<p>由于这个值是明文可见的，非常的不安全，所以你要进行编码和解码操作，可以使用以下两种方法：</p>
+<ul>
+<li>早期的方法：escape()编码，unescape()解码；（<em>已废弃，但可以用</em>）</li>
+<li>新的方法：encodeURIComponent()编码，decodeURIComponent()解码。</li>
+</ul>
+<p>方法： <code>document.cookie = &quot;&lt;名字&gt;=&lt;值&gt;&quot;</code>。</p>
+<p>例如：<code>document.cookie = &quot;title=&quot; + encodeURIComponent(&#39;世界那么大&#39;)</code>。</p>
+<h3 id="最大期限"><a href="#最大期限" class="headerlink" title="最大期限"></a>最大期限</h3><p>最大期限之前是<code>expires</code>属性（<em>已废弃</em>）；现在是<code>max-age</code>来表示，它接收秒作为单位。</p>
+<p>方法： <code>document.cookie = &quot;max-age=&lt;数字&gt;&quot;</code>。</p>
+<p>例如：<code>document.cookie = &quot;title=&quot; + encodeURIComponent(&#39;你好啊&#39;) + &quot;;max-age=&quot; + 60*60*24*7;</code>。</p>
+<h3 id="path"><a href="#path" class="headerlink" title="path"></a>path</h3><p>path就是当前文件所在的目录，在这个目录下的所以网页都可以共享这个cookie信息，但是不在这个路径下的网页就享受不到这个cookie信息了。</p>
+<p>比如说：<code>test.html</code>在<code>server</code>这个目录下，test.html的网页设置了cookie，那么这个server下面的其他网页也可以共享这一个cookie信息；但是不在server这个目录下的网页就享受不到这个cookie信息了。</p>
+<p>可以通过设置这个属性来告诉游览器哪些目录下的网页可以获取cookie信息。</p>
+<p>方法： <code>document.cookie = &quot;path=&#39;&lt;文件路径名字&gt;&#39;&quot;</code>。</p>
+<p>例如：<code>document.cookie = &quot;title=&quot; + encodeURIComponent(&#39;你好啊&#39;) + &quot;;max-age=&quot; + 60*60*24*7 + &#39;;path=&#39; + &#39;/&#39;;</code>。</p>
+<h3 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h3><p>domain就是当前html文件所在的这个网站（不包括二级域名），在这个网站下的所以网页都可以共享这个cookie信息，但是不在这个网站下的网页就享受不到这个cookie信息了。</p>
+<p>比如说：<code>test.html</code>在<code>http://www.examle.com</code>这个目录下，test.html的网页设置了cookie，那么这个<code>http://www.examle.com</code>网站下面的其他网页也可以共享这一个cookie信息；但是不在<code>http://www.examle.com</code>这个网站下的网站（比如：<code>http://blog.examle.com</code>）网页就享受不到这个cookie信息了。</p>
+<p>可以通过设置这个属性来告诉游览器哪些网站可以获取cookie信息。</p>
+<p>方法： <code>document.cookie = &quot;domain=&#39;&lt;网站域名&gt;&#39;&quot;</code>。</p>
+<p>例如：<code>document.cookie = &quot;title=&quot; + encodeURIComponent(&#39;你好啊&#39;) + &quot;;max-age=&quot; + 60*60*24*7 + &#39;;domain=&#39; + &#39;127.0.0.1&#39;;</code></p>
+<p>那么其他的比如说<code>localhost</code>下面的网页无法获取cookie信息。</p>
+<h3 id="secure"><a href="#secure" class="headerlink" title="secure"></a>secure</h3><p>这个属性是一个布尔值，如果添加到一条cookie记录中，那么这个cookie只能在带有<code>https</code>安全协议或者其他安全协议的网站下面进行存取。</p>
+<p>例如:<code>document.cookie = &quot;title=&quot; + encodeURIComponent(&#39;你好啊&#39;) + &quot;;max-age=&quot; + 60*60*24*7 + &#39;;secure&#39;</code></p>
+<h2 id="cookie的方法"><a href="#cookie的方法" class="headerlink" title="cookie的方法"></a>cookie的方法</h2><h3 id="设置cookie"><a href="#设置cookie" class="headerlink" title="设置cookie"></a>设置cookie</h3><p>可以通过封装一个方法来方便的设置cookie，下面是我封装的一个设置cookie的方法，里面要传五个参数，分别对于五个属性。</p>
+<p>原理就是对传入的参数进行类型检测，然后遍历对象的属性和值进行存储。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name,value,maxAge,path,domain,secure</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//检测flag</span></span><br><span class="line">  <span class="keyword">var</span> cookieinfo = &#123;</span><br><span class="line">    name: name,</span><br><span class="line">    value: value,</span><br><span class="line">    maxAge: maxAge,</span><br><span class="line">    path: path,</span><br><span class="line">    domain: domain,</span><br><span class="line">    secure: secure</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> res = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//验证值</span></span><br><span class="line">  <span class="keyword">for</span>(key <span class="keyword">in</span> cookieinfo) &#123;</span><br><span class="line">    <span class="keyword">var</span> val = cookieinfo[key];</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="string">'path'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!val) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> val != <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: path must be an string!'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (key == <span class="string">'domain'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!val) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> val != <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: domain must be an string!'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (key == <span class="string">'secure'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!val) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> val != <span class="string">'boolean'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: secure must be an boolean!'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (val == <span class="string">''</span> || val == <span class="literal">undefined</span> || val == <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error:'</span> + key + <span class="string">' not a null value!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//赋值</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> cookieinfo) &#123;</span><br><span class="line">    <span class="keyword">var</span> val = cookieinfo[key];</span><br><span class="line">    <span class="keyword">if</span> (val == <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="string">'value'</span>) &#123;</span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="string">'name'</span>) &#123;</span><br><span class="line">      res += cookieinfo[<span class="string">'name'</span>] + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(cookieinfo[<span class="string">'value'</span>]) + <span class="string">';'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (key == <span class="string">'maxAge'</span>) &#123;</span><br><span class="line">      res += <span class="string">'max-age'</span> + <span class="string">'='</span> + cookieinfo[<span class="string">'maxAge'</span>] + <span class="string">';'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key == <span class="string">'secure'</span> &amp;&amp; cookieinfo[<span class="string">'secure'</span>] === <span class="literal">true</span>) &#123;</span><br><span class="line">      res += <span class="string">'secure;'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      res += key + <span class="string">'='</span> + val + <span class="string">';'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (res) &#123;</span><br><span class="line">    <span class="built_in">document</span>.cookie = res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">setCookie(<span class="string">'title'</span>,<span class="built_in">document</span>.title,<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">7</span>,<span class="string">'/'</span>,<span class="string">'127.0.0.1'</span>,secure);</span><br></pre></td></tr></table></figure>
+<h3 id="读取cookie"><a href="#读取cookie" class="headerlink" title="读取cookie"></a>读取cookie</h3><p>可以通过封装一个方法来方便的读取cookie，下面是我封装的一个读取cookie的方法，里面要传两个参数，第一个是布尔值，true表示获取全部cookie,false表示不用；第二个参数是你要获取的cookie名字。</p>
+<p>原理就是对cookie进行分解，然后再进行对比，返回相应的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">isAll,name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> tisAll = isAll;</span><br><span class="line">  <span class="keyword">var</span> tname = name;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> tisAll != <span class="string">'boolean'</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: tisAll not an boolean!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (!tisAll) &#123;</span><br><span class="line">    <span class="keyword">if</span> (tname == <span class="string">'undefined'</span>  || tname == <span class="literal">null</span> || </span><br><span class="line">      tname == <span class="string">''</span> ||  <span class="keyword">typeof</span> tname == <span class="string">'object'</span> || </span><br><span class="line">      <span class="keyword">typeof</span> tname == <span class="string">'function'</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: name not an object or function or undefined!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">  <span class="keyword">var</span> cookies = cookie.split(<span class="string">';'</span>);</span><br><span class="line">  <span class="keyword">var</span> value = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">var</span> allObj = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;cookies.length;i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> vals = cookies[i].split(<span class="string">'='</span>);</span><br><span class="line">    <span class="keyword">var</span> allKey = vals[<span class="number">0</span>].trim();</span><br><span class="line">    <span class="keyword">var</span> allVal = <span class="built_in">decodeURIComponent</span>(vals[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">if</span> (allKey == <span class="string">''</span> &amp;&amp; allVal == <span class="string">''</span>) &#123;</span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (tisAll) &#123;</span><br><span class="line">        allObj[allKey] = allVal;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (tname == allKey) &#123;</span><br><span class="line">          value = allVal;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (!tisAll &amp;&amp; value == <span class="string">''</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error:'</span> + tname +  <span class="string">' not found!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (tisAll) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> allObj) &#123;</span><br><span class="line">      <span class="keyword">if</span> (key == <span class="string">''</span> &amp;&amp; allObj[key] == <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: all cookie not found!'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> res = tisAll ? allObj : value;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//例如：上面的cookie值</span></span><br><span class="line"><span class="built_in">console</span>.log(getCookie(<span class="literal">false</span>,<span class="string">'title'</span>)); <span class="comment">// 你好啊</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h3><p>可以通过封装一个方法来方便的删除cookie，下面是我封装的一个删除cookie的方法，里面要传一个参数，参数是你要删除的cookie名字。</p>
+<p>原理：只要设置这个cookie的期限为0，就可以删除这个cookie了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (name == <span class="string">''</span> || name == <span class="literal">undefined</span> || name == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error: name not an null!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">  <span class="keyword">var</span> cookies = cookie.split(<span class="string">';'</span>);</span><br><span class="line">  <span class="keyword">var</span> res;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;cookies.length;i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> vals = cookies[i].split(<span class="string">'='</span>);</span><br><span class="line">    <span class="keyword">var</span> allKey = vals[<span class="number">0</span>].trim();</span><br><span class="line">    <span class="keyword">if</span> (name == allKey) &#123;</span><br><span class="line">      res = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (!res) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error:'</span> + name +<span class="string">' not found!'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">document</span>.cookie = name + <span class="string">'='</span> + <span class="string">''</span> + <span class="string">';max-age=0'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//例如：删除上面的title</span></span><br><span class="line">removeCookie(<span class="string">'title'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>有关cookie的知识点就讲这么多，老铁，赶快用起来吧！</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-01-30T10:52:08.282Z" itemprop="dateUpdated">2019-01-30 18:52:08</time>
+</span><br>
+
+
+        
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2019-01-30/js-cookie/" target="_blank" rel="external">https://tech.guanqi.xyz/2019-01-30/js-cookie/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://tech.guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="GuanQi">
+            GuanQi
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-01-30/js-cookie/&title=《js中Cookie的属性和用法》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-01-30/js-cookie/&title=《js中Cookie的属性和用法》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.guanqi.xyz/2019-01-30/js-cookie/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中Cookie的属性和用法》 — 观奇笔记&url=https://tech.guanqi.xyz/2019-01-30/js-cookie/&via=https://tech.guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tech.guanqi.xyz/2019-01-30/js-cookie/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-01-27/js-dom-use/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">js中DOM详解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>GuanQi &copy; 2016 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-01-30/js-cookie/&title=《js中Cookie的属性和用法》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-01-30/js-cookie/&title=《js中Cookie的属性和用法》 — 观奇笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.guanqi.xyz/2019-01-30/js-cookie/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中Cookie的属性和用法》 — 观奇笔记&url=https://tech.guanqi.xyz/2019-01-30/js-cookie/&via=https://tech.guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tech.guanqi.xyz/2019-01-30/js-cookie/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aUW7jMAwE0Nz/0tkDFLZnKHuByM9fRaEkei0wEUl9PvHzPXj+rmnXH73q88SDgYHxs4zv6ZN8wArvaE2+NwwMjPcwjjZ3/tb5+1xs4jSCz/eGgYGBcb6mDe7knTEwMDDuZSQx2sY0BgYGxkoR2zbXZo22x2txDAyMH2TkXff///Mj8w0MDIyfYnzLJ+HNBpPfhQcDA2NvxqyV1h7m2mJ1th8MDIxdGXlp+sQwMm+lXcAwMDBewGgjclYr55/VrsHAwNibkTfX8tI0P+S1RfINPUIMDIxNGUn43hCOMaAYZGJgYGzBSC5DtFcc2sNlWzZnLUQMDIx9GO0mZivbGM2/JS7+PxgYGNsx7roqkQ8+2yFBtCsMDIztGOutrvXrX20hfXhbBAMDY1NG2zjLB5P5kS75rOjoiYGB8QJGG8HrF1VXIvjiHi4GBsamjCeGlCsDhrp5h4GBsTUjHy62pWl+NJw14KLOHwYGxhaMJFjb4jYfHuQDhnqygYGBsR0jb8q3Tbd8GDkLawwMjPcwnrvN0RauebhjYGC8jTEbc84aarOm28WrMDAwNmXMtnV+sGtHm7Oy+eIbAwMDYyPGetjNLmesHDpXIhsDA+N3GbO4bC9kJOuTorqoxTEwMLZj5MHXfmS+po1+DAwMjNkxLv9Njo/+HBgYGBjxaDOJy2IwGR9eMTAw3sBIytEi/hYiOE9RDAyM9zBWgrIN4tkY8rZBJgYGxu8x/gEnCiy66iqcwQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
