@@ -25,11 +25,11 @@
 <meta name="keywords" content="js,DOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js中DOM详解">
-<meta property="og:url" content="https://gitguanqi.github.io/2019-01-27/js-dom-use/index.html">
+<meta property="og:url" content="https://tech.guanqi.xyz/2019-01-27/js-dom-use/index.html">
 <meta property="og:site_name" content="观奇笔记">
 <meta property="og:description" content="之前说过BOM是游览器对象模型，提供了很多操作游览器、操作窗口的属性和方法。那从今天开始讲述有关DOM的知识点。  DOM的概念DOM英文全称是Document Object Model,简称DOM，含义是文档对象模型。这个是核心的js语法所没有的，是对核心js的扩展。 每个游览器窗口都显示一个HTML文档，那每个窗口就有一个Window对象，而它的属性document就是引用的Document">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-30T08:54:06.205Z">
+<meta property="og:updated_time" content="2019-01-30T09:10:50.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js中DOM详解">
 <meta name="twitter:description" content="之前说过BOM是游览器对象模型，提供了很多操作游览器、操作窗口的属性和方法。那从今天开始讲述有关DOM的知识点。  DOM的概念DOM英文全称是Document Object Model,简称DOM，含义是文档对象模型。这个是核心的js语法所没有的，是对核心js的扩展。 每个游览器窗口都显示一个HTML文档，那每个窗口就有一个Window对象，而它的属性document就是引用的Document">
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM的概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">DOM的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0级DOM-旧规范"><span class="post-toc-number">2.</span> <span class="post-toc-text">0级DOM(旧规范)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#案例"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">案例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文档对象集合"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">文档对象集合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#案例-1"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取表单元素"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">获取表单元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取文档中所有的链接"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">获取文档中所有的链接</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1级DOM-W3C标准"><span class="post-toc-number">3.</span> <span class="post-toc-text">1级DOM(W3C标准)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM树"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">DOM树</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM节点"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">DOM节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节点案例"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">节点案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取一个元素的各类节点以及元素"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">获取一个元素的各类节点以及元素</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性操作"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">属性操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元素的操作"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">元素的操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取元素"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">获取元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建元素"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">创建元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加元素"><span class="post-toc-number">3.5.3.</span> <span class="post-toc-text">添加元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改元素"><span class="post-toc-number">3.5.4.</span> <span class="post-toc-text">修改元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#插入元素"><span class="post-toc-number">3.5.5.</span> <span class="post-toc-text">插入元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#替换元素"><span class="post-toc-number">3.5.6.</span> <span class="post-toc-text">替换元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#克隆元素"><span class="post-toc-number">3.5.7.</span> <span class="post-toc-text">克隆元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除元素"><span class="post-toc-number">3.5.8.</span> <span class="post-toc-text">删除元素</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSSDOM"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">CSSDOM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#styleSheets-数组"><span class="post-toc-number">3.6.1.</span> <span class="post-toc-text">styleSheets[]数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#style属性控制"><span class="post-toc-number">3.6.2.</span> <span class="post-toc-text">style属性控制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#className"><span class="post-toc-number">3.6.3.</span> <span class="post-toc-text">className</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#classList"><span class="post-toc-number">3.6.4.</span> <span class="post-toc-text">classList</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM标准支持表"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">DOM标准支持表</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM的概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">DOM的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0级DOM-旧规范"><span class="post-toc-number">2.</span> <span class="post-toc-text">0级DOM(旧规范)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#案例"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">案例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文档对象集合"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">文档对象集合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#案例-1"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取表单元素"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">获取表单元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取文档中所有的链接"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">获取文档中所有的链接</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1级DOM-W3C标准"><span class="post-toc-number">3.</span> <span class="post-toc-text">1级DOM(W3C标准)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM树"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">DOM树</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM节点"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">DOM节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节点案例"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">节点案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取一个元素的各类节点以及元素"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">获取一个元素的各类节点以及元素</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性操作"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">属性操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#元素的操作"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">元素的操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#获取元素"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">获取元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建元素"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">创建元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加元素"><span class="post-toc-number">3.5.3.</span> <span class="post-toc-text">添加元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改元素"><span class="post-toc-number">3.5.4.</span> <span class="post-toc-text">修改元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#插入元素"><span class="post-toc-number">3.5.5.</span> <span class="post-toc-text">插入元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#替换元素"><span class="post-toc-number">3.5.6.</span> <span class="post-toc-text">替换元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#克隆元素"><span class="post-toc-number">3.5.7.</span> <span class="post-toc-text">克隆元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除元素"><span class="post-toc-number">3.5.8.</span> <span class="post-toc-text">删除元素</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSSDOM"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">CSSDOM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#styleSheets-数组"><span class="post-toc-number">3.6.1.</span> <span class="post-toc-text">styleSheets[]数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#style属性控制"><span class="post-toc-number">3.6.2.</span> <span class="post-toc-text">style属性控制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#className"><span class="post-toc-number">3.6.3.</span> <span class="post-toc-text">className</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#classList"><span class="post-toc-number">3.6.4.</span> <span class="post-toc-text">classList</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM标准支持表"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">DOM标准支持表</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优缺点"><span class="post-toc-number">4.</span> <span class="post-toc-text">优缺点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优点"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">优点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺点"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">缺点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -535,6 +535,16 @@
 <ul>
 <li>David Hammond的：<a href="http://www.webdevout.net" target="_blank" rel="noopener">webdevout</a></li>
 </ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>一个对象的出现，既有优点，又有缺点，不过缺点大于优点。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>易用性强</li>
+<li>把文档信息都存于内存中，遍历简单方便</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>解析速度慢，占内存过高，非常大的文件就不适合操作；</li>
+<li>在DOM运行的过程中，创建和修改、删除了大量的对象，机制不健全，导致效率低下，消耗了大量的时间</li>
+</ul>
+<p>DOM有风险，使用需谨慎。切记，切记。</p>
 <h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>因为DOM在不断的发展，内容规则和标准在不断的扩展。所以今天讲的是0级和1级DOM的有关知识点。因为内容太多，所以有关2级DOM的内容放在以后来说。其实上面的内容已经非常多了，需要慢慢的去使用。实践出真知，理论联系实践，相信你自己一定可以成功的。</p>
 
         </div>
@@ -544,17 +554,17 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-01-30T08:54:06.205Z" itemprop="dateUpdated">2019-01-30 16:54:06</time>
+    Last updated: <time datetime="2019-01-30T09:10:50.041Z" itemprop="dateUpdated">2019-01-30 17:10:50</time>
 </span><br>
 
 
         
-        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2019-01-27/js-dom-use/" target="_blank" rel="external">https://gitguanqi.github.io/2019-01-27/js-dom-use/</a>
+        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2019-01-27/js-dom-use/" target="_blank" rel="external">https://tech.guanqi.xyz/2019-01-27/js-dom-use/</a>
         
     </div>
     
     <footer>
-        <a href="https://gitguanqi.github.io">
+        <a href="https://tech.guanqi.xyz">
             <img src="/img/avatar.jpg" alt="GuanQi">
             GuanQi
         </a>
@@ -580,7 +590,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -590,22 +600,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-01-27/js-dom-use/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.guanqi.xyz/2019-01-27/js-dom-use/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中DOM详解》 — 观奇笔记&url=https://gitguanqi.github.io/2019-01-27/js-dom-use/&via=https://gitguanqi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中DOM详解》 — 观奇笔记&url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/&via=https://tech.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-01-27/js-dom-use/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -728,7 +738,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -738,22 +748,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/&title=《js中DOM详解》 — 观奇笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-01-27/js-dom-use/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tech.guanqi.xyz/2019-01-27/js-dom-use/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中DOM详解》 — 观奇笔记&url=https://gitguanqi.github.io/2019-01-27/js-dom-use/&via=https://gitguanqi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中DOM详解》 — 观奇笔记&url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/&via=https://tech.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-01-27/js-dom-use/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://tech.guanqi.xyz/2019-01-27/js-dom-use/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -764,7 +774,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOklEQVR42u3azU4DMQxF4b7/Sw8bFkioM+faoSjOyQqh6ZAvlYx/8nrhdf1aP39//zx5J/9Ua8mQIWNbxnW77v8kefP9QZBjut+bDBkyzmGQTXRCMw/QPKDLkCFDxrvXddLE9D0yZMiQ0Qm49+ld7Zl/+L8hQ4aMrRikiOUBND2Oj9biMmTI2JDBS9PP//wn8w0ZMmRsxbjCRUaP/Mn+fr7fI0OGjNGMdBiZJoL9EpfvR4YMGbMZPIzyBhwpO/tHE5+3DBkyNmTUGmc8NUxHkvyzDxmuDBkyBjFqg8z0kgRv66ehVoYMGecwOmPCuCkWFrToG5AhQ8bBDJIO8rDYabehY5UhQ8YBjNoVLp4IktEm39vb1FCGDBnjGGkCx8Nf54JF3POXIUPGaAZP0dKCkwflWhGL+oUyZMgYweCtsdr1iOCuR3jZQoYMGecw+q0xkt7xBLE2TJUhQ8YJjFVbXBVq+WdlyJBxDoNvpTaG5KOCBc0+GTJkjGbULl7URpXplS8+8pQhQ8ZUBmm61cYDZKM8BKMMV4YMGQcwVg0M0oI2bdU9BFwZMmQMZdSSM345bO2A82EwIEOGjEGMK1x8eMCTvAXJogwZMkYz+iPGNOzWDmjVoFSGDBn7MmojxnTcmF6hiFNPGTJkHMDojAFSQCftQ7W4DBkyZDTqRx5SSeIY9PZkyJBxMCNtupHQTLa+OODKkCFjE0Z6dZWPNtMRKSmkZciQcRojTezSUpOPS3laWUxYZciQsR/jCyyPapjHtZ3LAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aXXKDMAxFYfa/abqADOZcKaSDfHjqNI7x1wfV+jkO/Jwfz+enV+uv1nz+/mr/rz0yZMh4LeNcPuQF5MX8D3H13vUOMmTI2IFBQmGfRL6bhmkZMmTISEMqZ6fBV4YMGTJSRi1xXa/5h4ArQ4aMVzFIErt+WS1BXe/wSC4uQ4aMFzJ41f33Pz/S35AhQ8arGGf4kNZjP1zGp5IhQ8Zoxm8akDx9rZ1HhgwZOzBIaYwwSKhNy3zxZVGGDBnjGHxsgoxH9C+RxRaCDBkyRjPI0dOEk3+aUuMQLEOGjBGMTgksLZB12gw3J5EhQ8YGDB5wO1lyenHkQV+GDBmzGenS2vUuLe2lqawMGTJ2YKTF/TRl7bQk43KbDBkyhjJq5bA0dPIwyluqR+3FMmTIeC0j/XJQDsNrit0MGTJkjGZ8d/SB8zrt0puZERkyZIxjdNLX2jAZ34c3G2TIkDGbwUci+B3subQWNQNkyJAxjrG+ctUOnbYqyQUx6GzIkCFjNIMfnVwo0yYl3w3NjMiQIWMDBrmK1a6SHJM2OGXIkLEDgxS24iBYanDyRFeGDBk7MM7w4aWxtJGwTqRbd1sZMmS8nPG1mF0qrpHfdIYzZMiQMYnRKbeRRDcdsEhXypAhYx8GmV5IWwL8Wsn/A1wiZciQISMc6uJNSr7nTSCWIUOGjLA9WRu8aLVCZciQsQEjbQY8EazT/WXIkLEPg6eOvEnJBzj67QEZMmSMZvwBI6wD8TryvxIAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
