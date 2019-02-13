@@ -14,7 +14,7 @@
     
     
     
-    <title>初识webpack | 观奇笔记</title>
+    <title>初识webpack | 观奇前端笔记</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识webpack">
 <meta property="og:url" content="https://tech.guanqi.xyz/2018-04-01/front-talk-three/index.html">
-<meta property="og:site_name" content="观奇笔记">
+<meta property="og:site_name" content="观奇前端笔记">
 <meta property="og:description" content="今天，咱们正式介绍一下前端打包神器，webpack。这是一款非常流行的打包工具，和各种框架都非常搭配。  一.简介大家好！今天我开始分享有关web前端的故事。俗话说：“男怕入错行，女怕嫁错郎”。如果能够进入发展前景比较好的行业是一个不错的选择，对自己以后的成长与发展都会起到很大的作用。虽然说目前还看不出什么，但是相信随着时间的流逝，这个行业会越来越好。而我选择的这个行业，就是互联网行业，属于服务">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-01-16T03:20:38.946Z">
@@ -34,7 +34,7 @@
 <meta name="twitter:title" content="初识webpack">
 <meta name="twitter:description" content="今天，咱们正式介绍一下前端打包神器，webpack。这是一款非常流行的打包工具，和各种框架都非常搭配。  一.简介大家好！今天我开始分享有关web前端的故事。俗话说：“男怕入错行，女怕嫁错郎”。如果能够进入发展前景比较好的行业是一个不错的选择，对自己以后的成长与发展都会起到很大的作用。虽然说目前还看不出什么，但是相信随着时间的流逝，这个行业会越来越好。而我选择的这个行业，就是互联网行业，属于服务">
     
-        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="观奇前端笔记" href="/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -59,7 +59,7 @@
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname">GuanQi</h5>
+          <h5 class="nickname">观奇笔记</h5>
           <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
         </hgroup>
       </div>
@@ -70,28 +70,28 @@
             <li class="waves-block waves-effect">
               <a href="/">
                 <i class="icon icon-lg icon-home"></i>
-                Home
+                首页
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/archives">
                 <i class="icon icon-lg icon-archives"></i>
-                Archives
+                归档
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/tags">
                 <i class="icon icon-lg icon-tags"></i>
-                Tags
+                标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/categories">
                 <i class="icon icon-lg icon-th-list"></i>
-                categories
+                分类
               </a>
             </li>
         
@@ -227,8 +227,8 @@
     
     <footer>
         <a href="https://tech.guanqi.xyz">
-            <img src="/img/avatar.jpg" alt="GuanQi">
-            GuanQi
+            <img src="/img/avatar.jpg" alt="观奇笔记">
+            观奇笔记
         </a>
     </footer>
 </blockquote>
@@ -252,7 +252,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇前端笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -262,7 +262,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇前端笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -272,7 +272,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初识webpack》 — 观奇笔记&url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&via=https://tech.guanqi.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初识webpack》 — 观奇前端笔记&url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&via=https://tech.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -389,7 +389,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>GuanQi &copy; 2016 - 2019</span>
+        <p><span>观奇笔记 &copy; 2017 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -407,7 +407,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇前端笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -417,7 +417,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&title=《初识webpack》 — 观奇前端笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -427,7 +427,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初识webpack》 — 观奇笔记&url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&via=https://tech.guanqi.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初识webpack》 — 观奇前端笔记&url=https://tech.guanqi.xyz/2018-04-01/front-talk-three/&via=https://tech.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

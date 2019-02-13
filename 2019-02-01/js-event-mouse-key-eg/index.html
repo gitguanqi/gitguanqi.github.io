@@ -14,7 +14,7 @@
     
     
     
-    <title>js之鼠标和键盘事件案例 | 观奇笔记</title>
+    <title>js之鼠标和键盘事件案例 | 观奇前端笔记</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="js之鼠标和键盘事件案例">
 <meta property="og:url" content="https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/index.html">
-<meta property="og:site_name" content="观奇笔记">
+<meta property="og:site_name" content="观奇前端笔记">
 <meta property="og:description" content="之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  鼠标和键盘事件鼠标和键盘事件就是设备相关的事件，可以使用鼠标和键盘对文档进行操作，触发相应的事件。 鼠标事件案例既然之前已经知道了如何使用鼠标事件，那本节就提出两个案例，来对学过的知识的实践。 本节有两个案例，第一个是有关右击鼠标显示自定义菜单的；第二个是有关如何使用鼠标进行拖拽元素。 鼠标右击自定义菜单原理：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://tech.guanqi.xyz/img/blogimg/drag.png">
@@ -36,7 +36,7 @@
 <meta name="twitter:description" content="之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  鼠标和键盘事件鼠标和键盘事件就是设备相关的事件，可以使用鼠标和键盘对文档进行操作，触发相应的事件。 鼠标事件案例既然之前已经知道了如何使用鼠标事件，那本节就提出两个案例，来对学过的知识的实践。 本节有两个案例，第一个是有关右击鼠标显示自定义菜单的；第二个是有关如何使用鼠标进行拖拽元素。 鼠标右击自定义菜单原理：">
 <meta name="twitter:image" content="https://tech.guanqi.xyz/img/blogimg/drag.png">
     
-        <link rel="alternate" type="application/atom+xml" title="观奇笔记" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="观奇前端笔记" href="/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -61,7 +61,7 @@
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname">GuanQi</h5>
+          <h5 class="nickname">观奇笔记</h5>
           <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
         </hgroup>
       </div>
@@ -72,28 +72,28 @@
             <li class="waves-block waves-effect">
               <a href="/">
                 <i class="icon icon-lg icon-home"></i>
-                Home
+                首页
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/archives">
                 <i class="icon icon-lg icon-archives"></i>
-                Archives
+                归档
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/tags">
                 <i class="icon icon-lg icon-tags"></i>
-                Tags
+                标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/categories">
                 <i class="icon icon-lg icon-th-list"></i>
-                categories
+                分类
               </a>
             </li>
         
@@ -248,8 +248,8 @@
     
     <footer>
         <a href="https://tech.guanqi.xyz">
-            <img src="/img/avatar.jpg" alt="GuanQi">
-            GuanQi
+            <img src="/img/avatar.jpg" alt="观奇笔记">
+            观奇笔记
         </a>
     </footer>
 </blockquote>
@@ -273,7 +273,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇前端笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,7 +283,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇前端笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -293,7 +293,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js之鼠标和键盘事件案例》 — 观奇笔记&url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&via=https://tech.guanqi.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js之鼠标和键盘事件案例》 — 观奇前端笔记&url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&via=https://tech.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -410,7 +410,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>GuanQi &copy; 2016 - 2019</span>
+        <p><span>观奇笔记 &copy; 2017 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -428,7 +428,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇前端笔记&pic=https://tech.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -438,7 +438,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&title=《js之鼠标和键盘事件案例》 — 观奇前端笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -448,7 +448,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js之鼠标和键盘事件案例》 — 观奇笔记&url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&via=https://tech.guanqi.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js之鼠标和键盘事件案例》 — 观奇前端笔记&url=https://tech.guanqi.xyz/2019-02-01/js-event-mouse-key-eg/&via=https://tech.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
