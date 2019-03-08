@@ -25,7 +25,7 @@
 <meta name="keywords" content="前端案例,表单验证">
 <meta property="og:type" content="article">
 <meta property="og:title" content="表单输入验证案例">
-<meta property="og:url" content="https://gitguanqi.github.io/2019-02-01/front-form-eg/index.html">
+<meta property="og:url" content="https://blog.guanqi.xyz/2019-02-01/front-form-eg/index.html">
 <meta property="og:site_name" content="猿七笔记">
 <meta property="og:description" content="之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下表单的案例。  案例步骤 1.建好表单结构和样式； 2.获取输入内容进行验证； 3.不正确进行文字提示； 4.输入成功后提交表单  代码展示12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455">
 <meta property="og:locale" content="zh-Hans">
@@ -199,7 +199,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.tips</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//禁止默认提交</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnForm</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//确定重置提示</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">confirmForm</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reset = confirm(<span class="string">'你确定要清空所有输入的内容吗？'</span>);</span><br><span class="line">  <span class="keyword">return</span> reset;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//验证表单内容</span></span><br><span class="line"><span class="keyword">var</span> tips = $g.ecls(<span class="string">'tips'</span>);</span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.myform.submit;</span><br><span class="line">$g.addEvent(btn, <span class="string">'click'</span>, checkFrom, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkFrom</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//正则表达式</span></span><br><span class="line">  <span class="keyword">var</span> formreg = <span class="regexp">/\w&#123;5,&#125;/</span>;</span><br><span class="line">  <span class="comment">//表单元素</span></span><br><span class="line">  <span class="keyword">var</span> myform = <span class="built_in">document</span>.myform;</span><br><span class="line">  <span class="keyword">var</span> username = myform.username.value;</span><br><span class="line">  <span class="keyword">var</span> password = myform.password.value;</span><br><span class="line">  <span class="keyword">var</span> sex = myform.sex.value;</span><br><span class="line">  <span class="keyword">var</span> hobbies = myform.hobbies;</span><br><span class="line">  <span class="keyword">var</span> city = myform.city.value;</span><br><span class="line">  <span class="keyword">var</span> headimg = myform.headimg.value;</span><br><span class="line">  <span class="keyword">var</span> comment = myform.comment.value;</span><br><span class="line">  <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">if</span> (username == <span class="string">''</span>) &#123;</span><br><span class="line">    tips[<span class="number">0</span>].innerText = <span class="string">'昵称不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!formreg.test(username)) &#123;</span><br><span class="line">    tips[<span class="number">0</span>].innerText = <span class="string">'请输入6-10位名字'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">0</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (password == <span class="string">''</span>) &#123;</span><br><span class="line">    tips[<span class="number">1</span>].innerText = <span class="string">'密码不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!formreg.test(password)) &#123;</span><br><span class="line">    tips[<span class="number">1</span>].innerText = <span class="string">'请输入至少6位密码'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">1</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (sex == <span class="string">''</span>) &#123;</span><br><span class="line">    tips[<span class="number">2</span>].innerText = <span class="string">'性别不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">2</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> isChecked;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; hobbies.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> checked = hobbies[i].checked;</span><br><span class="line">    <span class="keyword">if</span> (checked) &#123;</span><br><span class="line">      isChecked = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (!isChecked) &#123;</span><br><span class="line">    tips[<span class="number">3</span>].innerText = <span class="string">'爱好不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">3</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (city == <span class="string">''</span>) &#123;</span><br><span class="line">    tips[<span class="number">4</span>].innerText = <span class="string">'城市不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">4</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (headimg == <span class="string">''</span>) &#123;</span><br><span class="line">    tips[<span class="number">5</span>].innerText = <span class="string">'头像不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">5</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (comment == <span class="string">''</span>) &#123;</span><br><span class="line">    tips[<span class="number">6</span>].innerText = <span class="string">'自我介绍不能为空'</span>;</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tips[<span class="number">6</span>].innerText = <span class="string">''</span>;</span><br><span class="line">    flag = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p>这个例子是兼容IE5-11，Firefox，Google Chrome等游览器的。</p>
-<p>如果你想要看效果，请点击【<a href="https://gitguanqi.github.io/fedemo/cases/validate?from=blog">这里</a>】前去GitHub查看。</p>
+<p>如果你想要看效果，请点击【<a href="https://gitguanqi.github.io/fedemo/cases/validate?from=blog" target="_blank" rel="noopener">这里</a>】前去GitHub查看。</p>
 
         </div>
 
@@ -213,12 +213,12 @@
 
 
         
-        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/2019-02-01/front-form-eg/" target="_blank" rel="external">https://gitguanqi.github.io/2019-02-01/front-form-eg/</a>
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/2019-02-01/front-form-eg/" target="_blank" rel="external">https://blog.guanqi.xyz/2019-02-01/front-form-eg/</a>
         
     </div>
     
     <footer>
-        <a href="https://gitguanqi.github.io">
+        <a href="https://blog.guanqi.xyz">
             <img src="/img/avatar.jpg" alt="猿七">
             猿七
         </a>
@@ -244,7 +244,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&pic=https://blog.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -254,22 +254,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-02-01/front-form-eg/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.guanqi.xyz/2019-02-01/front-form-eg/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《表单输入验证案例》 — 猿七笔记&url=https://gitguanqi.github.io/2019-02-01/front-form-eg/&via=https://gitguanqi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《表单输入验证案例》 — 猿七笔记&url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/&via=https://blog.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-02-01/front-form-eg/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -289,7 +289,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-03-08/node-http/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">使用node创建一个http服务</h4>
+      </a>
+    </div>
   
 
   
@@ -392,7 +399,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&pic=https://blog.guanqi.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -402,22 +409,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/&title=《表单输入验证案例》 — 猿七笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2019-02-01/front-form-eg/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.guanqi.xyz/2019-02-01/front-form-eg/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《表单输入验证案例》 — 猿七笔记&url=https://gitguanqi.github.io/2019-02-01/front-form-eg/&via=https://gitguanqi.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《表单输入验证案例》 — 猿七笔记&url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/&via=https://blog.guanqi.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2019-02-01/front-form-eg/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.guanqi.xyz/2019-02-01/front-form-eg/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -428,7 +435,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aO7LcMAwEwHf/S69Tu2zRM4Q2ENWMtvZHtAIUCPDnJ16f39b6natP9/7z5oWBgfFYxme5WkYC+zvQZN/1P2BgYLyBcZXBrr6zfqfYPmCsY8PAwMBov5O/s07NGBgYGBNGu+UklWNgYGC0h9j5gXN9fB2VmBgYGEczJiny26+/Mt/AwMB4FONTrqTdlrfMJpH8sQsGBsbRjL1tknQ5LwHbeDAwMN7D2LsG0bLz0UJRLGJgYBzKWH+8l0YnKTsfEvyjwsXAwHgNI2nK75WGbYlZ5FIMDIyjGfWFhjgdT66LbUaFgYFxKGN+raENLkm+dQGKgYHxAkZ7gGzbam1xWUeIgYFxNKNNgnlzLf/t5GFhYGC8gdE21NqLX5PHkZMwMDDOZuTlV75xHm5+WI2KQgwMjEMZRc04aIflg8889MvLFhgYGMcx9gq4vetcbbLOD8kYGBhvY+ytpEmXDwk2kzsGBsbRjLsCqhtkgxYbBgbG2xhJmyxvme01ztqxxGVpiIGB8RrG5JrF3vWvGx4KBgbGCxjzY+03isWiQMTAwDiU8SlX2+ivm/tlSy6qbTEwMB7OuKv1n/DyS2P55YwahoGB8VhG227Lr3PtDQPyYzMGBsbbGOsvtZu1qbktJS8TLgYGBkYZRF4mToagGBgYGPnwYBJWnr7/c4jFwMA4mpEPAyabTZpxt7XbMDAwHsiYDBrzX60fSr7XaKiJgYHxPMYvAuMD8T0AEWsAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW7DMAwEwP7/0+m1QBBnl0pbWBqdjCJRPDqwFMmvr3g9fqznv796fl7Xe7765McWBgbGbRmPy9UyPvWZ/N0wMDDOYbyKYNfP+T5vXuIyBEe/hYGBgRFv3SaFefDFwMDAyBltcFxJHDEwMDDaS+z1RrOA+w93cQwMjBsy8qr73z//Sn8DAwPjVoxHuRLeemOyfisMDIytGXmAy19xlly2ARcDA+Mcxvrow0oxLi+lvYFhYGAcwGh/eFb2agtw+YFiYGDszcgL/W17YFY4a1uYGBgY5zDyhC+5uObBcWXMAgMD4xzGUoQeFc7yMYskoSxiPAYGxkaMWZOg/e6s8PdyNwwMjK0Z7SU2v4jmSeTsSrx0F8fAwLghYzYENgPnAbpOEzEwMDZlJENdyUBYPhw2+29Qz4xgYGAcw8gLc3mYbpsNUdKJgYGxNWOlHP8bhbml4h0GBsbWjDaZWy+u5Zj6+DAwMDZltONZsxHVleGwurOBgYGxNSP5gTYpbEtswysxBgbGAYzkpdvwutLgbGMpBgbGyYwkXLYp4+yA3pTtMDAwNmU8ytWW/leal/lRYmBg7M3I16z12Bby2oBeYzAwMG7LmIXLtoWQn+Jw1AMDA+MARlGCjwttbQLahv5hfwMDA+MARh5GkwvqbHQsOj8MDIzjGbOguX4cHw64GBgYt2Ikl9j2Yrl+Zc3bCRgYGHszVvKulU2TPVdGOjAwMLZgfAPr5lWDezxoNAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
