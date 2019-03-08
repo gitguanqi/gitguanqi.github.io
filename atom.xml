@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>前端笔记</title>
+  <title>猿七笔记</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://gitguanqi.github.io/</id>
   
   <author>
-    <name>GuanQi</name>
+    <name>猿七</name>
     
   </author>
   
