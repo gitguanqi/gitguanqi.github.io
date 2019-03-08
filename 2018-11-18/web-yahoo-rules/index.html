@@ -25,38 +25,38 @@
 <meta name="keywords" content="前端规范,雅虎军规,性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="雅虎军规总结">
-<meta property="og:url" content="https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/index.html">
+<meta property="og:url" content="https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/index.html">
 <meta property="og:site_name" content="猿七笔记">
 <meta property="og:description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_logo.jpg">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules01.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules02.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules03.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules04.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules05.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules06.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules07.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules08.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules09.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules10.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules11.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules12.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules13.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules14.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules15.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules16.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules17.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules18.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules19.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules20.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules21.png">
-<meta property="og:image" content="https://blog.guanqi.xyz/img/blogimg/yh_rules22.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_logo.jpg">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules01.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules02.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules03.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules04.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules05.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules06.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules07.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules08.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules09.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules10.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules11.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules12.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules13.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules14.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules15.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules16.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules17.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules18.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules19.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules20.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules21.png">
+<meta property="og:image" content="https://gitguanqi.github.io/img/blogimg/yh_rules22.png">
 <meta property="og:updated_time" content="2019-03-08T03:07:19.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雅虎军规总结">
 <meta name="twitter:description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
-<meta name="twitter:image" content="https://blog.guanqi.xyz/img/blogimg/yh_logo.jpg">
+<meta name="twitter:image" content="https://gitguanqi.github.io/img/blogimg/yh_logo.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -441,12 +441,12 @@
 
 
         
-        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/2018-11-18/web-yahoo-rules/" target="_blank" rel="external">https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/</a>
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/2018-11-18/web-yahoo-rules/" target="_blank" rel="external">https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/</a>
         
     </div>
     
     <footer>
-        <a href="https://blog.guanqi.xyz">
+        <a href="https://gitguanqi.github.io">
             <img src="/img/avatar.jpg" alt="猿七">
             猿七
         </a>
@@ -472,7 +472,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&pic=https://blog.guanqi.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -482,22 +482,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《雅虎军规总结》 — 猿七笔记&url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/&via=https://blog.guanqi.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《雅虎军规总结》 — 猿七笔记&url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/&via=https://gitguanqi.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -520,18 +520,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018-11-24/markdown-use/" id="post-prev" class="post-nav-link">
+      <a href="/2018-11-18/git-config/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">markdown使用笔记</h4>
+        <h4 class="title">github配置教程</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018-11-18/git-config/" id="post-next" class="post-nav-link">
+      <a href="/2018-11-18/front-talk-origin/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">github配置教程</h4>
+        <h4 class="title">前端杂谈之缘起</h4>
       </a>
     </div>
   
@@ -627,7 +627,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&pic=https://blog.guanqi.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&pic=https://gitguanqi.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -637,22 +637,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&source=Front" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/&title=《雅虎军规总结》 — 猿七笔记&source=Front" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《雅虎军规总结》 — 猿七笔记&url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/&via=https://blog.guanqi.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《雅虎军规总结》 — 猿七笔记&url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/&via=https://gitguanqi.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.guanqi.xyz/2018-11-18/web-yahoo-rules/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://gitguanqi.github.io/2018-11-18/web-yahoo-rules/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -663,7 +663,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3ayw7CMAxEUf7/p8sWqWoyMw5I2DcrVKDN6cLyI6+XvK7bcq9/fnv/zdOVwwsGDBh/y7iWS9mWst31Ru+/0fcGAwaMOYynCJZtRXlN61/qe4MBAwaM9WclLCpJofJcGDBgwKgw1tfdAhUGDBgwKkXs9wKuWzzDgAFjGkPvuv/+81fmGzBgwPgrxmUuvTWWDSavaMGAAaM3Qw9w+u2U5LJSDD++GhgwYDRluEWjnrTpw0iFsfkvDBgwWjOyUWXWvq8koFK6CQMGjDGMdXpXoWZxUhmLwoABYwIj29D6kcq3lRJ3M4+FAQNGa0a2IRfvNtqMQhoGDBjtGG4K6Bau2UbtNhwMGDDGMCpjgyy8VpCbESYMGDBaM061++0TH3J4fRwJwIABoylDKV+zTR8bTLqHLWDAgNGUoSdnbsnqBnG9GbcJ2TBgwBjGUBK4daB0w3T2gmDAgNGVcaqJrzDqRezjdRgwYLRmZBi3Paf/yy2kYcCAMY1RP8B6Kijrg9LNlAMGDBjtGFnjXilTK8dejeMaMGDAGMDIWvzu0NE9lmHcAQYMGE0Zl7ncVpqePiovSMptYcCA0Y5xIFqbD64czghTRhgwYLRg6IWo0iZTyuMsEG/KbxgwYAxgZIGvEqyze25qcRgwYMCQxwNKOpgVycZ8AwYMGIMZepJXv6cxkIABA8YAxtkDE5WSVSliYcCAMY3h5l3Zg93C1R1qwoABoynjDQOGLLpvxvtnAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aQZLDIAwF0dz/0s4BZoz7C5wqRLNK1diYx0IjgT4fPK6b8fevd8+PZ76bZ/GQIUPGtoxrOMbLSjH8GT6DDBkyzmGQUDgOi8XP4216WLMMGTJk4M8TPHlShgwZMt5jkGKVF7EyZMiQkZaad1NcYKSF7ou1uAwZMjZk8FP33/9+5X5DhgwZWzGucMzcG9YSRLQqGTJktGbwAJdeao6vDUiKma5HhgwZXRk8mAa7AkpTsjXkqA4tVIYMGZszahcA8QdwkCUNHOj/hgwZMhoxeHtEelg232ZBtkmGDBnnMMgU6bVimlAu6xaRIUNGUwZP1xbkoQATl9MyZMhozZh/IT3EnwEHX5chQ0YjxkySx4Mvvx5AJev4uE2GDBlNGbXWCt54wUk8yKJuERkyZLRg8Bd44Zo2atQuSmXIkHEaIy1f0waL9EKUX1QElwQyZMhoxCBhNw3QM42w8fMyZMhoxyDHbekhflrW1tLEf2pxGTJkNGXwIzYSgnkJmhaoQduZDBkymjJqyVwtLM5s1sMWyJAh4wBGmiyS0jc+1p8pcWXIkHEAY21pmobRWnB/qMhlyJDRgnGFg18YrEor4/pbhgwZ7Ri15KyW9tXSTRLWZciQcQKDBNlau9h8A1lwqSBDhowDGLUjs5kYz5eL3pIhQ4aMsIjlbRYklURzypAhQwZOE2vLSrdjQcCVIUPGhgxSxNaSRbIF6bsyZMg4jcFLx3S6WkNGej0gQ4aM1owvNMVLqbYtK+wAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
