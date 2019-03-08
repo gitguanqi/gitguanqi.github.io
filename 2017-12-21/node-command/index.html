@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="nodejs,node命令">
-    <meta name="description" content="安装node验证是否安装node12$node -v$npm -v npm node package manager ,Node 的包管理器  安装 包12# 安装到当前目录$ npm install &amp;lt;包名&amp;gt; 出现error network 重新安装 搜索包1$npm search &amp;lt;包名&amp;gt; 安装指定版本在cmd中: 12$ npm install &amp;lt;包名&amp;gt;@">
+    <meta name="description" content="包管理器 现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。   npm bower  npm包基本命令 node package manager ,Node 的包管理器  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;lt;包名&amp;gt; 出现e">
 <meta name="keywords" content="nodejs,node命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js常用命令">
 <meta property="og:url" content="https://blog.guanqi.xyz/2017-12-21/node-command/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="安装node验证是否安装node12$node -v$npm -v npm node package manager ,Node 的包管理器  安装 包12# 安装到当前目录$ npm install &amp;lt;包名&amp;gt; 出现error network 重新安装 搜索包1$npm search &amp;lt;包名&amp;gt; 安装指定版本在cmd中: 12$ npm install &amp;lt;包名&amp;gt;@">
+<meta property="og:description" content="包管理器 现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。   npm bower  npm包基本命令 node package manager ,Node 的包管理器  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;lt;包名&amp;gt; 出现e">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-16T03:03:24.802Z">
+<meta property="og:updated_time" content="2019-03-08T02:24:25.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js常用命令">
-<meta name="twitter:description" content="安装node验证是否安装node12$node -v$npm -v npm node package manager ,Node 的包管理器  安装 包12# 安装到当前目录$ npm install &amp;lt;包名&amp;gt; 出现error network 重新安装 搜索包1$npm search &amp;lt;包名&amp;gt; 安装指定版本在cmd中: 12$ npm install &amp;lt;包名&amp;gt;@">
+<meta name="twitter:description" content="包管理器 现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。   npm bower  npm包基本命令 node package manager ,Node 的包管理器  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;lt;包名&amp;gt; 出现e">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -143,7 +143,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node/">node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
             
         </h5>
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#npm"><span class="post-toc-number">2.</span> <span class="post-toc-text">npm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-包"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包"><span class="post-toc-number">4.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装指定版本"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装指定版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的版本信息"><span class="post-toc-number">6.</span> <span class="post-toc-text">查看包的版本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的包列表"><span class="post-toc-number">7.</span> <span class="post-toc-text">查看安装的包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新包"><span class="post-toc-number">8.</span> <span class="post-toc-text">更新包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包"><span class="post-toc-number">9.</span> <span class="post-toc-text">卸载包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#init-初始化"><span class="post-toc-number">10.</span> <span class="post-toc-text">init 初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装并添加依赖"><span class="post-toc-number">11.</span> <span class="post-toc-text">安装并添加依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装"><span class="post-toc-number">12.</span> <span class="post-toc-text">全局安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">13.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的信息"><span class="post-toc-number">14.</span> <span class="post-toc-text">查看包的信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包-1"><span class="post-toc-number">15.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包列表"><span class="post-toc-number">16.</span> <span class="post-toc-text">包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包-1"><span class="post-toc-number">17.</span> <span class="post-toc-text">卸载包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后"><span class="post-toc-number">18.</span> <span class="post-toc-text">最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#包管理器"><span class="post-toc-number">1.</span> <span class="post-toc-text">包管理器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm包基本命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">npm包基本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装指定版本"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">安装指定版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的版本信息"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">查看包的版本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的包列表"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">查看安装的包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新包"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">更新包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bower安装命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">bower安装命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的信息"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">查看包的信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包列表"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包-1"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#init-初始化"><span class="post-toc-number">4.</span> <span class="post-toc-text">init 初始化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装并添加依赖"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装并添加依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">全局安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -173,7 +173,7 @@
             <time class="post-time" title="2017-12-21 15:27:21" datetime="2017-12-21T07:27:21.000Z" itemprop="datePublished">2017-12-21</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node/">node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
 
 
@@ -185,31 +185,40 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>验证是否安装node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$node -v</span><br><span class="line">$npm -v</span><br></pre></td></tr></table></figure></p>
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><blockquote>
-<p>node package manager ,<br>Node 的包管理器</p>
+            <h2 id="包管理器"><a href="#包管理器" class="headerlink" title="包管理器"></a>包管理器</h2><blockquote>
+<p>现今的包管理器有很多，包括<code>npm</code>,<code>yard</code>,<code>bower</code>,今天介绍两个包管理器，分别是<code>npm</code>和<code>bower</code>,本篇采用<code>git</code>工具安装。</p>
 </blockquote>
-<h3 id="安装-包"><a href="#安装-包" class="headerlink" title="安装 包"></a>安装 包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装到当前目录</span><br><span class="line">$ npm install &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>npm</li>
+<li>bower</li>
+</ul>
+<h2 id="npm包基本命令"><a href="#npm包基本命令" class="headerlink" title="npm包基本命令"></a>npm包基本命令</h2><blockquote>
+<p>node package manager ,Node 的包管理器</p>
+</blockquote>
+<h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>验证是否安装node<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$node -v</span><br><span class="line">$npm -v</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p>安装到当前目录</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;包名&gt;</span><br></pre></td></tr></table></figure>
 <p>出现error network 重新安装</p>
-<h3 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm search &lt;包名&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="安装指定版本"><a href="#安装指定版本" class="headerlink" title="安装指定版本"></a>安装指定版本</h3><p>在cmd中:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;包名&gt;@版本号</span><br><span class="line">$ npm install jquery@1.12.4</span><br></pre></td></tr></table></figure>
+<h3 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm search &lt;包名&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="查看包的版本信息"><a href="#查看包的版本信息" class="headerlink" title="查看包的版本信息"></a>查看包的版本信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm list &lt;包名&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="查看安装的包列表"><a href="#查看安装的包列表" class="headerlink" title="查看安装的包列表"></a>查看安装的包列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm ls</span><br></pre></td></tr></table></figure>
 <h3 id="更新包"><a href="#更新包" class="headerlink" title="更新包"></a>更新包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm update &lt;包名&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall jquery</span><br></pre></td></tr></table></figure>
-<h3 id="init-初始化"><a href="#init-初始化" class="headerlink" title="init 初始化"></a>init 初始化</h3><p><code>npm init</code> 会生成一个packagejson的文件，项目的配置信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;day06&quot;, //项目名</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;, //版本号</span><br><span class="line">  &quot;description&quot;: &quot;this is a npm project&quot;, //项目的描述</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;, //程序的入口文件</span><br><span class="line">  &quot;dependencies&quot;: &#123; //项目依赖的包!!!重要的</span><br><span class="line">    &quot;jquery&quot;: &quot;^1.12.4&quot;</span><br><span class="line">    &quot;zepto&quot;: &quot;^1.2.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;&#125;, //开发阶段依赖的包!!!重要的</span><br><span class="line">  &quot;scripts&quot;: &#123; //命令</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [ //关键词</span><br><span class="line">    &quot;npm&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;author&quot;: &quot;guanqi&quot;, //作者</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot; //协议</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="安装并添加依赖"><a href="#安装并添加依赖" class="headerlink" title="安装并添加依赖"></a>安装并添加依赖</h3><p><code>$ npm install &lt;包名&gt; --save</code> 会将当前目录下的安装包，并将包的信息，<br>添加到package.json中的<strong>dependencies</strong>选项中</p>
-<p><code>$ npm install &lt;包名&gt; --save-dev</code>安装开发阶段用的工具包，并不是项目必须有的。这个命令会将包安装到当前目录下的安装包，并将包的版本信息，<br>添加到package.json中的<strong>devDependencies</strong>选项中</p>
-<h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><p><code>$ npm install &lt;包&gt; -g</code> , -g代表全局安装，不会在package.json中看到</p>
-<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p><code>$ bower install &lt;包名&gt; --save</code>,在当前目录安装包，并将版本信息添加到bower.json中</p>
+<h2 id="bower安装命令"><a href="#bower安装命令" class="headerlink" title="bower安装命令"></a>bower安装命令</h2><h3 id="安装包-1"><a href="#安装包-1" class="headerlink" title="安装包"></a>安装包</h3><p><code>$ bower install &lt;包名&gt; --save</code>,在当前目录安装包，并将版本信息添加到bower.json中</p>
 <p><code>$ bower install &lt;包名&gt;@版本号</code>，安装指定的版本号</p>
 <h3 id="查看包的信息"><a href="#查看包的信息" class="headerlink" title="查看包的信息"></a>查看包的信息</h3><p><code>$ bower info &lt;包名&gt;</code> 查看包的详细信息</p>
 <h3 id="搜索包-1"><a href="#搜索包-1" class="headerlink" title="搜索包"></a>搜索包</h3><p><code>$ bower search &lt;包名&gt;</code></p>
 <h3 id="包列表"><a href="#包列表" class="headerlink" title="包列表"></a>包列表</h3><p><code>$ bower list</code></p>
 <h3 id="卸载包-1"><a href="#卸载包-1" class="headerlink" title="卸载包"></a>卸载包</h3><p><code>$ bower uninstall &lt;包名&gt;</code></p>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>心动不如行动，快练习一下巩固知识。</p>
+<h2 id="init-初始化"><a href="#init-初始化" class="headerlink" title="init 初始化"></a>init 初始化</h2><p><code>npm init</code> 会生成一个packagejson的文件，项目的配置信息 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;day06&quot;, //项目名</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;, //版本号</span><br><span class="line">  &quot;description&quot;: &quot;this is a npm project&quot;, //项目的描述</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;, //程序的入口文件</span><br><span class="line">  &quot;dependencies&quot;: &#123; //项目依赖的包!!!重要的</span><br><span class="line">    &quot;jquery&quot;: &quot;^1.12.4&quot;</span><br><span class="line">    &quot;zepto&quot;: &quot;^1.2.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;&#125;, //开发阶段依赖的包!!!重要的</span><br><span class="line">  &quot;scripts&quot;: &#123; //命令</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [ //关键词</span><br><span class="line">    &quot;npm&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;author&quot;: &quot;guanqi&quot;, //作者</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot; //协议</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装并添加依赖"><a href="#安装并添加依赖" class="headerlink" title="安装并添加依赖"></a>安装并添加依赖</h3><p><code>$ npm install &lt;包名&gt; --save</code> 会将当前目录下的安装包，并将包的信息，<br>添加到package.json中的<strong>dependencies</strong>选项中</p>
+<p><code>$ npm install &lt;包名&gt; --save-dev</code>安装开发阶段用的工具包，并不是项目必须有的。这个命令会将包安装到当前目录下的安装包，并将包的版本信息，<br>添加到package.json中的<strong>devDependencies</strong>选项中</p>
+<h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><p><code>$ npm install &lt;包&gt; -g</code> , -g代表全局安装，不会在package.json中看到</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>心动不如行动，快练习一下巩固知识。</p>
 
         </div>
 
@@ -218,12 +227,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-01-16T03:03:24.802Z" itemprop="dateUpdated">2019-01-16 11:03:24</time>
+    最后更新时间：<time datetime="2019-03-08T02:24:25.201Z" itemprop="dateUpdated">2019-03-08 10:24:25</time>
 </span><br>
 
 
         
-        观奇笔记,专注于前端开发文章分享，原文链接：<a href="/2017-12-21/node-command/" target="_blank" rel="external">https://blog.guanqi.xyz/2017-12-21/node-command/</a>
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/2017-12-21/node-command/" target="_blank" rel="external">https://blog.guanqi.xyz/2017-12-21/node-command/</a>
         
     </div>
     
@@ -302,9 +311,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018-02-18/front-talk-two/" id="post-prev" class="post-nav-link">
+      <a href="/2018-02-18/front-talk-vue/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">初识vue</h4>
+        <h4 class="title">前端杂谈之认识vue</h4>
       </a>
     </div>
   

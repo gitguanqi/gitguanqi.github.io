@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>初识webpack | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="构建工具,webpack">
+    <meta name="description" content="今天，咱们正式介绍一下前端构建打包神器，webpack。这是一款非常流行的打包工具，和各种框架都非常搭配。  一.简介大家好！今天我开始分享有关web前端的故事。俗话说：“男怕入错行，女怕嫁错郎”。如果能够进入发展前景比较好的行业是一个不错的选择，对自己以后的成长与发展都会起到很大的作用。虽然说目前还看不出什么，但是相信随着时间的流逝，这个行业会越来越好。而我选择的这个行业，就是互联网行业，属于">
+<meta name="keywords" content="构建工具,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识webpack">
+<meta property="og:url" content="https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="今天，咱们正式介绍一下前端构建打包神器，webpack。这是一款非常流行的打包工具，和各种框架都非常搭配。  一.简介大家好！今天我开始分享有关web前端的故事。俗话说：“男怕入错行，女怕嫁错郎”。如果能够进入发展前景比较好的行业是一个不错的选择，对自己以后的成长与发展都会起到很大的作用。虽然说目前还看不出什么，但是相信随着时间的流逝，这个行业会越来越好。而我选择的这个行业，就是互联网行业，属于">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-08T03:06:34.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识webpack">
+<meta name="twitter:description" content="今天，咱们正式介绍一下前端构建打包神器，webpack。这是一款非常流行的打包工具，和各种框架都非常搭配。  一.简介大家好！今天我开始分享有关web前端的故事。俗话说：“男怕入错行，女怕嫁错郎”。如果能够进入发展前景比较好的行业是一个不错的选择，对自己以后的成长与发展都会起到很大的作用。虽然说目前还看不出什么，但是相信随着时间的流逝，这个行业会越来越好。而我选择的这个行业，就是互联网行业，属于">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">初识webpack</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">初识webpack</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-01T08:07:39.000Z" itemprop="datePublished" class="page-time">
+  2018-04-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/构建工具/">构建工具</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">一.简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二-四个核心概念"><span class="post-toc-number">2.</span> <span class="post-toc-text">二.四个核心概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-入口-entry"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.入口(entry)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-输出-output"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.输出(output)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-loader"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.loader</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-插件-plugins"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4.插件(plugins)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四-总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">四.总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-tool-webpack-use" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">初识webpack</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-01 16:07:39" datetime="2018-04-01T08:07:39.000Z" itemprop="datePublished">2018-04-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/构建工具/">构建工具</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>今天，咱们正式介绍一下前端构建打包神器，webpack。这是一款非常流行的打包工具，和各种框架都非常搭配。</p>
+</blockquote>
+<h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a>一.简介</h2><p>大家好！今天我开始分享有关web前端的故事。俗话说：“男怕入错行，女怕嫁错郎”。如果能够进入发展前景比较好的行业是一个不错的选择，对自己以后的成长与发展都会起到很大的作用。虽然说目前还看不出什么，但是相信随着时间的流逝，这个行业会越来越好。而我选择的这个行业，就是互联网行业，属于服务业。而我目前从事的是前端，这个从2015年兴盛起来的职业，目前已经度过了寒冬，正迎来蓬勃的生机。</p>
+<h2 id="二-四个核心概念"><a href="#二-四个核心概念" class="headerlink" title="二.四个核心概念"></a>二.四个核心概念</h2><p>接下来就解释一下这四个核心的概念。</p>
+<ul>
+<li>入口(entry)</li>
+<li>输出(output)</li>
+<li>loader</li>
+<li>插件(plugins)</li>
+</ul>
+<h3 id="1-入口-entry"><a href="#1-入口-entry" class="headerlink" title="1.入口(entry)"></a>1.入口(entry)</h3><p>入口：所谓入口，就是指示webpack应该使用哪个模块来作为内部依赖的开始，它会根据入口来生成一个bundles文件。</p>
+<p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面就是指定入口文件，就是file.js。</p>
+<h3 id="2-输出-output"><a href="#2-输出-output" class="headerlink" title="2.输出(output)"></a>2.输出(output)</h3><p>出口：就是打包输出到哪个文件夹下面去。</p>
+<p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);<span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面就是指定出口文件dist，文件名称叫dist文件夹下面的这个文件my-first-webpack.bundle.js。</p>
+<h3 id="3-loader"><a href="#3-loader" class="headerlink" title="3.loader"></a>3.loader</h3><p>loader:就是让webpack去处理那些非JavaScript文件，并且导入任何类型的模块，比如css。并且，进行处理。它可以将所有类型的文件，转化为可以直接引用的模块。</p>
+<p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义规则</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);<span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125; <span class="comment">//解析规则</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 到处配置</span></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
+<p>这个就是，模块打包规则。test,use,就是告诉webpack遇到引用txt文件的，使用raw-loader转化一下。</p>
+<h3 id="4-插件-plugins"><a href="#4-插件-plugins" class="headerlink" title="4.插件(plugins)"></a>4.插件(plugins)</h3><p>这是最后一个核心概念。有时候，前面的不一定处理过来，所以靠扩展插件来提高打包效率是一个非常有效的方法。<br>它可以执行更多复杂的任务，例如：打包优化，压缩，重新定义环境变量等等。</p>
+<p>插件的使用方法见下面的代码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">// 通过 npm 安装const webpack = require('webpack'); // 用于访问内置插件const path = require('path');const config = &#123;</span></span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure></p>
+<h2 id="四-总结"><a href="#四-总结" class="headerlink" title="四.总结"></a>四.总结</h2><p>我们今天先说到这里，下次继续聊webpack。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-08T03:06:34.918Z" itemprop="dateUpdated">2019-03-08 11:06:34</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/2018-04-01/tool-webpack-use/" target="_blank" rel="external">https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构建工具/">构建工具</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/&title=《初识webpack》 — 猿七笔记&pic=https://blog.guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/&title=《初识webpack》 — 猿七笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初识webpack》 — 猿七笔记&url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/&via=https://blog.guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018-05-05/computer-base-dataset-learn/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">数据结构</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018-02-18/front-talk-vue/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">前端杂谈之认识vue</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/&title=《初识webpack》 — 猿七笔记&pic=https://blog.guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/&title=《初识webpack》 — 猿七笔记&source=Front" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初识webpack》 — 猿七笔记&url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/&via=https://blog.guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.guanqi.xyz/2018-04-01/tool-webpack-use/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aS5KDMAwFwNz/0sx2FgPzJIWksNurVIqAm4Wij1+veB2/1tk3yfVnVyb3fMPCwMB4LOO4XNfXXG/x+ikJONkbBgbGPowkFE4C631hGgMDA6MXBJOQOn99GBgYGNfbytO+PKR+IeBiYGA8ilEtU5Mt5q/jo7U4BgbGAxl51/3zn2+Zb2BgYDyKcRRXr/WWhMg8yP5xTwwMjKUZkwHku0rfXsDFwMDYh5FsbrKtXtmZFMzld4yBgfFYRn7pNbJ65CtvouUjBAwMjLUZ1a1Ug3UecKsJKAYGxm6MXrrWGzfmv02oGBgYOzDy7U7K1OrRil7IxsDA2JPxT+0bh+Pk/r3uGQYGxg6MvMnVGwNMjnyV220YGBiLMibHHSa5WT4QbZavGBgYSzCSG/WK1V7LrJpQYmBg7MDIH58/IC+D5w2709QQAwNjIUZSviZFaRWZF8ZReoqBgbEBo3dsq9oyqw4mC99jYGAszUjSvkkwrbbtqgfIMDAwdmNUQ+qkDZc39QrjVQwMjA0Y1dI0b+jnA8s8ZJ8OMjEwMJZmlIeFg0MYvSSy/L+BgYGxBOMort6xjF44LhyExcDAWJrRa+5PTnZMGnC9YhsDA2MNRjXI9hi9xlyzFsfAwFiUMRku5mFxnupFtTgGBsb2jGo4Lg8jezksBgYGRrEOfu/Wo6EpBgbGBoykiK2Wr/MU85ZaHAMD44GMXumYk/KAe98RDQwMjMcyfgCLJ507nTV0kAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

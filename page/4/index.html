@@ -158,7 +158,7 @@
         <time class="post-time" title="2017-12-21 15:27:21" datetime="2017-12-21T07:27:21.000Z" itemprop="datePublished">2017-12-21</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node/">node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
 
 
@@ -179,15 +179,20 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        安装node验证是否安装node12$node -v$npm -v
+        包管理器
+现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。
+
+
 npm
+bower
+
+npm包基本命令
 node package manager ,Node 的包管理器
 
-安装 包12# 安装到当前目录$ npm install &lt;包名&gt;
-出现error network 重新安装
-搜索包1$npm search &lt;包名&gt;
-安装指定版本在cmd中:
-12$ npm install &lt;包名&g...
+安装node验证是否安装node12$node -v$npm -v
+安装包安装到当前目录
+1$ npm install &lt;包名&gt;
+...
     
 
         <a href="/2017-12-21/node-command/" class="post-more waves-effect waves-button">
@@ -212,7 +217,7 @@ node package manager ,Node 的包管理器
         <time class="post-time" title="2017-12-10 18:04:21" datetime="2017-12-10T10:04:21.000Z" itemprop="datePublished">2017-12-10</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node/">node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
 
 
 
@@ -255,13 +260,13 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-todomvc" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-vue-todomvc" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2017-10-23 14:42:21" datetime="2017-10-23T06:42:21.000Z" itemprop="datePublished">2017-10-23</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端案例/">前端案例</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
 
 
 
@@ -272,7 +277,7 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017-10-23/todomvc/">todocmvc练习(vue版)</a>
+      <a class="post-title-link" href="/2017-10-23/vue-todomvc/">todocmvc练习(vue版)</a>
     </h3>
   
 
@@ -282,14 +287,14 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        安装依赖安装依赖的css，js
-1$npm install
+        安装依赖安装依赖的css，js。
+1$ npm install
 引入vue1&lt;script src="js/vue.js"&gt;&lt;/script&gt;
 定义初始化数据在app.js中，实例化Vue，然后定义初始化数据
-1234567891011&#123; //为了形成块级作用域()()	let vm = new Vue(&#123;		el: &apos;#app&apos;,...
+12345678910let vm = new Vue(&#123;  el: '#app',  data: &#123;    datas: [      &...
     
 
-        <a href="/2017-10-23/todomvc/" class="post-more waves-effect waves-button">
+        <a href="/2017-10-23/vue-todomvc/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -305,13 +310,13 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-babel-use" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-tool-gulp-babel-use" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2017-09-21 17:30:21" datetime="2017-09-21T09:30:21.000Z" itemprop="datePublished">2017-09-21</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编译工具/">编译工具</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/构建工具/">构建工具</a></li></ul>
 
 
 
@@ -322,7 +327,7 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017-09-21/babel-use/">babel编译教程</a>
+      <a class="post-title-link" href="/2017-09-21/tool-gulp-babel-use/">gulp下babel编译教程</a>
     </h3>
   
 
@@ -341,14 +346,14 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 建立文件夹新建一个名为gulpfile.js的文件...
     
 
-        <a href="/2017-09-21/babel-use/" class="post-more waves-effect waves-button">
+        <a href="/2017-09-21/tool-gulp-babel-use/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/">babel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/">babel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构建工具/">构建工具</a></li></ul>
 
     </div>
     
@@ -407,7 +412,7 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-sass-use" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-tool-sass-use" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2017-09-19 08:42:21" datetime="2017-09-19T00:42:21.000Z" itemprop="datePublished">2017-09-19</time>
@@ -424,7 +429,7 @@ Node.js uses an event-driven, non-blocking I/O model that makes it lightweight a
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017-09-19/sass-use/">SASS使用教程</a>
+      <a class="post-title-link" href="/2017-09-19/tool-sass-use/">SASS使用教程</a>
     </h3>
   
 
@@ -444,7 +449,7 @@ SASS有以下四个特点:
 成熟Sas...
     
 
-        <a href="/2017-09-19/sass-use/" class="post-more waves-effect waves-button">
+        <a href="/2017-09-19/tool-sass-use/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -460,7 +465,7 @@ SASS有以下四个特点:
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-stock-learn" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-computer-base-stock-learn" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2017-09-19 08:42:21" datetime="2017-09-19T00:42:21.000Z" itemprop="datePublished">2017-09-19</time>
@@ -477,7 +482,7 @@ SASS有以下四个特点:
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017-09-19/stock-learn/">栈及其基本运算</a>
+      <a class="post-title-link" href="/2017-09-19/computer-base-stock-learn/">栈及其基本运算</a>
     </h3>
   
 
@@ -495,7 +500,7 @@ SASS有以下四个特点:
 栈顶元素总是...
     
 
-        <a href="/2017-09-19/stock-learn/" class="post-more waves-effect waves-button">
+        <a href="/2017-09-19/computer-base-stock-learn/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -511,13 +516,13 @@ SASS有以下四个特点:
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-gulp-use" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-tool-gulp-use" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2017-09-17 08:16:21" datetime="2017-09-17T00:16:21.000Z" itemprop="datePublished">2017-09-17</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/打包工具/">打包工具</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/构建工具/">构建工具</a></li></ul>
 
 
 
@@ -528,7 +533,7 @@ SASS有以下四个特点:
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017-09-17/gulp-use/">gulp使用指南</a>
+      <a class="post-title-link" href="/2017-09-17/tool-gulp-use/">gulp使用指南</a>
     </h3>
   
 
@@ -549,14 +554,14 @@ gulp作用。
 通过代码优于配置的策略，Gulp 让简单...
     
 
-        <a href="/2017-09-17/gulp-use/" class="post-more waves-effect waves-button">
+        <a href="/2017-09-17/tool-gulp-use/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构建工具/">构建工具</a></li></ul>
 
     </div>
     
