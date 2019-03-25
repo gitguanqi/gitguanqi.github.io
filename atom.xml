@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://blog.guanqi.xyz/"/>
+  <link href="https://guanqi.xyz/"/>
   <updated>2019-03-08T09:57:07.327Z</updated>
-  <id>https://blog.guanqi.xyz/</id>
+  <id>https://guanqi.xyz/</id>
   
   <author>
     <name>猿七</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>使用node创建一个http服务</title>
-    <link href="https://blog.guanqi.xyz/2019-03-08/node-http/"/>
-    <id>https://blog.guanqi.xyz/2019-03-08/node-http/</id>
+    <link href="https://guanqi.xyz/2019-03-08/node-http/"/>
+    <id>https://guanqi.xyz/2019-03-08/node-http/</id>
     <published>2019-03-08T09:35:01.000Z</published>
     <updated>2019-03-08T09:57:07.327Z</updated>
     
@@ -38,19 +38,19 @@
     
     </summary>
     
-      <category term="nodejs" scheme="https://blog.guanqi.xyz/categories/nodejs/"/>
+      <category term="nodejs" scheme="https://guanqi.xyz/categories/nodejs/"/>
     
     
-      <category term="nodejs" scheme="https://blog.guanqi.xyz/tags/nodejs/"/>
+      <category term="nodejs" scheme="https://guanqi.xyz/tags/nodejs/"/>
     
-      <category term="http" scheme="https://blog.guanqi.xyz/tags/http/"/>
+      <category term="http" scheme="https://guanqi.xyz/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>表单输入验证案例</title>
-    <link href="https://blog.guanqi.xyz/2019-02-01/front-form-eg/"/>
-    <id>https://blog.guanqi.xyz/2019-02-01/front-form-eg/</id>
+    <link href="https://guanqi.xyz/2019-02-01/front-form-eg/"/>
+    <id>https://guanqi.xyz/2019-02-01/front-form-eg/</id>
     <published>2019-02-01T08:33:21.000Z</published>
     <updated>2019-03-08T03:47:00.365Z</updated>
     
@@ -68,19 +68,19 @@
     
     </summary>
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
-      <category term="表单验证" scheme="https://blog.guanqi.xyz/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+      <category term="表单验证" scheme="https://guanqi.xyz/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
     
   </entry>
   
   <entry>
     <title>鼠标和键盘事件案例</title>
-    <link href="https://blog.guanqi.xyz/2019-02-01/front-event-mouse-key-eg/"/>
-    <id>https://blog.guanqi.xyz/2019-02-01/front-event-mouse-key-eg/</id>
+    <link href="https://guanqi.xyz/2019-02-01/front-event-mouse-key-eg/"/>
+    <id>https://guanqi.xyz/2019-02-01/front-event-mouse-key-eg/</id>
     <published>2019-02-01T02:33:21.000Z</published>
     <updated>2019-03-08T04:01:55.968Z</updated>
     
@@ -98,19 +98,19 @@
     
     </summary>
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
-      <category term="表单键盘案例" scheme="https://blog.guanqi.xyz/tags/%E8%A1%A8%E5%8D%95%E9%94%AE%E7%9B%98%E6%A1%88%E4%BE%8B/"/>
+      <category term="表单键盘案例" scheme="https://guanqi.xyz/tags/%E8%A1%A8%E5%8D%95%E9%94%AE%E7%9B%98%E6%A1%88%E4%BE%8B/"/>
     
   </entry>
   
   <entry>
     <title>js之事件解读</title>
-    <link href="https://blog.guanqi.xyz/2019-01-31/js-events/"/>
-    <id>https://blog.guanqi.xyz/2019-01-31/js-events/</id>
+    <link href="https://guanqi.xyz/2019-01-31/js-events/"/>
+    <id>https://guanqi.xyz/2019-01-31/js-events/</id>
     <published>2019-01-31T02:33:21.000Z</published>
     <updated>2019-03-08T03:25:22.280Z</updated>
     
@@ -126,23 +126,23 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js基础" scheme="https://blog.guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
+      <category term="js基础" scheme="https://guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="DOM" scheme="https://blog.guanqi.xyz/tags/DOM/"/>
+      <category term="DOM" scheme="https://guanqi.xyz/tags/DOM/"/>
     
-      <category term="events" scheme="https://blog.guanqi.xyz/tags/events/"/>
+      <category term="events" scheme="https://guanqi.xyz/tags/events/"/>
     
   </entry>
   
   <entry>
     <title>js之Cookie的属性和用法</title>
-    <link href="https://blog.guanqi.xyz/2019-01-30/js-cookie/"/>
-    <id>https://blog.guanqi.xyz/2019-01-30/js-cookie/</id>
+    <link href="https://guanqi.xyz/2019-01-30/js-cookie/"/>
+    <id>https://guanqi.xyz/2019-01-30/js-cookie/</id>
     <published>2019-01-30T09:33:21.000Z</published>
     <updated>2019-03-08T03:28:43.458Z</updated>
     
@@ -158,21 +158,21 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js方法" scheme="https://blog.guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
+      <category term="js方法" scheme="https://guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
     
-      <category term="cookie操作" scheme="https://blog.guanqi.xyz/tags/cookie%E6%93%8D%E4%BD%9C/"/>
+      <category term="cookie操作" scheme="https://guanqi.xyz/tags/cookie%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>js之DOM详解</title>
-    <link href="https://blog.guanqi.xyz/2019-01-27/js-dom-use/"/>
-    <id>https://blog.guanqi.xyz/2019-01-27/js-dom-use/</id>
+    <link href="https://guanqi.xyz/2019-01-27/js-dom-use/"/>
+    <id>https://guanqi.xyz/2019-01-27/js-dom-use/</id>
     <published>2019-01-27T01:35:21.000Z</published>
     <updated>2019-03-08T03:28:41.091Z</updated>
     
@@ -190,21 +190,21 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js基础" scheme="https://blog.guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
+      <category term="js基础" scheme="https://guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="DOM" scheme="https://blog.guanqi.xyz/tags/DOM/"/>
+      <category term="DOM" scheme="https://guanqi.xyz/tags/DOM/"/>
     
   </entry>
   
   <entry>
     <title>js之BOM的概念和方法</title>
-    <link href="https://blog.guanqi.xyz/2019-01-25/js-bom-use/"/>
-    <id>https://blog.guanqi.xyz/2019-01-25/js-bom-use/</id>
+    <link href="https://guanqi.xyz/2019-01-25/js-bom-use/"/>
+    <id>https://guanqi.xyz/2019-01-25/js-bom-use/</id>
     <published>2019-01-25T07:35:21.000Z</published>
     <updated>2019-03-08T03:28:46.311Z</updated>
     
@@ -222,21 +222,21 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js基础" scheme="https://blog.guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
+      <category term="js基础" scheme="https://guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="BOM" scheme="https://blog.guanqi.xyz/tags/BOM/"/>
+      <category term="BOM" scheme="https://guanqi.xyz/tags/BOM/"/>
     
   </entry>
   
   <entry>
     <title>js常用方法集合</title>
-    <link href="https://blog.guanqi.xyz/2019-01-24/js-some-example/"/>
-    <id>https://blog.guanqi.xyz/2019-01-24/js-some-example/</id>
+    <link href="https://guanqi.xyz/2019-01-24/js-some-example/"/>
+    <id>https://guanqi.xyz/2019-01-24/js-some-example/</id>
     <published>2019-01-24T10:16:21.000Z</published>
     <updated>2019-03-08T03:26:04.967Z</updated>
     
@@ -254,19 +254,19 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js方法" scheme="https://blog.guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
+      <category term="js方法" scheme="https://guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>js中正则表达式使用方法</title>
-    <link href="https://blog.guanqi.xyz/2019-01-24/js-regexp-use/"/>
-    <id>https://blog.guanqi.xyz/2019-01-24/js-regexp-use/</id>
+    <link href="https://guanqi.xyz/2019-01-24/js-regexp-use/"/>
+    <id>https://guanqi.xyz/2019-01-24/js-regexp-use/</id>
     <published>2019-01-24T06:16:21.000Z</published>
     <updated>2019-03-08T03:26:43.176Z</updated>
     
@@ -284,21 +284,21 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js基础" scheme="https://blog.guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
+      <category term="js基础" scheme="https://guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="正则表达式" scheme="https://blog.guanqi.xyz/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="https://guanqi.xyz/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>js获取url地址的参数的方法</title>
-    <link href="https://blog.guanqi.xyz/2019-01-23/js-url-params/"/>
-    <id>https://blog.guanqi.xyz/2019-01-23/js-url-params/</id>
+    <link href="https://guanqi.xyz/2019-01-23/js-url-params/"/>
+    <id>https://guanqi.xyz/2019-01-23/js-url-params/</id>
     <published>2019-01-23T13:36:21.000Z</published>
     <updated>2019-03-08T03:26:14.935Z</updated>
     
@@ -317,21 +317,21 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js方法" scheme="https://blog.guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
+      <category term="js方法" scheme="https://guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
     
-      <category term="url" scheme="https://blog.guanqi.xyz/tags/url/"/>
+      <category term="url" scheme="https://guanqi.xyz/tags/url/"/>
     
   </entry>
   
   <entry>
     <title>es6之const命令</title>
-    <link href="https://blog.guanqi.xyz/2019-01-23/es6-const/"/>
-    <id>https://blog.guanqi.xyz/2019-01-23/es6-const/</id>
+    <link href="https://guanqi.xyz/2019-01-23/es6-const/"/>
+    <id>https://guanqi.xyz/2019-01-23/es6-const/</id>
     <published>2019-01-23T13:31:21.000Z</published>
     <updated>2019-01-23T13:18:51.546Z</updated>
     
@@ -349,19 +349,19 @@
     
     </summary>
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/categories/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/categories/es6/"/>
     
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/tags/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/tags/es6/"/>
     
-      <category term="const" scheme="https://blog.guanqi.xyz/tags/const/"/>
+      <category term="const" scheme="https://guanqi.xyz/tags/const/"/>
     
   </entry>
   
   <entry>
     <title>es6之块级作用域</title>
-    <link href="https://blog.guanqi.xyz/2019-01-23/es6-block/"/>
-    <id>https://blog.guanqi.xyz/2019-01-23/es6-block/</id>
+    <link href="https://guanqi.xyz/2019-01-23/es6-block/"/>
+    <id>https://guanqi.xyz/2019-01-23/es6-block/</id>
     <published>2019-01-23T13:30:21.000Z</published>
     <updated>2019-01-23T13:16:19.050Z</updated>
     
@@ -379,19 +379,19 @@
     
     </summary>
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/categories/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/categories/es6/"/>
     
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/tags/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/tags/es6/"/>
     
-      <category term="块级作用域" scheme="https://blog.guanqi.xyz/tags/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+      <category term="块级作用域" scheme="https://guanqi.xyz/tags/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     
   </entry>
   
   <entry>
     <title>es6之set数据结构</title>
-    <link href="https://blog.guanqi.xyz/2019-01-22/es6-set/"/>
-    <id>https://blog.guanqi.xyz/2019-01-22/es6-set/</id>
+    <link href="https://guanqi.xyz/2019-01-22/es6-set/"/>
+    <id>https://guanqi.xyz/2019-01-22/es6-set/</id>
     <published>2019-01-22T10:30:21.000Z</published>
     <updated>2019-03-08T03:18:46.945Z</updated>
     
@@ -407,19 +407,19 @@
     
     </summary>
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/categories/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/categories/es6/"/>
     
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/tags/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/tags/es6/"/>
     
-      <category term="set" scheme="https://blog.guanqi.xyz/tags/set/"/>
+      <category term="set" scheme="https://guanqi.xyz/tags/set/"/>
     
   </entry>
   
   <entry>
     <title>es6之let命令</title>
-    <link href="https://blog.guanqi.xyz/2019-01-19/es6-let/"/>
-    <id>https://blog.guanqi.xyz/2019-01-19/es6-let/</id>
+    <link href="https://guanqi.xyz/2019-01-19/es6-let/"/>
+    <id>https://guanqi.xyz/2019-01-19/es6-let/</id>
     <published>2019-01-19T09:30:21.000Z</published>
     <updated>2019-01-19T09:43:28.003Z</updated>
     
@@ -437,19 +437,19 @@
     
     </summary>
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/categories/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/categories/es6/"/>
     
     
-      <category term="es6" scheme="https://blog.guanqi.xyz/tags/es6/"/>
+      <category term="es6" scheme="https://guanqi.xyz/tags/es6/"/>
     
-      <category term="let" scheme="https://blog.guanqi.xyz/tags/let/"/>
+      <category term="let" scheme="https://guanqi.xyz/tags/let/"/>
     
   </entry>
   
   <entry>
     <title>ajax技术详解</title>
-    <link href="https://blog.guanqi.xyz/2019-01-18/ajax-detail/"/>
-    <id>https://blog.guanqi.xyz/2019-01-18/ajax-detail/</id>
+    <link href="https://guanqi.xyz/2019-01-18/ajax-detail/"/>
+    <id>https://guanqi.xyz/2019-01-18/ajax-detail/</id>
     <published>2019-01-18T13:16:21.000Z</published>
     <updated>2019-03-08T02:35:49.471Z</updated>
     
@@ -467,19 +467,19 @@
     
     </summary>
     
-      <category term="ajax" scheme="https://blog.guanqi.xyz/categories/ajax/"/>
+      <category term="ajax" scheme="https://guanqi.xyz/categories/ajax/"/>
     
     
-      <category term="ajax" scheme="https://blog.guanqi.xyz/tags/ajax/"/>
+      <category term="ajax" scheme="https://guanqi.xyz/tags/ajax/"/>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
   </entry>
   
   <entry>
     <title>前端小项目汇总</title>
-    <link href="https://blog.guanqi.xyz/2019-01-16/front-project-list/"/>
-    <id>https://blog.guanqi.xyz/2019-01-16/front-project-list/</id>
+    <link href="https://guanqi.xyz/2019-01-16/front-project-list/"/>
+    <id>https://guanqi.xyz/2019-01-16/front-project-list/</id>
     <published>2019-01-16T13:30:21.000Z</published>
     <updated>2019-03-08T03:00:48.599Z</updated>
     
@@ -495,19 +495,19 @@
     
     </summary>
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
-      <category term="项目汇总" scheme="https://blog.guanqi.xyz/tags/%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%80%BB/"/>
+      <category term="项目汇总" scheme="https://guanqi.xyz/tags/%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%80%BB/"/>
     
   </entry>
   
   <entry>
     <title>js中对象详解</title>
-    <link href="https://blog.guanqi.xyz/2019-01-16/js-object-use/"/>
-    <id>https://blog.guanqi.xyz/2019-01-16/js-object-use/</id>
+    <link href="https://guanqi.xyz/2019-01-16/js-object-use/"/>
+    <id>https://guanqi.xyz/2019-01-16/js-object-use/</id>
     <published>2019-01-16T13:16:21.000Z</published>
     <updated>2019-03-08T03:26:59.080Z</updated>
     
@@ -525,21 +525,21 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js基础" scheme="https://blog.guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
+      <category term="js基础" scheme="https://guanqi.xyz/tags/js%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="object" scheme="https://blog.guanqi.xyz/tags/object/"/>
+      <category term="object" scheme="https://guanqi.xyz/tags/object/"/>
     
   </entry>
   
   <entry>
     <title>前端案例汇总</title>
-    <link href="https://blog.guanqi.xyz/2019-01-16/front-case-list/"/>
-    <id>https://blog.guanqi.xyz/2019-01-16/front-case-list/</id>
+    <link href="https://guanqi.xyz/2019-01-16/front-case-list/"/>
+    <id>https://guanqi.xyz/2019-01-16/front-case-list/</id>
     <published>2019-01-16T02:30:21.000Z</published>
     <updated>2019-03-08T03:01:02.484Z</updated>
     
@@ -555,19 +555,19 @@
     
     </summary>
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/categories/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
     
-      <category term="前端案例" scheme="https://blog.guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
+      <category term="前端案例" scheme="https://guanqi.xyz/tags/%E5%89%8D%E7%AB%AF%E6%A1%88%E4%BE%8B/"/>
     
-      <category term="案例汇总" scheme="https://blog.guanqi.xyz/tags/%E6%A1%88%E4%BE%8B%E6%B1%87%E6%80%BB/"/>
+      <category term="案例汇总" scheme="https://guanqi.xyz/tags/%E6%A1%88%E4%BE%8B%E6%B1%87%E6%80%BB/"/>
     
   </entry>
   
   <entry>
     <title>手机上查看pc上的网页</title>
-    <link href="https://blog.guanqi.xyz/2019-01-13/web-page-on-phone/"/>
-    <id>https://blog.guanqi.xyz/2019-01-13/web-page-on-phone/</id>
+    <link href="https://guanqi.xyz/2019-01-13/web-page-on-phone/"/>
+    <id>https://guanqi.xyz/2019-01-13/web-page-on-phone/</id>
     <published>2019-01-13T09:51:21.000Z</published>
     <updated>2019-03-08T02:13:47.038Z</updated>
     
@@ -584,19 +584,19 @@
     
     </summary>
     
-      <category term="网页技巧" scheme="https://blog.guanqi.xyz/categories/%E7%BD%91%E9%A1%B5%E6%8A%80%E5%B7%A7/"/>
+      <category term="网页技巧" scheme="https://guanqi.xyz/categories/%E7%BD%91%E9%A1%B5%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="网页技巧" scheme="https://blog.guanqi.xyz/tags/%E7%BD%91%E9%A1%B5%E6%8A%80%E5%B7%A7/"/>
+      <category term="网页技巧" scheme="https://guanqi.xyz/tags/%E7%BD%91%E9%A1%B5%E6%8A%80%E5%B7%A7/"/>
     
-      <category term="局域网调试" scheme="https://blog.guanqi.xyz/tags/%E5%B1%80%E5%9F%9F%E7%BD%91%E8%B0%83%E8%AF%95/"/>
+      <category term="局域网调试" scheme="https://guanqi.xyz/tags/%E5%B1%80%E5%9F%9F%E7%BD%91%E8%B0%83%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>js之数组的操作方法</title>
-    <link href="https://blog.guanqi.xyz/2019-01-06/js-array-use/"/>
-    <id>https://blog.guanqi.xyz/2019-01-06/js-array-use/</id>
+    <link href="https://guanqi.xyz/2019-01-06/js-array-use/"/>
+    <id>https://guanqi.xyz/2019-01-06/js-array-use/</id>
     <published>2019-01-06T13:16:21.000Z</published>
     <updated>2019-03-08T03:28:49.496Z</updated>
     
@@ -615,14 +615,14 @@
     
     </summary>
     
-      <category term="js" scheme="https://blog.guanqi.xyz/categories/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/categories/js/"/>
     
     
-      <category term="js" scheme="https://blog.guanqi.xyz/tags/js/"/>
+      <category term="js" scheme="https://guanqi.xyz/tags/js/"/>
     
-      <category term="js方法" scheme="https://blog.guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
+      <category term="js方法" scheme="https://guanqi.xyz/tags/js%E6%96%B9%E6%B3%95/"/>
     
-      <category term="数组操作" scheme="https://blog.guanqi.xyz/tags/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
+      <category term="数组操作" scheme="https://guanqi.xyz/tags/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
