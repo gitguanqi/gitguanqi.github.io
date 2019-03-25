@@ -21,21 +21,21 @@
     
     
     <meta name="keywords" content="git,github配置">
-    <meta name="description" content="一.配置ssh1.检查本机是否有ssh key设置如果没有则提示： No such file or directory如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件） 2.使用Git Bash生成新的ssh key$ cd ~  #保证当前路径在”~”下123456789101112$ ssh-keygen -t rsa -C &amp;quot;xxxxxx@yy.com&amp;quo">
+    <meta name="description" content="配置ssh检查本机是否有ssh key设置12//如果没有则提示： No such file or directory //如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件) 使用Git Bash生成新的ssh key12345678910111213$ cd ~  #保证当前路径在”~”下$ ssh-keygen -t rsa -C &amp;quot;xxxxxx@yy.com&amp;">
 <meta name="keywords" content="git,github配置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="github配置教程">
 <meta property="og:url" content="https://guanqi.xyz/note/git-config/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="一.配置ssh1.检查本机是否有ssh key设置如果没有则提示： No such file or directory如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件） 2.使用Git Bash生成新的ssh key$ cd ~  #保证当前路径在”~”下123456789101112$ ssh-keygen -t rsa -C &amp;quot;xxxxxx@yy.com&amp;quo">
+<meta property="og:description" content="配置ssh检查本机是否有ssh key设置12//如果没有则提示： No such file or directory //如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件) 使用Git Bash生成新的ssh key12345678910111213$ cd ~  #保证当前路径在”~”下$ ssh-keygen -t rsa -C &amp;quot;xxxxxx@yy.com&amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://guanqi.xyz/img/blogimg/git03.png">
 <meta property="og:image" content="https://guanqi.xyz/img/blogimg/git01.png">
 <meta property="og:image" content="https://guanqi.xyz/img/blogimg/git02.png">
-<meta property="og:updated_time" content="2019-03-08T03:14:24.357Z">
+<meta property="og:updated_time" content="2019-03-25T12:19:45.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github配置教程">
-<meta name="twitter:description" content="一.配置ssh1.检查本机是否有ssh key设置如果没有则提示： No such file or directory如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件） 2.使用Git Bash生成新的ssh key$ cd ~  #保证当前路径在”~”下123456789101112$ ssh-keygen -t rsa -C &amp;quot;xxxxxx@yy.com&amp;quo">
+<meta name="twitter:description" content="配置ssh检查本机是否有ssh key设置12//如果没有则提示： No such file or directory //如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件) 使用Git Bash生成新的ssh key12345678910111213$ cd ~  #保证当前路径在”~”下$ ssh-keygen -t rsa -C &amp;quot;xxxxxx@yy.com&amp;">
 <meta name="twitter:image" content="https://guanqi.xyz/img/blogimg/git03.png">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
@@ -164,7 +164,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一-配置ssh"><span class="post-toc-number">1.</span> <span class="post-toc-text">一.配置ssh</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-检查本机是否有ssh-key设置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.检查本机是否有ssh key设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-使用Git-Bash生成新的ssh-key"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.使用Git Bash生成新的ssh key</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-添加ssh-key到GItHub"><span class="post-toc-number">2.</span> <span class="post-toc-text">3.添加ssh key到GItHub</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-登录GitHub系统；"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">3.1 登录GitHub系统；</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-复制id-rsa-pub的公钥内容"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">3.2 复制id_rsa.pub的公钥内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-配置账户"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">4.配置账户</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-测试ssh-keys是否设置成功"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">5.测试ssh keys是否设置成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、Github新建项目"><span class="post-toc-number">3.</span> <span class="post-toc-text">二、Github新建项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Github新建项目"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.Github新建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-注意项目名（必须是：github的用户名-github-io）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.注意项目名（必须是：github的用户名.github.io）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-将项目clone到本地"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.将项目clone到本地</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-将index-html推送到远程github仓库中"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.将index.html推送到远程github仓库中</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三-写在最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">三.写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置ssh"><span class="post-toc-number">1.</span> <span class="post-toc-text">配置ssh</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查本机是否有ssh-key设置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">检查本机是否有ssh key设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Git-Bash生成新的ssh-key"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用Git Bash生成新的ssh key</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加ssh-key到GItHub"><span class="post-toc-number">2.</span> <span class="post-toc-text">添加ssh key到GItHub</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录GitHub系统；"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">登录GitHub系统；</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#复制id-rsa-pub的公钥内容"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">复制id_rsa.pub的公钥内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置账户"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">配置账户</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试ssh-keys是否设置成功"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">测试ssh keys是否设置成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github新建项目"><span class="post-toc-number">3.</span> <span class="post-toc-text">Github新建项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Github新建项目-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Github新建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意项目名（必须是：github的用户名-github-io）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">注意项目名（必须是：github的用户名.github.io）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将项目clone到本地"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">将项目clone到本地</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将index-html推送到远程github仓库中"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">将index.html推送到远程github仓库中</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -189,9 +189,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="一-配置ssh"><a href="#一-配置ssh" class="headerlink" title="一.配置ssh"></a>一.配置ssh</h2><h3 id="1-检查本机是否有ssh-key设置"><a href="#1-检查本机是否有ssh-key设置" class="headerlink" title="1.检查本机是否有ssh key设置"></a>1.检查本机是否有ssh key设置</h3><p>如果没有则提示： No such file or directory<br>如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件）</p>
-<h3 id="2-使用Git-Bash生成新的ssh-key"><a href="#2-使用Git-Bash生成新的ssh-key" class="headerlink" title="2.使用Git Bash生成新的ssh key"></a>2.使用Git Bash生成新的ssh key</h3><p>$ cd ~  #保证当前路径在”~”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;xxxxxx@yy.com&quot;  #建议填写自己真实有效的邮箱地址</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/xxxx_000/.ssh/id_rsa):   #不填直接回车</span><br><span class="line">Enter passphrase (empty for no passphrase):   #输入密码（可以为空）</span><br><span class="line">Enter same passphrase again:   #再次确认密码（可以为空）</span><br><span class="line">Your identification has been saved in /c/Users/xxxx_000/.ssh/id_rsa.   #生成的密钥</span><br><span class="line">Your public key has been saved in /c/Users/xxxx_000/.ssh/id_rsa.pub. #生成的公钥</span><br><span class="line">The key fingerprint is:</span><br><span class="line">e3:51:33:xx:xx:xx:xx:xxx:61:28:83:e2:81 xxxxxx@yy.com</span><br><span class="line">//本机已完成ssh key设置，其存放路径为：c:/Users/xxxx_000/.ssh/下。</span><br><span class="line">//可生成ssh key自定义名称的密钥，默认id_rsa。</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;邮箱地址&quot; -f ~/.ssh/githug_blog_keys #生成ssh key的名称为githug_blog_keys，慎用容易出现其它异常。</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-添加ssh-key到GItHub"><a href="#3-添加ssh-key到GItHub" class="headerlink" title="3.添加ssh key到GItHub"></a>3.添加ssh key到GItHub</h2><h3 id="3-1-登录GitHub系统；"><a href="#3-1-登录GitHub系统；" class="headerlink" title="3.1 登录GitHub系统；"></a>3.1 登录GitHub系统；</h3><p>  点击右上角账号头像的“▼”→Settings→SSH kyes→Add SSH key。</p>
+            <h2 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h2><h3 id="检查本机是否有ssh-key设置"><a href="#检查本机是否有ssh-key设置" class="headerlink" title="检查本机是否有ssh key设置"></a>检查本机是否有ssh key设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//如果没有则提示： No such file or directory </span><br><span class="line">//如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件)</span><br></pre></td></tr></table></figure>
+<h3 id="使用Git-Bash生成新的ssh-key"><a href="#使用Git-Bash生成新的ssh-key" class="headerlink" title="使用Git Bash生成新的ssh key"></a>使用Git Bash生成新的ssh key</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~  #保证当前路径在”~”下</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;xxxxxx@yy.com&quot;  #建议填写自己真实有效的邮箱地址</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/c/Users/xxxx_000/.ssh/id_rsa):   #不填直接回车</span><br><span class="line">Enter passphrase (empty for no passphrase):   #输入密码（可以为空）</span><br><span class="line">Enter same passphrase again:   #再次确认密码（可以为空）</span><br><span class="line">Your identification has been saved in /c/Users/xxxx_000/.ssh/id_rsa.   #生成的密钥</span><br><span class="line">Your public key has been saved in /c/Users/xxxx_000/.ssh/id_rsa.pub. #生成的公钥</span><br><span class="line">The key fingerprint is:</span><br><span class="line">e3:51:33:xx:xx:xx:xx:xxx:61:28:83:e2:81 xxxxxx@yy.com</span><br><span class="line">//本机已完成ssh key设置，其存放路径为：c:/Users/xxxx_000/.ssh/下。</span><br><span class="line">//可生成ssh key自定义名称的密钥，默认id_rsa。</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;邮箱地址&quot; -f ~/.ssh/githug_blog_keys #生成ssh key的名称为githug_blog_keys，慎用容易出现其它异常。</span><br></pre></td></tr></table></figure>
+<h2 id="添加ssh-key到GItHub"><a href="#添加ssh-key到GItHub" class="headerlink" title="添加ssh key到GItHub"></a>添加ssh key到GItHub</h2><h3 id="登录GitHub系统；"><a href="#登录GitHub系统；" class="headerlink" title="登录GitHub系统；"></a>登录GitHub系统；</h3><p>  点击右上角账号头像的“▼”→Settings→SSH kyes→Add SSH key。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -199,10 +199,10 @@
                 </div>
                 <div class="image-caption">key</div>
             </figure>
-<h3 id="3-2-复制id-rsa-pub的公钥内容"><a href="#3-2-复制id-rsa-pub的公钥内容" class="headerlink" title="3.2 复制id_rsa.pub的公钥内容"></a>3.2 复制id_rsa.pub的公钥内容</h3><p>1) 进入c:/Users/xxxx_000/.ssh/目录下，打开id_rsa.pub文件，全选复制公钥内容。<br>2) Title自定义，将公钥粘贴到GitHub中Add an SSH key的key输入框，最后“AddKey”。</p>
-<h3 id="4-配置账户"><a href="#4-配置账户" class="headerlink" title="4.配置账户"></a>4.配置账户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name “your_username” #设置用户名</span><br><span class="line">$ git config --global user.email “your_registered_github_Email” #设置邮箱地址(建议用注册giuhub的邮箱)</span><br></pre></td></tr></table></figure>
-<h3 id="5-测试ssh-keys是否设置成功"><a href="#5-测试ssh-keys是否设置成功" class="headerlink" title="5.测试ssh keys是否设置成功"></a>5.测试ssh keys是否设置成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &apos;github.com(192.30.252.129)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is16:27:xx:xx:xx:xx:xx:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continueconnecting (yes/no)? yes #确认你是否继续联系，输入yes</span><br><span class="line">Warning: Permanently added&apos;github.com,192.30.252.129&apos; (RSA) to the list of known hosts.</span><br><span class="line">Enter passphrase for key&apos;/c/Users/xxxx_000/.ssh/id_rsa&apos;: #生成sshkye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span><br><span class="line">Hi xxx! You&apos;ve successfullyauthenticated, but GitHub does not provide shell access. #出现词句话，说明设置成功。</span><br></pre></td></tr></table></figure>
-<h2 id="二、Github新建项目"><a href="#二、Github新建项目" class="headerlink" title="二、Github新建项目"></a>二、Github新建项目</h2><h3 id="1-Github新建项目"><a href="#1-Github新建项目" class="headerlink" title="1.Github新建项目"></a>1.Github新建项目</h3><p>点击按钮</p>
+<h3 id="复制id-rsa-pub的公钥内容"><a href="#复制id-rsa-pub的公钥内容" class="headerlink" title="复制id_rsa.pub的公钥内容"></a>复制id_rsa.pub的公钥内容</h3><p>1) 进入c:/Users/xxxx_000/.ssh/目录下，打开id_rsa.pub文件，全选复制公钥内容。<br>2) Title自定义，将公钥粘贴到GitHub中Add an SSH key的key输入框，最后“AddKey”。</p>
+<h3 id="配置账户"><a href="#配置账户" class="headerlink" title="配置账户"></a>配置账户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name “your_username” #设置用户名</span><br><span class="line">$ git config --global user.email “your_registered_github_Email” #设置邮箱地址(建议用注册giuhub的邮箱)</span><br></pre></td></tr></table></figure>
+<h3 id="测试ssh-keys是否设置成功"><a href="#测试ssh-keys是否设置成功" class="headerlink" title="测试ssh keys是否设置成功"></a>测试ssh keys是否设置成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &apos;github.com(192.30.252.129)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is16:27:xx:xx:xx:xx:xx:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continueconnecting (yes/no)? yes #确认你是否继续联系，输入yes</span><br><span class="line">Warning: Permanently added&apos;github.com,192.30.252.129&apos; (RSA) to the list of known hosts.</span><br><span class="line">Enter passphrase for key&apos;/c/Users/xxxx_000/.ssh/id_rsa&apos;: #生成sshkye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span><br><span class="line">Hi xxx! You&apos;ve successfullyauthenticated, but GitHub does not provide shell access. #出现词句话，说明设置成功。</span><br></pre></td></tr></table></figure>
+<h2 id="Github新建项目"><a href="#Github新建项目" class="headerlink" title="Github新建项目"></a>Github新建项目</h2><h3 id="Github新建项目-1"><a href="#Github新建项目-1" class="headerlink" title="Github新建项目"></a>Github新建项目</h3><p>点击按钮</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -210,17 +210,17 @@
                 </div>
                 <div class="image-caption">新建</div>
             </figure>
-<h3 id="2-注意项目名（必须是：github的用户名-github-io）"><a href="#2-注意项目名（必须是：github的用户名-github-io）" class="headerlink" title="2.注意项目名（必须是：github的用户名.github.io）"></a>2.注意项目名（必须是：github的用户名.github.io）</h3><figure class="image-bubble">
+<h3 id="注意项目名（必须是：github的用户名-github-io）"><a href="#注意项目名（必须是：github的用户名-github-io）" class="headerlink" title="注意项目名（必须是：github的用户名.github.io）"></a>注意项目名（必须是：github的用户名.github.io）</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="../../img/blogimg/git02.png" alt="新建" title="">
                 </div>
                 <div class="image-caption">新建</div>
             </figure>
-<h3 id="3-将项目clone到本地"><a href="#3-将项目clone到本地" class="headerlink" title="3.将项目clone到本地"></a>3.将项目clone到本地</h3><p><code>$ git clone https://github.com/&lt;你的用户名&gt;/&lt;仓库名字&gt;.git</code></p>
+<h3 id="将项目clone到本地"><a href="#将项目clone到本地" class="headerlink" title="将项目clone到本地"></a>将项目clone到本地</h3><p><code>$ git clone https://github.com/&lt;你的用户名&gt;/&lt;仓库名字&gt;.git</code></p>
 <p>然后输入命令，回车，等待clone完成。</p>
-<h3 id="4-将index-html推送到远程github仓库中"><a href="#4-将index-html推送到远程github仓库中" class="headerlink" title="4.将index.html推送到远程github仓库中"></a>4.将index.html推送到远程github仓库中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;这里是注释信息，自己写&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h2 id="三-写在最后"><a href="#三-写在最后" class="headerlink" title="三.写在最后"></a>三.写在最后</h2><p>git的配置就到这里。</p>
+<h3 id="将index-html推送到远程github仓库中"><a href="#将index-html推送到远程github仓库中" class="headerlink" title="将index.html推送到远程github仓库中"></a>将index.html推送到远程github仓库中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;这里是注释信息，自己写&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>git的配置就到这里。</p>
 
         </div>
 
@@ -229,7 +229,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-03-08T03:14:24.357Z" itemprop="dateUpdated">2019-03-08 11:14:24</time>
+    Last updated: <time datetime="2019-03-25T12:19:45.843Z" itemprop="dateUpdated">2019-03-25 20:19:45</time>
 </span><br>
 
 
@@ -313,18 +313,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/note/markdown-use/" id="post-prev" class="post-nav-link">
+      <a href="/note/web-yahoo-rules/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">markdown使用笔记</h4>
+        <h4 class="title">雅虎军规总结</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/note/web-yahoo-rules/" id="post-next" class="post-nav-link">
+      <a href="/note/front-talk-origin/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">雅虎军规总结</h4>
+        <h4 class="title">前端杂谈之缘起</h4>
       </a>
     </div>
   
