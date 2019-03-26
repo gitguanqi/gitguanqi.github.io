@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ajax技术详解 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ajax">
+    <meta name="description" content="今天来讲一下ajax的有关知识点。  ajax概念ajax全称叫Asynchronous JavaScript and XML,意思是异步的 JavaScript 和 XML。 ajax是现有标准的一种新方法，不是编程语言，可以在不刷新网页的情况下，和服务器交换数据并且更新部分页面内容，不需要任何插件，只需要游览器允许运行JavaScript就可以。 而传统的网页（不使用ajax的）如果需要更新">
+<meta name="keywords" content="ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax技术详解">
+<meta property="og:url" content="https://guanqi.xyz/note/detailed-ajax-technology/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="今天来讲一下ajax的有关知识点。  ajax概念ajax全称叫Asynchronous JavaScript and XML,意思是异步的 JavaScript 和 XML。 ajax是现有标准的一种新方法，不是编程语言，可以在不刷新网页的情况下，和服务器交换数据并且更新部分页面内容，不需要任何插件，只需要游览器允许运行JavaScript就可以。 而传统的网页（不使用ajax的）如果需要更新">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-26T07:19:13.270Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ajax技术详解">
+<meta name="twitter:description" content="今天来讲一下ajax的有关知识点。  ajax概念ajax全称叫Asynchronous JavaScript and XML,意思是异步的 JavaScript 和 XML。 ajax是现有标准的一种新方法，不是编程语言，可以在不刷新网页的情况下，和服务器交换数据并且更新部分页面内容，不需要任何插件，只需要游览器允许运行JavaScript就可以。 而传统的网页（不使用ajax的）如果需要更新">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ajax技术详解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ajax技术详解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-18T13:16:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ajax/">ajax</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ajax概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">ajax概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ajax的原理"><span class="post-toc-number">2.</span> <span class="post-toc-text">ajax的原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XMLHttpRequest的使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">XMLHttpRequest的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#open方法使用"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">open方法使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#send方法使用"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">send方法使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#onreadystatechange事件"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">onreadystatechange事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的get请求。"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">简单的get请求。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模拟数据"><span class="post-toc-number">4.</span> <span class="post-toc-text">模拟数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模拟的JSON数据"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">模拟的JSON数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模拟的Nodejs的api"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">模拟的Nodejs的api</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#封装的ajax函数"><span class="post-toc-number">5.</span> <span class="post-toc-text">封装的ajax函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#示例：获取数据渲染页面"><span class="post-toc-number">6.</span> <span class="post-toc-text">示例：获取数据渲染页面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">7.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-detailed-ajax-technology" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ajax技术详解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-18 21:16:21" datetime="2019-01-18T13:16:21.000Z" itemprop="datePublished">2019-01-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ajax/">ajax</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>今天来讲一下ajax的有关知识点。</p>
+</blockquote>
+<h2 id="ajax概念"><a href="#ajax概念" class="headerlink" title="ajax概念"></a>ajax概念</h2><p>ajax全称叫<strong>Asynchronous JavaScript and XML</strong>,意思是异步的 JavaScript 和 XML。</p>
+<p>ajax是现有标准的一种新方法，不是编程语言，可以在不刷新网页的情况下，和服务器交换数据并且更新部分页面内容，不需要任何插件，只需要游览器允许运行JavaScript就可以。</p>
+<p>而传统的网页（不使用ajax的）如果需要更新页面内容，就需要重新请求服务器，返回网页内容，重新渲染刷新页面。</p>
+<h2 id="ajax的原理"><a href="#ajax的原理" class="headerlink" title="ajax的原理"></a>ajax的原理</h2><p><strong>原理</strong>：ajax的运行过程包括以下几个方面</p>
+<ol>
+<li>Browser游览器通过事件触发方法，本地通过<code>XMLHttpRequest</code>对象，创建并且发送请求通过互联网到服务器；</li>
+<li>Server服务器收到请求的内容，响应请求，发送所需数据到游览器；</li>
+<li>Browser游览器通过<code>XMLHttpRequest</code>对象的<code>onreadystatechange</code>的方法收到请求的数据后，解析和渲染数据到页面中。</li>
+</ol>
+<p><strong>注意：</strong>ajax依赖的标准有以下几个</p>
+<ol>
+<li>XMLHttpRequest对象,异步的与服务器交换数据</li>
+<li>JavaScript/DOM,信息显示/交互</li>
+<li>XML,作为转换数据的格式</li>
+</ol>
+<h2 id="XMLHttpRequest的使用"><a href="#XMLHttpRequest的使用" class="headerlink" title="XMLHttpRequest的使用"></a>XMLHttpRequest的使用</h2><p>创建<code>XMLHttpRequest</code>对象，通过<code>new</code>实例化一个<code>XMLHttpRequest</code>对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest() || <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>); <span class="comment">// 兼容ie和Firefox，google chrome,opera,safari</span></span><br></pre></td></tr></table></figure>
+<p>发送请求使用<code>XMLHttpRequest</code>对象的<code>open</code>和<code>send</code>方法</p>
+<h3 id="open方法使用"><a href="#open方法使用" class="headerlink" title="open方法使用"></a>open方法使用</h3><p><code>open(method,url,async)</code>,接受三个参数。</p>
+<ul>
+<li>第一个是method请求的类型，如：<code>get</code>和<code>post</code>;</li>
+<li>第二个是url请求地址，即文件在服务器的位置；</li>
+<li>第三个是是否处理异步处理请求,值为true和false；</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">'get'</span>,<span class="string">'https://www.abc.com/service.php?tamp='</span>+<span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()),<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="send方法使用"><a href="#send方法使用" class="headerlink" title="send方法使用"></a>send方法使用</h3><p><code>send(string)</code>接受的参数为请求类型为post传递的值，为get类型时候不传值。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">send(<span class="string">'tamp='</span>+<span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br></pre></td></tr></table></figure>
+<h3 id="onreadystatechange事件"><a href="#onreadystatechange事件" class="headerlink" title="onreadystatechange事件"></a>onreadystatechange事件</h3><p>当readyState属性发生变化时，就会触发onreadystatechange事件，该事件通过回调函数获取到响应的数据信息。</p>
+<p><strong>readyState</strong>值:</p>
+<ul>
+<li>值为0表示：请求未初始化；</li>
+<li>值为1表示：服务器连接已建立；</li>
+<li>值为2表示：请求已接收；</li>
+<li>值为3表示：请求处理中；</li>
+<li>值为4表示:请求已完成，且响应已就绪；</li>
+</ul>
+<p><strong>status</strong>值：</p>
+<ul>
+<li>200: 请求成功</li>
+<li>404: 未找到页面</li>
+</ul>
+<h3 id="简单的get请求。"><a href="#简单的get请求。" class="headerlink" title="简单的get请求。"></a>简单的get请求。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="keyword">if</span> (!xhr &amp;&amp; <span class="keyword">typeof</span> xhr !== <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest() || <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">'get'</span>,<span class="string">'https://www.abc.com/service.php?tamp='</span>+<span class="built_in">Date</span>.parse(<span class="keyword">new</span> <span class="built_in">Date</span>()),<span class="literal">true</span>);</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<h2 id="模拟数据"><a href="#模拟数据" class="headerlink" title="模拟数据"></a>模拟数据</h2><h3 id="模拟的JSON数据"><a href="#模拟的JSON数据" class="headerlink" title="模拟的JSON数据"></a>模拟的JSON数据</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 保存为data.json文件</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"msg"</span>: <span class="string">"get_succ"</span>,</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">201</span>,</span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"list"</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>:<span class="number">1</span>,</span><br><span class="line">                <span class="attr">"name"</span>: <span class="string">"alun"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>:<span class="number">2</span>,</span><br><span class="line">                <span class="attr">"name"</span>: <span class="string">"mark"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>:<span class="number">3</span>,</span><br><span class="line">                <span class="attr">"name"</span>: <span class="string">"jean"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="模拟的Nodejs的api"><a href="#模拟的Nodejs的api" class="headerlink" title="模拟的Nodejs的api"></a>模拟的Nodejs的api</h3><blockquote>
+<p>请确保你的系统安装有node.js环境。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保存为node.js文件</span></span><br><span class="line"><span class="comment">// 引入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> success = &#123;</span><br><span class="line">    msg: <span class="string">"get_succ"</span>,</span><br><span class="line">    code: <span class="number">201</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        list: [</span><br><span class="line">            &#123;<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"name"</span>: <span class="string">"alun"</span>&#125;,</span><br><span class="line">            &#123;<span class="string">"id"</span>:<span class="number">2</span>,<span class="string">"name"</span>: <span class="string">"mark"</span>&#125;,</span><br><span class="line">            &#123;<span class="string">"id"</span>:<span class="number">3</span>,<span class="string">"name"</span>: <span class="string">"jean"</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> error = &#123;</span><br><span class="line">    msg: <span class="string">"get_fail"</span>,</span><br><span class="line">    code: <span class="number">101</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        info: <span class="string">'this request failed,again try!'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> authy = &#123;</span><br><span class="line">    msg: <span class="string">"no visited!"</span>,</span><br><span class="line">    code: <span class="number">403</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        info: <span class="string">'not visited!'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立http服务</span></span><br><span class="line"><span class="keyword">const</span> serve = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> lawDomainList = <span class="string">"http://localhost:9925"</span>;</span><br><span class="line">    res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'text/plain;charset=utf8'</span>);</span><br><span class="line">    res.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,lawDomainList);</span><br><span class="line">    <span class="keyword">if</span> (req.url == <span class="string">'/api'</span>) &#123;</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(success));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(error));</span><br><span class="line">    &#125;</span><br><span class="line">    res.end(authy);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 监听端口</span></span><br><span class="line">serve.listen(port,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'serve is running on port 3000!'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="封装的ajax函数"><a href="#封装的ajax函数" class="headerlink" title="封装的ajax函数"></a>封装的ajax函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 保存为ajax.js文件</span></span><br><span class="line">$g = &#123;</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!url &amp;&amp; !(<span class="keyword">typeof</span> url == <span class="string">'string'</span>)) &#123; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SysantaxError: this get request must had url!'</span>); &#125;</span><br><span class="line">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest() || <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">            xhr.open(<span class="string">'GET'</span>,url,<span class="literal">true</span>);</span><br><span class="line">            xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">200</span>) &#123;</span><br><span class="line">                        resolve(<span class="keyword">this</span>.responseText,<span class="keyword">this</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">var</span> resJson = &#123; <span class="attr">code</span>: <span class="keyword">this</span>.status, <span class="attr">response</span>: <span class="keyword">this</span>.response &#125;</span><br><span class="line">                        reject(resJson, <span class="keyword">this</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            xhr.send();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    post: <span class="function"><span class="keyword">function</span>(<span class="params">url,data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!url) &#123; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SysantaxError: this post request must had url!'</span>); &#125;</span><br><span class="line">            <span class="keyword">if</span> (!data) &#123; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'SysantaxError: this post request must had data!'</span>); &#125;</span><br><span class="line">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest() || <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">            xhr.open(<span class="string">'POST'</span>,url,<span class="literal">true</span>);</span><br><span class="line">            xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">            xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">200</span>) &#123;</span><br><span class="line">                        resolve(<span class="keyword">this</span>.responseText,<span class="keyword">this</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">var</span> resJson = &#123; <span class="attr">code</span>: <span class="keyword">this</span>.status, <span class="attr">response</span>: <span class="keyword">this</span>.response &#125;</span><br><span class="line">                        reject(resJson, <span class="keyword">this</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            xhr.send(<span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例：获取数据渲染页面"><a href="#示例：获取数据渲染页面" class="headerlink" title="示例：获取数据渲染页面"></a>示例：获取数据渲染页面</h2><blockquote>
+<p>通过点击按钮获取数据，渲染列表。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>请求数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"res"</span>&gt;</span>结果：暂无结果<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"ajax.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.btn'</span>);</span><br><span class="line"><span class="keyword">let</span> resbox = <span class="built_in">document</span>.querySelector(<span class="string">'.res'</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> url = <span class="string">'http://localhost:3000/api'</span>; <span class="comment">// node api</span></span><br><span class="line">    <span class="keyword">var</span> urlJson = <span class="string">'data.json'</span>; <span class="comment">// mock api</span></span><br><span class="line">    $g.get(url).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> res == <span class="string">'string'</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> responTxt = <span class="built_in">JSON</span>.parse(res);</span><br><span class="line">            <span class="keyword">if</span> (responTxt.msg == <span class="string">'get_succ'</span> &amp;&amp; responTxt.code == <span class="number">201</span>) &#123;</span><br><span class="line">                <span class="keyword">let</span> list = responTxt.data.list;</span><br><span class="line">                <span class="keyword">let</span> str = <span class="string">''</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;list.length;i++) &#123;</span><br><span class="line">                    str += <span class="string">'&lt;li&gt;'</span>+ list[i].id + <span class="string">':'</span> + list[i].name + <span class="string">'&lt;/li&gt;'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                resbox.innerHTML = str;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(err);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这只是我总结的一小部分知识点，其实这个技术还是有很多地方没有说到，以后再补充吧！</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最後更新時間：<time datetime="2019-03-26T07:19:13.270Z" itemprop="dateUpdated">2019-03-26 15:19:13</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/detailed-ajax-technology/" target="_blank" rel="external">https://guanqi.xyz/note/detailed-ajax-technology/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/detailed-ajax-technology/&title=《ajax技术详解》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/detailed-ajax-technology/&title=《ajax技术详解》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/detailed-ajax-technology/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ajax技术详解》 — 猿七笔记&url=https://guanqi.xyz/note/detailed-ajax-technology/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/detailed-ajax-technology/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/es6-let-command/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">es6之let命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/front-end-project-summary/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">前端项目汇总</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/detailed-ajax-technology/&title=《ajax技术详解》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/detailed-ajax-technology/&title=《ajax技术详解》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/detailed-ajax-technology/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ajax技术详解》 — 猿七笔记&url=https://guanqi.xyz/note/detailed-ajax-technology/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/detailed-ajax-technology/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACN0lEQVR42u3awY6DMAxF0f7/TzObWVRiQu+z6Ug4l1WFQshh4TqxXy98Hafr/T4Z835ndX818rZLhgwZj2Ucl1dtzHn+82/+ma7fK0OGjH0Yq6lXY66D7/Xi+DxkbTJkyJCRkkhw5EuXIUOGjE7AJTOkm1sSxGXIkLEzg2xQO0dvnZE378VlyJDxQAY/df//31+pb8iQIeNRjCO8CI+nd/31/M4sQ4aM0Qz+Gn5wxg/UOs0WMmTI2IfRT9ru/aKkXeOPOzJkyBjNSI+0Osde/AAubeaQIUPGbAZv2OIhtXNwln4mGTJk7MBIWxzidC1M+FpPyZAhYygjTQf58X36LB9fjNMyZMh4LKPWVJGmg7w5jIdd9B8iQ4aMQQweTPkL+GzBuSCvxMqQIWM04zqM1hrFSPDlm+TlszJkyNiMUQu1tbSydsQmQ4aMfRi1MErCMSk58JEfxsuQIWNLBt/EpulgvyAqQ4aMnRm1IgEvQKbtHcGqZMiQMZqRPsbDZa35jLBR/4gMGTLGMe56AZ+TB2XeriFDhowdGCSYktfXRvLiwYfygAwZMkYz0sJAep/DSHK5bAuTIUPGOEanMNBZIkkcg1ZXGTJkjGb0g11KrTVV1MqcMmTImMQgy7oOiGkorIHjTawMGTLGMdK2BpLMkSaMdEMbFwZkyJCxMYOnfTVAHMplyJAhA7dZpKleLZVc1jdkyJAxmkG2pvx+nxq3aMiQIWM0I906dja6terEbYVMGTJkPI/xA1G6S6mQYdj1AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

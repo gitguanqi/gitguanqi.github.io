@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Node简介 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="node简介">
+    <meta name="description" content="简介官网中文官网 Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.  Node.js是构建在 chorme的V8引擎上的一个js运行时 Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and e">
+<meta name="keywords" content="node简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node简介">
+<meta property="og:url" content="https://guanqi.xyz/note/introduction-to-node/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="简介官网中文官网 Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.  Node.js是构建在 chorme的V8引擎上的一个js运行时 Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and e">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-26T07:20:56.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node简介">
+<meta name="twitter:description" content="简介官网中文官网 Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.  Node.js是构建在 chorme的V8引擎上的一个js运行时 Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and e">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Node简介</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Node简介</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-10T10:04:21.000Z" itemprop="datePublished" class="page-time">
+  2017-12-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作者"><span class="post-toc-number">2.</span> <span class="post-toc-text">作者</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#适用场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">适用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Global"><span class="post-toc-number">4.</span> <span class="post-toc-text">Global</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#REPL环境"><span class="post-toc-number">5.</span> <span class="post-toc-text">REPL环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行Node-js的代码"><span class="post-toc-number">6.</span> <span class="post-toc-text">运行Node.js的代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-introduction-to-node" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Node简介</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-10 18:04:21" datetime="2017-12-10T10:04:21.000Z" itemprop="datePublished">2017-12-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">官网</a><br><a href="http://nodejs.cn/" target="_blank" rel="noopener">中文官网</a></p>
+<p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. </p>
+<p>Node.js是构建在 chorme的V8引擎上的一个js运行时</p>
+<p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. </p>
+<ul>
+<li>事件驱动(回调函数)</li>
+<li>非阻塞异步I/O</li>
+<li>单线程单进程</li>
+</ul>
+<p>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.</p>
+<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Ryan Dahl</p>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><ul>
+<li>高并发(双11)</li>
+<li>站内信</li>
+<li>实时聊天</li>
+<li>缺点：不适合大量的计算</li>
+</ul>
+<h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><p>在游览器中全局对象（顶层对象）是window<br>在node中全局对象叫Global</p>
+<ul>
+<li>Buffer</li>
+<li>process</li>
+<li>console</li>
+<li>setTimeout</li>
+<li>setInterval</li>
+<li>clearTimeout</li>
+<li>clearInterval</li>
+</ul>
+<h2 id="REPL环境"><a href="#REPL环境" class="headerlink" title="REPL环境"></a>REPL环境</h2><p>进入的方法，在cmd中输入node,然后enter，就可以进入node的REPL环境。</p>
+<ul>
+<li>Read 读，读取用户输入，解析输入的JS数据结构并存储在内存中</li>
+<li>Eval 执行，执行输入的数据结构</li>
+<li>Print 打印，输出结果</li>
+<li>Loop 循环 ，循环操作以上步骤，直到CTRL+C以后</li>
+<li>退出REPL环境，用Ctrl+C两次</li>
+</ul>
+<h2 id="运行Node-js的代码"><a href="#运行Node-js的代码" class="headerlink" title="运行Node.js的代码"></a>运行Node.js的代码</h2><p><code>$ node &lt;文件名&gt;</code></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>node.js是一个很不错的后端服务器编程语言。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最後更新時間：<time datetime="2019-03-26T07:20:56.146Z" itemprop="dateUpdated">2019-03-26 15:20:56</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/introduction-to-node/" target="_blank" rel="external">https://guanqi.xyz/note/introduction-to-node/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node简介/">node简介</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/introduction-to-node/&title=《Node简介》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/introduction-to-node/&title=《Node简介》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/introduction-to-node/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node简介》 — 猿七笔记&url=https://guanqi.xyz/note/introduction-to-node/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/introduction-to-node/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/node-common-command/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">node常用命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/todocmvc-practice-vue-version/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">todocmvc练习vue版</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/introduction-to-node/&title=《Node简介》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/introduction-to-node/&title=《Node简介》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/introduction-to-node/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node简介》 — 猿七笔记&url=https://guanqi.xyz/note/introduction-to-node/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/introduction-to-node/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHklEQVR42u3aUY6DMAxF0e5/08wCKsJ9djoSzs0XUinh8GHZsT8fvK6vxe+5+xe/c9uSIUPGaxnXcvEN1q9Lrtf7PnxKGTJkHMC4e63O9uknWF8/vLMMGTJk4FBLguMaKUOGDBm7GOvt+8WtDBkyZNSK2PWDSPFZu3NzLS5DhowXMvip+/9f/6S/IUOGjFcxrnDxcJm+1tVYMmTImM2obUPGLzr42vvIkCFjKoOH1M6ARe3T8IJZhgwZsxk1DA+RtQO4tDkhQ4aM2Yz+OBdvWPKAy9urMmTIOIGBfgiHJ4Itw3QTpa0yZMgYzeDNy1rbIB2tSNNQGTJkTGWkx/38AK5zDsZ3fMhwZciQMYiRxi5e6PIAzVuht7W4DBkyhjJqBSrZuF8A88AtQ4aMExi1QpRslh6KdUY3ZMiQMZtBjt07pWntObw8liFDxjmMdIM0ydv2pXmolSFDxjhGLfjWBsv4Pa2KXIYMGeMYu/R8OCxtS8QtARkyZAxi1MrIzqEbaTPEIxoyZMg4gJG2G8niAxm1UlaGDBkyePqYtiGDSprvLkOGjKGMK1wksatRN+e2MmTIGMSoBTuS5HFwv1SWIUPGCYy9QTYNuNsGxWTIkHEAIw18fEiiNhaWNidkyJAhgyd5vLVJEkQ+LiZDhgwZpECNQyQOtSgBlSFDxgGMXwxM8BKXNz5v75chQ8ZoRqt0bAxYpA0G/gQZMmQMYvwBHgpqmKG07x0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
