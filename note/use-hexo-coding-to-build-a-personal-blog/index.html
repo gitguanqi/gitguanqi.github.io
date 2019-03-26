@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="hexo,coding">
-    <meta name="description" content="检测node和npm先检测一下有没有node.js和npm 12345678$ node -v//如果有，说明node.js安装成功！$ node -vv8.4.0//如果有，说明npm安装成功！$npm -v$ npm -v5.3.0 安装hexo在git-bash中运行以下命令安装hexo 安装hexo全局1$ npm install -g hexo-cli 建立文件夹123hexo init">
+    <meta name="description" content="导语:最近无数据库编程语言的博客程序大行其道,成为了博客爱好者的首选,这篇博文目的就是教大家如何建立自己的博客程序和网站。  目录 检测node和npm     安装hexo 切换主题 发布到coding  检测node和npm先检测一下有没有node.js和npm 12345678$ node -v//如果有，说明node.js安装成功！$ node -vv8.4.0//如果有，说明npm安装">
 <meta name="keywords" content="hexo,coding">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用hexo+coding搭建个人博客">
 <meta property="og:url" content="https://guanqi.xyz/note/use-hexo-coding-to-build-a-personal-blog/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="检测node和npm先检测一下有没有node.js和npm 12345678$ node -v//如果有，说明node.js安装成功！$ node -vv8.4.0//如果有，说明npm安装成功！$npm -v$ npm -v5.3.0 安装hexo在git-bash中运行以下命令安装hexo 安装hexo全局1$ npm install -g hexo-cli 建立文件夹123hexo init">
+<meta property="og:description" content="导语:最近无数据库编程语言的博客程序大行其道,成为了博客爱好者的首选,这篇博文目的就是教大家如何建立自己的博客程序和网站。  目录 检测node和npm     安装hexo 切换主题 发布到coding  检测node和npm先检测一下有没有node.js和npm 12345678$ node -v//如果有，说明node.js安装成功！$ node -vv8.4.0//如果有，说明npm安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T07:23:34.172Z">
+<meta property="og:updated_time" content="2019-03-26T13:18:10.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hexo+coding搭建个人博客">
-<meta name="twitter:description" content="检测node和npm先检测一下有没有node.js和npm 12345678$ node -v//如果有，说明node.js安装成功！$ node -vv8.4.0//如果有，说明npm安装成功！$npm -v$ npm -v5.3.0 安装hexo在git-bash中运行以下命令安装hexo 安装hexo全局1$ npm install -g hexo-cli 建立文件夹123hexo init">
+<meta name="twitter:description" content="导语:最近无数据库编程语言的博客程序大行其道,成为了博客爱好者的首选,这篇博文目的就是教大家如何建立自己的博客程序和网站。  目录 检测node和npm     安装hexo 切换主题 发布到coding  检测node和npm先检测一下有没有node.js和npm 12345678$ node -v//如果有，说明node.js安装成功！$ node -vv8.4.0//如果有，说明npm安装">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检测node和npm"><span class="post-toc-number">1.</span> <span class="post-toc-text">检测node和npm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装hexo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装hexo全局"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装hexo全局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#建立文件夹"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">建立文件夹</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换主题"><span class="post-toc-number">3.</span> <span class="post-toc-text">切换主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题代码拷贝"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">主题代码拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启用主题"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">启用主题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#发布到coding"><span class="post-toc-number">4.</span> <span class="post-toc-text">发布到coding</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检测node和npm"><span class="post-toc-number">2.</span> <span class="post-toc-text">检测node和npm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装hexo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装hexo全局"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装hexo全局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#建立文件夹"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">建立文件夹</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换主题"><span class="post-toc-number">4.</span> <span class="post-toc-text">切换主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题代码拷贝"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">主题代码拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启用主题"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">启用主题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#发布到coding"><span class="post-toc-number">5.</span> <span class="post-toc-text">发布到coding</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">最后总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,14 +185,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="检测node和npm"><a href="#检测node和npm" class="headerlink" title="检测node和npm"></a>检测node和npm</h2><p>先检测一下有没有<strong><em>node.js</em></strong>和<strong><em>npm</em></strong></p>
+            <blockquote>
+<p><strong>导语</strong>:最近无数据库编程语言的博客程序大行其道,成为了博客爱好者的首选,这篇博文目的就是教大家如何建立自己的博客程序和网站。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#检测node和npm">检测node和npm</a>    </li>
+<li><a href="#安装hexo">安装hexo</a></li>
+<li><a href="#切换主题">切换主题</a></li>
+<li><a href="#发布到coding">发布到coding</a></li>
+</ul>
+<h2 id="检测node和npm"><a href="#检测node和npm" class="headerlink" title="检测node和npm"></a>检测node和npm</h2><p>先检测一下有没有<strong><em>node.js</em></strong>和<strong><em>npm</em></strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">//如果有，说明node.js安装成功！</span><br><span class="line">$ node -v</span><br><span class="line">v8.4.0</span><br><span class="line">//如果有，说明npm安装成功！</span><br><span class="line">$npm -v</span><br><span class="line">$ npm -v</span><br><span class="line">5.3.0</span><br></pre></td></tr></table></figure>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>在git-bash中运行以下命令安装hexo</p>
 <h3 id="安装hexo全局"><a href="#安装hexo全局" class="headerlink" title="安装hexo全局"></a>安装hexo全局</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="建立文件夹"><a href="#建立文件夹" class="headerlink" title="建立文件夹"></a>建立文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>然后运行<br><code>$ npm install</code> </p>
+<h3 id="建立文件夹"><a href="#建立文件夹" class="headerlink" title="建立文件夹"></a>建立文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 <p>就能够建立起一个本地的服务器，端口是4000，打开浏览器 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就能访问属于你自己的博客了。</p>
-<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><h3 id="主题代码拷贝"><a href="#主题代码拷贝" class="headerlink" title="主题代码拷贝"></a>主题代码拷贝</h3><p>主题的拷贝也是直接使用 git 即可，首先进入到你博客的根目录，再打开 git-bash 运行</p>
+<h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><p>hexo博客程序有默认主题,但是你可以拥有自己的博客主题,下面介绍一款好的主题。</p>
+<h3 id="主题代码拷贝"><a href="#主题代码拷贝" class="headerlink" title="主题代码拷贝"></a>主题代码拷贝</h3><p>主题的拷贝也是直接使用 git 即可，首先进入到你博客的根目录，再打开 git-bash 运行</p>
 <p><code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//在博客根目录下找到 _config.yml 文件，找到里面的 theme，改为</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
 <p>这时再运行一次 hexo s ，看看主题有没有生效吧。</p>
@@ -200,7 +209,7 @@
 <p>hexo 提供了一个部署命令 hexo deploy，首先需要安装一下 hexo-deployer-git插件</p>
 <p><code>npm install hexo-deployer-git --save</code></p>
 <p>然后配置一下_config.yml 文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repoistory: https://git.coding.net/codinggq/problog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repoistory: https://git.coding.net/myblog/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>预览效果</p>
 <p>在 coding 上建立一个私人仓库，找到代码的 coding 地址，填好上面的配置，然后直接执行</p>
 <p><code>hexo deploy</code></p>
@@ -209,8 +218,8 @@
 <p>最后运行以下命令上传到coding</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p>如果不行用git,输入以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir problog</span><br><span class="line">cd problog</span><br><span class="line">git init</span><br><span class="line">echo &quot;# problog&quot; &gt;&gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://git.coding.net/codinggq/problog.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>今天的hexo+coding配置免费博客就到这里，赶快体验一下吧！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br><span class="line">git init</span><br><span class="line">echo &quot;# blog&quot; &gt;&gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://git.coding.net/myblog/blog.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>今天的hexo+coding配置免费博客就到这里，赶快体验一下吧！</p>
 
         </div>
 
@@ -219,7 +228,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-26T07:23:34.172Z" itemprop="dateUpdated">2019-03-26 15:23:34</time>
+    最後更新時間：<time datetime="2019-03-26T13:18:10.674Z" itemprop="dateUpdated">2019-03-26 21:18:10</time>
 </span><br>
 
 
@@ -303,18 +312,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/note/gulp-babel-compilation-tutorial/" id="post-prev" class="post-nav-link">
+      <a href="/note/todocmvc-practice-vue-version/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">gulp下babel编译教程</h4>
+        <h4 class="title">todocmvc练习vue版</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/note/stack-and-its-basic-operations/" id="post-next" class="post-nav-link">
+      <a href="/note/sass-tutorial/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">栈及其基本运算</h4>
+        <h4 class="title">SASS使用教程</h4>
       </a>
     </div>
   
@@ -388,7 +397,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">
