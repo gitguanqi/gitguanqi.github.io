@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前端面试分析 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="面试分析">
+    <meta name="description" content="从事前端工作也一年有余，现在来总结以下之前面试过程中遇到的一些问题，做一下总结。  面试官经过之前几次的面试，我发现面试官有以下几种人： 初创公司的经理或者hr由于刚刚成立，团队建制不全，导致没有前端负责人或者缺少前端成员，处于初创期； 他们的面试经常是从一些宏观方向对你进行了解，涉及到技术方面的话就有点力不从心，无从下手。 所需要的也是至少应届生或者一年以内工作经验的求职者。 针对这种面试，你">
+<meta name="keywords" content="面试分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试分析">
+<meta property="og:url" content="https://guanqi.xyz/note/front-end-interview-analysis/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="从事前端工作也一年有余，现在来总结以下之前面试过程中遇到的一些问题，做一下总结。  面试官经过之前几次的面试，我发现面试官有以下几种人： 初创公司的经理或者hr由于刚刚成立，团队建制不全，导致没有前端负责人或者缺少前端成员，处于初创期； 他们的面试经常是从一些宏观方向对你进行了解，涉及到技术方面的话就有点力不从心，无从下手。 所需要的也是至少应届生或者一年以内工作经验的求职者。 针对这种面试，你">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-26T08:35:36.010Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试分析">
+<meta name="twitter:description" content="从事前端工作也一年有余，现在来总结以下之前面试过程中遇到的一些问题，做一下总结。  面试官经过之前几次的面试，我发现面试官有以下几种人： 初创公司的经理或者hr由于刚刚成立，团队建制不全，导致没有前端负责人或者缺少前端成员，处于初创期； 他们的面试经常是从一些宏观方向对你进行了解，涉及到技术方面的话就有点力不从心，无从下手。 所需要的也是至少应届生或者一年以内工作经验的求职者。 针对这种面试，你">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前端面试分析</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前端面试分析</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-26T08:35:21.000Z" itemprop="datePublished" class="page-time">
+  2019-03-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端杂谈/">前端杂谈</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#面试官"><span class="post-toc-number">1.</span> <span class="post-toc-text">面试官</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初创公司的经理或者hr"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">初创公司的经理或者hr</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中等公司的经理或者hr或者技术人员"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">中等公司的经理或者hr或者技术人员</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#大型或者行业巨头公司的经理或者hr和技术人员"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">大型或者行业巨头公司的经理或者hr和技术人员</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简历"><span class="post-toc-number">2.</span> <span class="post-toc-text">简历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#面试问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">面试问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-front-end-interview-analysis" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前端面试分析</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-26 16:35:21" datetime="2019-03-26T08:35:21.000Z" itemprop="datePublished">2019-03-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端杂谈/">前端杂谈</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>从事前端工作也一年有余，现在来总结以下之前面试过程中遇到的一些问题，做一下总结。</p>
+</blockquote>
+<h2 id="面试官"><a href="#面试官" class="headerlink" title="面试官"></a>面试官</h2><p>经过之前几次的面试，我发现面试官有以下几种人：</p>
+<h3 id="初创公司的经理或者hr"><a href="#初创公司的经理或者hr" class="headerlink" title="初创公司的经理或者hr"></a>初创公司的经理或者hr</h3><p>由于刚刚成立，团队建制不全，导致没有前端负责人或者缺少前端成员，处于初创期；</p>
+<p>他们的面试经常是从一些宏观方向对你进行了解，涉及到技术方面的话就有点力不从心，无从下手。</p>
+<p>所需要的也是至少应届生或者一年以内工作经验的求职者。</p>
+<p>针对这种面试，你要准备好心理准备，职业规划，还有项目案例，他们虽然不懂，但是还会看的，这个至少是不会漏掉的。</p>
+<p>但是你也要做好经常加班的准备。</p>
+<h3 id="中等公司的经理或者hr或者技术人员"><a href="#中等公司的经理或者hr或者技术人员" class="headerlink" title="中等公司的经理或者hr或者技术人员"></a>中等公司的经理或者hr或者技术人员</h3><p>这种类型的公司摆脱了初创期的烦恼，资金到位不短缺，人员也比较配备齐全，而且有了一定的业务线和稳定的客户，处于发展期；</p>
+<p>他们的面试官就需要一些有至少1-3年工作经验的求职者。</p>
+<p>针对这种面试，你也要做好心理准备，要有过硬的技术实力，技术至少扎实可靠，经得起历练。</p>
+<p>不过也要面临加班调休的情况。</p>
+<h3 id="大型或者行业巨头公司的经理或者hr和技术人员"><a href="#大型或者行业巨头公司的经理或者hr和技术人员" class="headerlink" title="大型或者行业巨头公司的经理或者hr和技术人员"></a>大型或者行业巨头公司的经理或者hr和技术人员</h3><p>这种类型的公司基本上已经步入了成熟健康成长的时代，摆脱了发展期的困境，有一定的规模，有一批非常稳定的重要主要客户，有一条或者几条盈利可观的业务线，处于成熟期；</p>
+<p>他们的面试流程通常很复杂，繁琐，有好几道关口，就是确保不会因为一个人的认知偏差就以偏概全的招聘一个人，包括一面、二面、三面甚至四面。从你个人的情况到你的技术情况以及你的项目经历情况还有你的技术输入和输出等各种方面。</p>
+<p>他们的面试官就需要一些工作经验在3-5年甚至更高的求职者。</p>
+<p>针对这种面试，你就要站在一定的高度，比如架构师或者高级或者专家水平才可以。</p>
+<p>以上就是我对这个面试官群体的一些愚见。</p>
+<h2 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h2><p>简历是公司了解求职者的第一步，如果一个简历写的很好，很有吸引力，那么面试官会多看两眼，一般情况下，简历是3秒一个，筛选非常快。</p>
+<p>那么如何写出高水平的简历就是求职者的一个重要任务。</p>
+<p>这里说的简历就是针对技术求职者而言，因为这个和其他类型的工种还不太一样，属于一种特殊的群体。</p>
+<p>以下就是我总结的几点，技术简历应该如何写好的方法：</p>
+<ul>
+<li>不要有封面、封皮、封套等罗里吧嗦的东西，这会让hr很头疼；</li>
+<li>不要有介绍信，除非你是名校毕业这个公司的师哥师姐很多，否则hr看都不会看；</li>
+<li>不要过于介绍你的个人信息情况，重要的就是姓名、联系电话/邮件、住址，最好有个人主页；</li>
+<li>不要放自己的照片，除非你长得很帅或者很漂亮，技术程序员不会像挑空姐那样严格的；</li>
+<li>重点介绍自己的技术技能、项目经验情况，不要过多介绍自己的教育背景/课程啥的；</li>
+</ul>
+<p>还有一点就是简历一定要<strong>真实、可靠、不要造假</strong>，这个是最重要的，不要为了求个职，就做人的道德和原则都沦陷了。</p>
+<h2 id="面试问题"><a href="#面试问题" class="headerlink" title="面试问题"></a>面试问题</h2><p>get到重点了，面试官喜欢问的的问题。这个因人而异，下面是几种情况：</p>
+<ul>
+<li>你的个人问题，比如说生活习惯、家庭家乡还有学习情况；</li>
+<li>你的职业技能，比如技术掌握情况，一些技术要点；</li>
+<li>你的项目经验，比如做过什么项目，用的什么技术栈，遇到过什么问题，怎么解决的；</li>
+</ul>
+<p>当被问到这些问题的时候，你要做好准备，想好应对之策。</p>
+<p>还有的会先进行笔试，做几道题，然后针对你做的题进行逐一提问。</p>
+<p>我想说的是面对这些问题，你面试前就应该都做好准备工作，想好怎么回答。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>以上就是我之前面试过程中遇到的问题，并且在面试完后进行的经验总结，希望可以帮助到你，希望你早日找到喜欢、合适的工作。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-26T08:35:36.010Z" itemprop="dateUpdated">2019-03-26 16:35:36</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/front-end-interview-analysis/" target="_blank" rel="external">https://guanqi.xyz/note/front-end-interview-analysis/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试分析/">面试分析</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/front-end-interview-analysis/&title=《前端面试分析》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/front-end-interview-analysis/&title=《前端面试分析》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/front-end-interview-analysis/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端面试分析》 — 猿七笔记&url=https://guanqi.xyz/note/front-end-interview-analysis/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/front-end-interview-analysis/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/usage-of-ssh-in-centos7-system/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CentOS7系统中ssh的用法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/linux-system-exploration/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">linux系统探索</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/front-end-interview-analysis/&title=《前端面试分析》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/front-end-interview-analysis/&title=《前端面试分析》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/front-end-interview-analysis/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端面试分析》 — 猿七笔记&url=https://guanqi.xyz/note/front-end-interview-analysis/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/front-end-interview-analysis/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3a0Y6DMAxEUf7/p+nrSrRhbpx2RXzztFpRyqFSFHt8HPE6/6zr/6/XXK+/fnZ8h+MbS4YMGY9lnMP16Rr66OMXQe//hipDhowGjGQrHH9qfJ/xNjrGj6+XIUOGjOShk+1yDJMhQ4aMtYy8QB2/goQtQ4YMGbSITfpdtPj8h1pchgwZD2TkXfff//2VfEOGDBmPYpxwVY6S9LAInkqGDBlbM+ixj4YBlaAUP48MGTI2ZdBwcVVgOW6u4bhUhgwZDRh5bJk092kDjgaiHzdcGTJkNGCsaorRxn0lwpQhQ0YHRiUYoKNdeQGcf0qGDBkdGHTEYVVRSkvom19AhgwZDRj1Ix2dhaCb8k2RLEOGjJaMZOQ0OXXS0Y2ccVOLy5AhowGDNsVorZwc+JJxjQUPJ0OGjIcwaJRIG/pzh8jSzIgMGTK2Y1QOfHmLn26jACNDhoytGXmhSCNJ2sijG/RNyiFDhoxNGZVDG40/k1eTFMkyZMjoxqBfSaPNCiYa/pAhQ0Ybxlzjfu4R6SjGzauRIUNGA0a+gc4VpZX4QYYMGTLogEUl1MxjADyiIUOGjE0ZJ1yT4SJ8r/iwKEOGjK0Z+aoEAMkRMI9CaaQhQ4aMPRh0k6001+jdQIEtQ4aMBoy5L5s7CFaOegtqcRkyZDRg0I0VD3jFeDzlIUOGjGaMubhxrp6OhsNkyJDRgJEUsUl5mQeZSeEKXooMGTK2ZpRKx7gcnYs5aVQgQ4aM7RgvWTPk89IZ2L0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

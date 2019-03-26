@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>CentOS7系统中mysql8安装配置 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="mysql">
+    <meta name="description" content="mysql是世界上最流行的关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司所有。今天我将记录一下如何在Linux centos7系统上安装和配置MySQL。  目录 环境准备 安装包 基本设置 语法操作  环境准备 linux centos7操作系统 ssh软件 MySQL官网  安装包第一步：进入下载文件夹，就是你要存放安装包的文件夹。 1cd /home/dow">
+<meta name="keywords" content="mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7系统中mysql8安装配置">
+<meta property="og:url" content="https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="mysql是世界上最流行的关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司所有。今天我将记录一下如何在Linux centos7系统上安装和配置MySQL。  目录 环境准备 安装包 基本设置 语法操作  环境准备 linux centos7操作系统 ssh软件 MySQL官网  安装包第一步：进入下载文件夹，就是你要存放安装包的文件夹。 1cd /home/dow">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-26T08:33:31.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS7系统中mysql8安装配置">
+<meta name="twitter:description" content="mysql是世界上最流行的关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司所有。今天我将记录一下如何在Linux centos7系统上安装和配置MySQL。  目录 环境准备 安装包 基本设置 语法操作  环境准备 linux centos7操作系统 ssh软件 MySQL官网  安装包第一步：进入下载文件夹，就是你要存放安装包的文件夹。 1cd /home/dow">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CentOS7系统中mysql8安装配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CentOS7系统中mysql8安装配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-26T08:36:21.000Z" itemprop="datePublished" class="page-time">
+  2019-03-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/mysql/">mysql</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境准备"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本设置"><span class="post-toc-number">4.</span> <span class="post-toc-text">基本设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法操作"><span class="post-toc-number">5.</span> <span class="post-toc-text">语法操作</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-mysql8-installation-configuration-in-centos7-system" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CentOS7系统中mysql8安装配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-26 16:36:21" datetime="2019-03-26T08:36:21.000Z" itemprop="datePublished">2019-03-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/mysql/">mysql</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>mysql是世界上最流行的关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司所有。今天我将记录一下如何在Linux centos7系统上安装和配置MySQL。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>环境准备</li>
+<li>安装包</li>
+<li>基本设置</li>
+<li>语法操作</li>
+</ul>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>linux centos7操作系统</li>
+<li>ssh软件</li>
+<li><a href="https://www.mysql.com/" target="_blank" rel="noopener">MySQL官网</a></li>
+</ul>
+<h2 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h2><p><strong>第一步</strong>：进入下载文件夹，就是你要存放安装包的文件夹。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/downloads</span><br></pre></td></tr></table></figure>
+<p><strong>第二步</strong>：下载安装包，并且用rpm添加MySQL程序包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm</span><br><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p><strong>第三步</strong>：安装包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y  mysql-community-server</span><br></pre></td></tr></table></figure>
+<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><ul>
+<li>启动并开机自启动MySQL程序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br><span class="line">systemctl enable mysqld</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看版本信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -V</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改密码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//查看临时密码</span><br><span class="line">grep &quot;A temporary password&quot; /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line">//进入mysql</span><br><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line">//修改密码</span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;MYsql123.&apos;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加防火墙端口</li>
+</ul>
+<p>MySQL默认的端口是3306，所有在防火墙中添加一个永久的端口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=3306/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h2 id="语法操作"><a href="#语法操作" class="headerlink" title="语法操作"></a>语法操作</h2><p>MySQL的一些语法操作基本上是增删查改不离手，分为数据库操作、数据表操作、用户操作、权限管理等，这次介绍一些查用的操作命令。</p>
+<p>想要获取更多内容，请访问MySQL的<a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank" rel="noopener">官方文档</a>。</p>
+<ul>
+<li>数据库操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//添加数据库</span><br><span class="line">mysql&gt; CREATE DATABASE mydb;</span><br><span class="line">//查看数据库</span><br><span class="line">mysql&gt; SHOW DATABASES;</span><br><span class="line">//使用数据库</span><br><span class="line">mysql&gt; USE &lt;database name&gt;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数据表操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//查看数据表</span><br><span class="line">mysql&gt; SHOW TABLES;</span><br><span class="line">//创建数据表</span><br><span class="line">mysql&gt; CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),</span><br><span class="line">       species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用户操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//新建本地用户</span><br><span class="line">mysql&gt; CREATE USER &apos;test&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line"></span><br><span class="line">//新建远程用户</span><br><span class="line">mysql&gt; CREATE USER &apos;test&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line"></span><br><span class="line">//赋予指定账户指定数据库远程访问权限</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON mydb.* TO &apos;test&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">//赋予指定账户对所有数据库远程访问权限</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;test&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">//赋予指定账户对所有数据库本地访问权限</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;test&apos;@&apos;localhost&apos;;</span><br><span class="line"></span><br><span class="line">//刷新权限</span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>权限管理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//查看权限</span><br><span class="line">SHOW GRANTS FOR &apos;test&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">//赋予权限</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;test&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">//收回权限</span><br><span class="line">REVOKE ALL PRIVILEGES ON *.* FROM &apos;test&apos;@&apos;%&apos;;</span><br><span class="line"></span><br><span class="line">//刷新权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line">//删除用户</span><br><span class="line">DROP USER &apos;test&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+<p>注：以上部分内容转载引用自<a href="https://ken.io/note/centos-mysql8-setup" target="_blank" rel="noopener">【ken.io】</a>。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-03-26T08:33:31.461Z" itemprop="dateUpdated">2019-03-26 16:33:31</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/mysql8-installation-configuration-in-centos7-system/" target="_blank" rel="external">https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/&title=《CentOS7系统中mysql8安装配置》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/&title=《CentOS7系统中mysql8安装配置》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7系统中mysql8安装配置》 — 猿七笔记&url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/centos7-system-configuration-nginx-server/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CentOS7系统配置nginx服务器</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/usage-of-ssh-in-centos7-system/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CentOS7系统中ssh的用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/&title=《CentOS7系统中mysql8安装配置》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/&title=《CentOS7系统中mysql8安装配置》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7系统中mysql8安装配置》 — 猿七笔记&url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/mysql8-installation-configuration-in-centos7-system/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3aQW7jQAwEwPz/01lgTwF2pXSTGtuH0slwFGVKAYaDJr++4uv77/Xz889vrr6//+bfJyRP+zpx4eHh4Y2WfnVd8e7Z99/f82Z/6/KZeHh4eMd4bTG4KgyzJeaAfM14eHh4n8BLDr7719G+Mjw8PLxP5uWxQv7TBI+Hh4f3mbzkCDsrD8+GwgezFjw8PLwuO60bYO/9fLy/h4eHhzfqqucNradGCvLnRKvFw8PDO8DLg4B8ES0sChRGDTk8PDy8E7zNCFQetuYhb15+os94eHh4L+e1x+j8ZW3+blGK8PDw8I7x2uPvrJwkIUV+yI6eiYeHh3eM127rs9GBNpKYDSXUMxF4eHh4JW+2+dY5cRxqbF7HL2A8PDy8h3jJiEDbKsuLzSzMLdaJh4eHd4A3OyjPGmAtNQmRo3Xi4eHhHePNJrbyLXsW1+YlJDpY4+Hh4T3Ea4eZZiMCm8bY5h+Ah4eH9yxv1oiaxQfJnbMWV3GYxsPDw3uI127r+/Di2QGFy2KGh4eHd5iXb9P1wFOwlM3g1+Vv4eHh4R3gzcahNsVjxl41yfDw8PBezssHBWb4NiZOSHh4eHjneHlwMFt0XnJmB+hf7sfDw8M7wEsw7YH4qVGAvCCtJsvw8PDwSt53ebXH6NnBuh4RaOcd8PDw8Na8tv3fjhG0pSJvj9VhBB4eHt5De3sbreYt/7YAJNFtO/SAh4eH9ywvH3WatfbzBlveWktWhYeHh/d6Xs6ejUnNoof69eHh4eEd4G0S0Ty82JSThDEk4eHh4S14bTDaNsOS428yRpDHInh4eHiv4eUber7R582w/eDX5Z14eHh4b+VtTuiztlZ7TF8VBjw8PLw38e7vnDXb2rX9J6vGw8PDO8Brx6fy6KEeMI3bXdFK8PDw8A7w2gNxPlKwCSk2yFV/Dw8PD+/u+gNZ9ivwvgc3VQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
