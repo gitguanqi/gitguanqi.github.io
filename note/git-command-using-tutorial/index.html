@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="git,git命令">
-    <meta name="description" content="这是一个学习git-bash以及命令的教程！  常用命令git add 含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m ““含义：这是将暂存区的文件提交到当前分支(master)。 例如： git commit -m &amp;quot;add files&amp;quot; git pull origin 含义： 这是">
+    <meta name="description" content="导语：这是一个学习git-bash以及命令的教程!  目录 常用命令 分支 标签 其他  常用命令git add 含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m ““含义：这是将暂存区的文件提交到当前分支(master)。 例如： git commit -m &amp;quot;add files&amp;quot; g">
 <meta name="keywords" content="git,git命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令使用教程">
 <meta property="og:url" content="https://guanqi.xyz/note/git-command-using-tutorial/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="这是一个学习git-bash以及命令的教程！  常用命令git add 含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m ““含义：这是将暂存区的文件提交到当前分支(master)。 例如： git commit -m &amp;quot;add files&amp;quot; git pull origin 含义： 这是">
+<meta property="og:description" content="导语：这是一个学习git-bash以及命令的教程!  目录 常用命令 分支 标签 其他  常用命令git add 含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m ““含义：这是将暂存区的文件提交到当前分支(master)。 例如： git commit -m &amp;quot;add files&amp;quot; g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T12:42:27.110Z">
+<meta property="og:updated_time" content="2019-03-26T14:03:32.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令使用教程">
-<meta name="twitter:description" content="这是一个学习git-bash以及命令的教程！  常用命令git add 含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m ““含义：这是将暂存区的文件提交到当前分支(master)。 例如： git commit -m &amp;quot;add files&amp;quot; git pull origin 含义： 这是">
+<meta name="twitter:description" content="导语：这是一个学习git-bash以及命令的教程!  目录 常用命令 分支 标签 其他  常用命令git add 含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m ““含义：这是将暂存区的文件提交到当前分支(master)。 例如： git commit -m &amp;quot;add files&amp;quot; g">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-add"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">git add </span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-commit-m-““"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">git commit -m ““</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-pull-origin"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">git pull origin </span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-push-origin"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">git push origin </span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支（master）"><span class="post-toc-number">2.</span> <span class="post-toc-text">分支（master）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建分支"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">创建分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换到指定分支"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">切换到指定分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建并且切换到指定分支"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">创建并且切换到指定分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除分支"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">删除分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制删除分支"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">强制删除分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合并分支"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">合并分支</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标签"><span class="post-toc-number">3.</span> <span class="post-toc-text">标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建标签"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">创建标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看所有标签"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">查看所有标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看标签信息"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">查看标签信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建带有说明的标签"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">创建带有说明的标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除标签"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">删除标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推送标签到远程仓库"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">推送标签到远程仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程仓库标签"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">删除远程仓库标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#忽略其他文件"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">忽略其他文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-add"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">git add </span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-commit-m-““"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">git commit -m ““</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-pull-origin"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">git pull origin </span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-push-origin"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">git push origin </span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支"><span class="post-toc-number">3.</span> <span class="post-toc-text">分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建分支"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">创建分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换到指定分支"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">切换到指定分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建并且切换到指定分支"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">创建并且切换到指定分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除分支"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">删除分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制删除分支"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">强制删除分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合并分支"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">合并分支</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标签"><span class="post-toc-number">4.</span> <span class="post-toc-text">标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建标签"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">创建标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看所有标签"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">查看所有标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看标签信息"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">查看标签信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建带有说明的标签"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">创建带有说明的标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除标签"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">删除标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推送标签到远程仓库"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">推送标签到远程仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程仓库标签"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">删除远程仓库标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#忽略其他文件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">忽略其他文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后"><span class="post-toc-number">6.</span> <span class="post-toc-text">最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -186,8 +186,14 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>这是一个学习git-bash以及命令的教程！</p>
+<p><strong>导语</strong>：这是一个学习git-bash以及命令的教程!</p>
 </blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>常用命令</li>
+<li>分支</li>
+<li>标签</li>
+<li>其他</li>
+</ul>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="git-add"><a href="#git-add" class="headerlink" title="git add "></a>git add <filename></filename></h3><p><strong>含义</strong>：这是将文件从本地文件夹提交到git storage (暂存区)。</p>
 <p>例如：<code>git add test.txt</code></p>
 <h3 id="git-commit-m-““"><a href="#git-commit-m-““" class="headerlink" title="git commit -m ““"></a>git commit -m “<message>“</message></h3><p><strong>含义</strong>：这是将暂存区的文件提交到当前分支(master)。</p>
@@ -196,7 +202,7 @@
 <p>例如：<code>git pull origin master</code></p>
 <h3 id="git-push-origin"><a href="#git-push-origin" class="headerlink" title="git push origin "></a>git push origin <branch name=""></branch></h3><p><strong>含义</strong>： 这是将本地分支的git文件推送到远程仓库。</p>
 <p>例如：<code>git push origin master</code></p>
-<h2 id="分支（master）"><a href="#分支（master）" class="headerlink" title="分支（master）"></a>分支（master）</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p><code>git branch &lt;分支名字&gt;</code></p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p><code>git branch &lt;分支名字&gt;</code></p>
 <p>例如：<code>git branch dev</code></p>
 <h3 id="切换到指定分支"><a href="#切换到指定分支" class="headerlink" title="切换到指定分支"></a>切换到指定分支</h3><p><code>git checkout dev</code></p>
 <h3 id="创建并且切换到指定分支"><a href="#创建并且切换到指定分支" class="headerlink" title="创建并且切换到指定分支"></a>创建并且切换到指定分支</h3><p><code>git branch -b &lt;分支名字&gt;</code></p>
@@ -234,7 +240,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T12:42:27.110Z" itemprop="dateUpdated">2019-03-26 20:42:27</time>
+    Last updated: <time datetime="2019-03-26T14:03:32.071Z" itemprop="dateUpdated">2019-03-26 22:03:32</time>
 </span><br>
 
 
@@ -318,9 +324,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/note/summary-of-yahoo-military-regulations/" id="post-prev" class="post-nav-link">
+      <a href="/note/github-configuration-tutorial/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">雅虎军规总结</h4>
+        <h4 class="title">github配置教程</h4>
       </a>
     </div>
   
@@ -403,7 +409,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="nodejs,node命令">
-    <meta name="description" content="包管理器 现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。   npm bower  npm包基本命令 node package manager ,Node 的包管理器  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;lt;包名&amp;gt; 出现e">
+    <meta name="description" content="导语：现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。&amp;gt; node package manager ,Node 的包管理器。  目录 安装node bower安装命令 init 初始化  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;l">
 <meta name="keywords" content="nodejs,node命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node常用命令">
 <meta property="og:url" content="https://guanqi.xyz/note/node-common-command/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="包管理器 现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。   npm bower  npm包基本命令 node package manager ,Node 的包管理器  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;lt;包名&amp;gt; 出现e">
+<meta property="og:description" content="导语：现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。&amp;gt; node package manager ,Node 的包管理器。  目录 安装node bower安装命令 init 初始化  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T12:34:41.864Z">
+<meta property="og:updated_time" content="2019-03-26T14:09:10.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node常用命令">
-<meta name="twitter:description" content="包管理器 现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。   npm bower  npm包基本命令 node package manager ,Node 的包管理器  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;lt;包名&amp;gt; 出现e">
+<meta name="twitter:description" content="导语：现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。&amp;gt; node package manager ,Node 的包管理器。  目录 安装node bower安装命令 init 初始化  安装node验证是否安装node12$node -v$npm -v 安装包安装到当前目录 1$ npm install &amp;l">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#包管理器"><span class="post-toc-number">1.</span> <span class="post-toc-text">包管理器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm包基本命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">npm包基本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装node</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装指定版本"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">安装指定版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的版本信息"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">查看包的版本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的包列表"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">查看安装的包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新包"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">更新包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bower安装命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">bower安装命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的信息"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">查看包的信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包列表"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包-1"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#init-初始化"><span class="post-toc-number">4.</span> <span class="post-toc-text">init 初始化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装并添加依赖"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装并添加依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">全局安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装node</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装指定版本"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装指定版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的版本信息"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">查看包的版本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的包列表"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">查看安装的包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新包"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">更新包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bower安装命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">bower安装命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的信息"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">查看包的信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包列表"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包-1"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#init-初始化"><span class="post-toc-number">4.</span> <span class="post-toc-text">init 初始化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装并添加依赖"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装并添加依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">全局安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -185,17 +185,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="包管理器"><a href="#包管理器" class="headerlink" title="包管理器"></a>包管理器</h2><blockquote>
-<p>现今的包管理器有很多，包括<code>npm</code>,<code>yard</code>,<code>bower</code>,今天介绍两个包管理器，分别是<code>npm</code>和<code>bower</code>,本篇采用<code>git</code>工具安装。</p>
+            <blockquote>
+<p><strong>导语</strong>：现今的包管理器有很多，包括<code>npm</code>,<code>yard</code>,<code>bower</code>,今天介绍两个包管理器，分别是<code>npm</code>和<code>bower</code>,本篇采用<code>git</code>工具安装。&gt; node package manager ,Node 的包管理器。</p>
 </blockquote>
-<ul>
-<li>npm</li>
-<li>bower</li>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>安装node</li>
+<li>bower安装命令</li>
+<li>init 初始化</li>
 </ul>
-<h2 id="npm包基本命令"><a href="#npm包基本命令" class="headerlink" title="npm包基本命令"></a>npm包基本命令</h2><blockquote>
-<p>node package manager ,Node 的包管理器</p>
-</blockquote>
-<h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>验证是否安装node<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$node -v</span><br><span class="line">$npm -v</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>验证是否安装node<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$node -v</span><br><span class="line">$npm -v</span><br></pre></td></tr></table></figure></p>
 <h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p>安装到当前目录</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;包名&gt;</span><br></pre></td></tr></table></figure>
 <p>出现error network 重新安装</p>
@@ -227,7 +225,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T12:34:41.864Z" itemprop="dateUpdated">2019-03-26 20:34:41</time>
+    Last updated: <time datetime="2019-03-26T14:09:10.717Z" itemprop="dateUpdated">2019-03-26 22:09:10</time>
 </span><br>
 
 
@@ -396,7 +394,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

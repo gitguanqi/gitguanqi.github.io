@@ -21,13 +21,13 @@
     
     
     <meta name="keywords" content="雅虎军规,性能优化">
-    <meta name="description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
+    <meta name="description" content="导语：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
 <meta name="keywords" content="雅虎军规,性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="雅虎军规总结">
 <meta property="og:url" content="https://guanqi.xyz/note/summary-of-yahoo-military-regulations/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
+<meta property="og:description" content="导语：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://guanqi.xyz/img/article/yhgz000.jpg">
 <meta property="og:image" content="https://guanqi.xyz/img/article/yhgz001.png">
@@ -52,10 +52,10 @@
 <meta property="og:image" content="https://guanqi.xyz/img/article/yhgz020.png">
 <meta property="og:image" content="https://guanqi.xyz/img/article/yhgz021.png">
 <meta property="og:image" content="https://guanqi.xyz/img/article/yhgz022.png">
-<meta property="og:updated_time" content="2019-03-26T07:23:07.266Z">
+<meta property="og:updated_time" content="2019-03-26T14:01:32.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雅虎军规总结">
-<meta name="twitter:description" content="前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
+<meta name="twitter:description" content="导语：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。">
 <meta name="twitter:image" content="https://guanqi.xyz/img/article/yhgz000.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
@@ -143,7 +143,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -184,7 +184,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-尽可能的减少http请求数"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.尽可能的减少http请求数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-使用CDN（内容分发网络）"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.使用CDN（内容分发网络）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-添加Expire-Cache-Control头"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.添加Expire/Cache-Control头</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-启用Gzip压缩"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.启用Gzip压缩</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-将css放在页面最上面"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.将css放在页面最上面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-将script放在页面最下面"><span class="post-toc-number">6.</span> <span class="post-toc-text">6.将script放在页面最下面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-避免在CSS中使用Expressions"><span class="post-toc-number">7.</span> <span class="post-toc-text">7.避免在CSS中使用Expressions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-把js和css文件放到外部文件中"><span class="post-toc-number">8.</span> <span class="post-toc-text">8.把js和css文件放到外部文件中</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-减少DNS查询"><span class="post-toc-number">9.</span> <span class="post-toc-text">9.减少DNS查询</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-压缩JavaScript和Css"><span class="post-toc-number">10.</span> <span class="post-toc-text">10.压缩JavaScript和Css</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#11-避免重定向"><span class="post-toc-number">11.</span> <span class="post-toc-text">11.避免重定向</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#12-移除重复的脚步"><span class="post-toc-number">12.</span> <span class="post-toc-text">12.移除重复的脚步</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#13-配置实体标签（ETag）"><span class="post-toc-number">13.</span> <span class="post-toc-text">13.配置实体标签（ETag）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#14-使用Ajax缓存"><span class="post-toc-number">14.</span> <span class="post-toc-text">14.使用Ajax缓存</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">15.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#尽可能的减少http请求数"><span class="post-toc-number">2.</span> <span class="post-toc-text">尽可能的减少http请求数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用CDN（内容分发网络）"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用CDN（内容分发网络）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#添加Expire-Cache-Control头"><span class="post-toc-number">4.</span> <span class="post-toc-text">添加Expire/Cache-Control头</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启用Gzip压缩"><span class="post-toc-number">5.</span> <span class="post-toc-text">启用Gzip压缩</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将css放在页面最上面"><span class="post-toc-number">6.</span> <span class="post-toc-text">将css放在页面最上面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将script放在页面最下面"><span class="post-toc-number">7.</span> <span class="post-toc-text">将script放在页面最下面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#避免在CSS中使用Expressions"><span class="post-toc-number">8.</span> <span class="post-toc-text">避免在CSS中使用Expressions</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#把js和css文件放到外部文件中"><span class="post-toc-number">9.</span> <span class="post-toc-text">把js和css文件放到外部文件中</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#减少DNS查询"><span class="post-toc-number">10.</span> <span class="post-toc-text">减少DNS查询</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#压缩JavaScript和Css"><span class="post-toc-number">11.</span> <span class="post-toc-text">压缩JavaScript和Css</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#避免重定向"><span class="post-toc-number">12.</span> <span class="post-toc-text">避免重定向</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#移除重复的脚步"><span class="post-toc-number">13.</span> <span class="post-toc-text">移除重复的脚步</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置实体标签（ETag）"><span class="post-toc-number">14.</span> <span class="post-toc-text">配置实体标签（ETag）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用Ajax缓存"><span class="post-toc-number">15.</span> <span class="post-toc-text">使用Ajax缓存</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">16.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
         </nav>
     </aside>
 
@@ -210,7 +210,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>前言：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。</p>
+<p><strong>导语</strong>：雅虎军规是雅虎的开发人员在总结了网站的不合理部分后，提出的优化网站性能提高的一套方法规则，非常适合初学者绕过这些坎。这篇博文，是我在网络上搜集的一些关于雅虎军规的内容，图片归原作者所有，总结一起，供大家参考使用，希望对你们以后的开发过程中有所帮助。</p>
 </blockquote>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -219,7 +219,23 @@
                 </div>
                 <div class="image-caption">http</div>
             </figure>
-<h1 id="1-尽可能的减少http请求数"><a href="#1-尽可能的减少http请求数" class="headerlink" title="1.尽可能的减少http请求数"></a>1.尽可能的减少http请求数</h1><p><strong>HTTP</strong>：从客户端到服务器端的请求消息。包括消息首行中，对资源的请求方法资源的标识符以及使用的协议。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>尽可能的减少http请求数</li>
+<li>使用CDN（内容分发网络）</li>
+<li>添加Expire/Cache-Control头</li>
+<li>启用Gzip压缩</li>
+<li>将css放在页面最上面</li>
+<li>将script放在页面最下面</li>
+<li>避免在CSS中使用Expressions</li>
+<li>把js和css文件放到外部文件中</li>
+<li>减少DNS查询</li>
+<li>压缩JavaScript和Css</li>
+<li>避免重定向</li>
+<li>移除重复的脚步</li>
+<li>配置实体标签（ETag）</li>
+<li>使用Ajax缓存</li>
+</ul>
+<h1 id="尽可能的减少http请求数"><a href="#尽可能的减少http请求数" class="headerlink" title="尽可能的减少http请求数"></a>尽可能的减少http请求数</h1><p><strong>HTTP</strong>：从客户端到服务器端的请求消息。包括消息首行中，对资源的请求方法资源的标识符以及使用的协议。</p>
 <p><strong>请求过程</strong>：当你打开网页的时候，你所看到的文字，图片，多媒体，这一切内容，都是你从服务器获取的，每一个内容的获取，就是一个http请求。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -228,7 +244,7 @@
                 </div>
                 <div class="image-caption">http</div>
             </figure>
-<h1 id="2-使用CDN（内容分发网络）"><a href="#2-使用CDN（内容分发网络）" class="headerlink" title="2.使用CDN（内容分发网络）"></a>2.使用CDN（内容分发网络）</h1><p><strong>CDN</strong>：内容分发网络，意思就是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。</p>
+<h1 id="使用CDN（内容分发网络）"><a href="#使用CDN（内容分发网络）" class="headerlink" title="使用CDN（内容分发网络）"></a>使用CDN（内容分发网络）</h1><p><strong>CDN</strong>：内容分发网络，意思就是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -244,9 +260,9 @@
                 </div>
                 <div class="image-caption">CDN</div>
             </figure>
-<h1 id="3-添加Expire-Cache-Control头"><a href="#3-添加Expire-Cache-Control头" class="headerlink" title="3.添加Expire/Cache-Control头"></a>3.添加Expire/Cache-Control头</h1><p><strong>Expire头</strong>：内容是一个时间值，值就是资源在本地的过期时间，存在本地；在本地缓存阶段，找到一个对应的资源值，当前时间还没有超过资源的过期时间，就直接使用这个资源，不会发送http请求。</p>
+<h1 id="添加Expire-Cache-Control头"><a href="#添加Expire-Cache-Control头" class="headerlink" title="添加Expire/Cache-Control头"></a>添加Expire/Cache-Control头</h1><p><strong>Expire头</strong>：内容是一个时间值，值就是资源在本地的过期时间，存在本地；在本地缓存阶段，找到一个对应的资源值，当前时间还没有超过资源的过期时间，就直接使用这个资源，不会发送http请求。</p>
 <p><strong>Cache-Control头C</strong>：是http协议中常用的头部之一，负责页面的缓存机制，如果该头部指示缓存，缓存的内容也会存在本地，操作流程和expire相似，但也有不同的地方，Cache-Control有更多的选项，而且有更多的处理方式。</p>
-<h1 id="4-启用Gzip压缩"><a href="#4-启用Gzip压缩" class="headerlink" title="4.启用Gzip压缩"></a>4.启用Gzip压缩</h1><p>看图：<br><figure class="image-bubble">
+<h1 id="启用Gzip压缩"><a href="#启用Gzip压缩" class="headerlink" title="启用Gzip压缩"></a>启用Gzip压缩</h1><p>看图：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="../../img/article/yhgz004.png" alt="Gzip压缩" title="">
@@ -260,7 +276,7 @@
                 </div>
                 <div class="image-caption">Gzip压缩</div>
             </figure></p>
-<h1 id="5-将css放在页面最上面"><a href="#5-将css放在页面最上面" class="headerlink" title="5.将css放在页面最上面"></a>5.将css放在页面最上面</h1><p><strong>CSS</strong>：CSS，就是层叠样式表。</p>
+<h1 id="将css放在页面最上面"><a href="#将css放在页面最上面" class="headerlink" title="将css放在页面最上面"></a>将css放在页面最上面</h1><p><strong>CSS</strong>：CSS，就是层叠样式表。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -283,7 +299,7 @@
                 </div>
                 <div class="image-caption">CSS03</div>
             </figure>
-<h1 id="6-将script放在页面最下面"><a href="#6-将script放在页面最下面" class="headerlink" title="6.将script放在页面最下面"></a>6.将script放在页面最下面</h1><p><strong>页面DOM加载顺序</strong>：<br><figure class="image-bubble">
+<h1 id="将script放在页面最下面"><a href="#将script放在页面最下面" class="headerlink" title="将script放在页面最下面"></a>将script放在页面最下面</h1><p><strong>页面DOM加载顺序</strong>：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="../../img/article/yhgz009.png" alt="js01" title="">
@@ -291,7 +307,7 @@
                 <div class="image-caption">js01</div>
             </figure></p>
 <p>为了顺利加载各种资源，把js放在页面最下面，可以正常运行脚本，也为获取DOM元素更流畅。</p>
-<h1 id="7-避免在CSS中使用Expressions"><a href="#7-避免在CSS中使用Expressions" class="headerlink" title="7.避免在CSS中使用Expressions"></a>7.避免在CSS中使用Expressions</h1><p><strong>定义</strong>：</p>
+<h1 id="避免在CSS中使用Expressions"><a href="#避免在CSS中使用Expressions" class="headerlink" title="避免在CSS中使用Expressions"></a>避免在CSS中使用Expressions</h1><p><strong>定义</strong>：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -306,7 +322,7 @@
                 </div>
                 <div class="image-caption">CSS—Expressions</div>
             </figure></p>
-<h1 id="8-把js和css文件放到外部文件中"><a href="#8-把js和css文件放到外部文件中" class="headerlink" title="8.把js和css文件放到外部文件中"></a>8.把js和css文件放到外部文件中</h1><p><strong>情况1</strong>：写在页面内，如果只是的单独一个页面使用js和css文件，可以写在页面里面；还有就是不经常访问的页面；并且脚本和样式很少。<br>这样写可以：</p>
+<h1 id="把js和css文件放到外部文件中"><a href="#把js和css文件放到外部文件中" class="headerlink" title="把js和css文件放到外部文件中"></a>把js和css文件放到外部文件中</h1><p><strong>情况1</strong>：写在页面内，如果只是的单独一个页面使用js和css文件，可以写在页面里面；还有就是不经常访问的页面；并且脚本和样式很少。<br>这样写可以：</p>
 <ul>
 <li>减少页面请求</li>
 <li>提升页面渲染速度</li>
@@ -317,7 +333,7 @@
 <li>缩小页面体积</li>
 <li>提高了js的css的可维护性</li>
 </ul>
-<h1 id="9-减少DNS查询"><a href="#9-减少DNS查询" class="headerlink" title="9.减少DNS查询"></a>9.减少DNS查询</h1><p><strong>DNS</strong>：（Domain Name System，域名系统），万维网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过域名，最终得到该域名对应的IP地址的过程叫做域名解析（或主机名解析）。</p>
+<h1 id="减少DNS查询"><a href="#减少DNS查询" class="headerlink" title="减少DNS查询"></a>减少DNS查询</h1><p><strong>DNS</strong>：（Domain Name System，域名系统），万维网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过域名，最终得到该域名对应的IP地址的过程叫做域名解析（或主机名解析）。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -346,7 +362,7 @@
                 </div>
                 <div class="image-caption">DNS</div>
             </figure>
-<h1 id="10-压缩JavaScript和Css"><a href="#10-压缩JavaScript和Css" class="headerlink" title="10.压缩JavaScript和Css"></a>10.压缩JavaScript和Css</h1><p><strong>方法</strong>：</p>
+<h1 id="压缩JavaScript和Css"><a href="#压缩JavaScript和Css" class="headerlink" title="压缩JavaScript和Css"></a>压缩JavaScript和Css</h1><p><strong>方法</strong>：</p>
 <ul>
 <li>去除不必要的空白符，格式符，注释符。</li>
 <li>简写方法名，参数名压缩js脚本。</li>
@@ -360,7 +376,7 @@
                 <div class="image-caption">压缩JavaScript和Css</div>
             </figure>
 <p><em>建议：</em>：在网站上线项目前，将JavaScript和Css都进行压缩，使线上版本是最轻量级的，大幅提升网站性能。</p>
-<h1 id="11-避免重定向"><a href="#11-避免重定向" class="headerlink" title="11.避免重定向"></a>11.避免重定向</h1><p><strong>定义</strong>： 原始请求被重新转向了其他请求。</p>
+<h1 id="避免重定向"><a href="#避免重定向" class="headerlink" title="避免重定向"></a>避免重定向</h1><p><strong>定义</strong>： 原始请求被重新转向了其他请求。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -388,10 +404,10 @@
                 </div>
                 <div class="image-caption">避免重定向</div>
             </figure>
-<h1 id="12-移除重复的脚步"><a href="#12-移除重复的脚步" class="headerlink" title="12.移除重复的脚步"></a>12.移除重复的脚步</h1><p>例子:</p>
+<h1 id="移除重复的脚步"><a href="#移除重复的脚步" class="headerlink" title="移除重复的脚步"></a>移除重复的脚步</h1><p>例子:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>移除重复的脚步<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> number = <span class="number">0</span>;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 引用1次 正常 1 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./test.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 引用2次 不正常 2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js dom</span></span><br><span class="line">number++;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'test'</span>).value = number;</span><br></pre></td></tr></table></figure>
-<h1 id="13-配置实体标签（ETag）"><a href="#13-配置实体标签（ETag）" class="headerlink" title="13.配置实体标签（ETag）"></a>13.配置实体标签（ETag）</h1><p><strong>定义</strong>：使用特殊的字符串来标识某个请求资源版本。</p>
+<h1 id="配置实体标签（ETag）"><a href="#配置实体标签（ETag）" class="headerlink" title="配置实体标签（ETag）"></a>配置实体标签（ETag）</h1><p><strong>定义</strong>：使用特殊的字符串来标识某个请求资源版本。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -407,7 +423,7 @@
                 <div class="image-caption">配置实体标签（ETag）</div>
             </figure>
 <p>如果本地版本游览器一样，就使用本地的缓存文件，并且会返回304。</p>
-<h1 id="14-使用Ajax缓存"><a href="#14-使用Ajax缓存" class="headerlink" title="14.使用Ajax缓存"></a>14.使用Ajax缓存</h1><p><strong>定义</strong>：即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。</p>
+<h1 id="使用Ajax缓存"><a href="#使用Ajax缓存" class="headerlink" title="使用Ajax缓存"></a>使用Ajax缓存</h1><p><strong>定义</strong>：即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -436,7 +452,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T07:23:07.266Z" itemprop="dateUpdated">2019-03-26 15:23:07</time>
+    Last updated: <time datetime="2019-03-26T14:01:32.919Z" itemprop="dateUpdated">2019-03-26 22:01:32</time>
 </span><br>
 
 
@@ -520,18 +536,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/note/github-configuration-tutorial/" id="post-prev" class="post-nav-link">
+      <a href="/note/markdown-notes/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">github配置教程</h4>
+        <h4 class="title">markdown使用笔记</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/note/git-command-using-tutorial/" id="post-next" class="post-nav-link">
+      <a href="/note/github-configuration-tutorial/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">git命令使用教程</h4>
+        <h4 class="title">github配置教程</h4>
       </a>
     </div>
   
@@ -605,7 +621,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

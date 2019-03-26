@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="es6,let">
-    <meta name="description" content="let命令的用法let是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合for循环，在循环中i的值只在循环语句中生效，在外边取不到的。 var命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而let只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。 for循环的变量是父作用域，和在循环体内let定义的变量">
+    <meta name="description" content="导语：今天学习一下let命令。  let命令的用法let是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合for循环，在循环中i的值只在循环语句中生效，在外边取不到的。 var命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而let只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。 for循环的变量是父">
 <meta name="keywords" content="es6,let">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6之let命令">
 <meta property="og:url" content="https://guanqi.xyz/note/es6-let-command/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="let命令的用法let是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合for循环，在循环中i的值只在循环语句中生效，在外边取不到的。 var命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而let只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。 for循环的变量是父作用域，和在循环体内let定义的变量">
+<meta property="og:description" content="导语：今天学习一下let命令。  let命令的用法let是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合for循环，在循环中i的值只在循环语句中生效，在外边取不到的。 var命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而let只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。 for循环的变量是父">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T12:32:39.756Z">
+<meta property="og:updated_time" content="2019-03-26T14:13:25.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6之let命令">
-<meta name="twitter:description" content="let命令的用法let是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合for循环，在循环中i的值只在循环语句中生效，在外边取不到的。 var命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而let只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。 for循环的变量是父作用域，和在循环体内let定义的变量">
+<meta name="twitter:description" content="导语：今天学习一下let命令。  let命令的用法let是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合for循环，在循环中i的值只在循环语句中生效，在外边取不到的。 var命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而let只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。 for循环的变量是父">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -185,7 +185,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="let命令的用法"><a href="#let命令的用法" class="headerlink" title="let命令的用法"></a>let命令的用法</h2><p><code>let</code>是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合<code>for</code>循环，在循环中i的值只在循环语句中生效，在外边取不到的。</p>
+            <blockquote>
+<p><strong>导语</strong>：今天学习一下<code>let</code>命令。</p>
+</blockquote>
+<h2 id="let命令的用法"><a href="#let命令的用法" class="headerlink" title="let命令的用法"></a>let命令的用法</h2><p><code>let</code>是es6中的声明一个变量的命令，只在它声明的代码块中有效，出了这个代码块就会报错。也非常适合<code>for</code>循环，在循环中i的值只在循环语句中生效，在外边取不到的。</p>
 <p><code>var</code>命令声明的是一个全局的变量，i是指向全局的变量，只会输出最后的值。而<code>let</code>只在循环语句块里面生效，每次循环都会重新声明一个i的，所以每次循环都能拿到对应的值。</p>
 <p><code>for</code>循环的变量是父作用域，和在循环体内<code>let</code>定义的变量（子作用域）不在同一个作用域。</p>
 <p>例如：</p>
@@ -226,7 +229,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T12:32:39.756Z" itemprop="dateUpdated">2019-03-26 20:32:39</time>
+    Last updated: <time datetime="2019-03-26T14:13:25.139Z" itemprop="dateUpdated">2019-03-26 22:13:25</time>
 </span><br>
 
 
@@ -395,7 +398,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

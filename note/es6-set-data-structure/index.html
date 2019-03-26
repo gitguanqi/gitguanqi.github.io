@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="es6,set">
-    <meta name="description" content="学习setset是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。 例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;#125;">
+    <meta name="description" content="导语：set是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。  学习set例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;">
 <meta name="keywords" content="es6,set">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6之set数据结构">
 <meta property="og:url" content="https://guanqi.xyz/note/es6-set-data-structure/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="学习setset是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。 例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;#125;">
+<meta property="og:description" content="导语：set是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。  学习set例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T12:32:44.161Z">
+<meta property="og:updated_time" content="2019-03-26T14:12:58.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6之set数据结构">
-<meta name="twitter:description" content="学习setset是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。 例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;#125;">
+<meta name="twitter:description" content="导语：set是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。  学习set例如： 12345const set = new Set();[1,2,3,4,5,2,1,2,1,2].forEach( x =&amp;gt; set.add(x) );for(let i of set) &amp;#123;    console.log(i); // 1 2 3 4 5&amp;">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -185,8 +185,10 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="学习set"><a href="#学习set" class="headerlink" title="学习set"></a>学习set</h2><p>set是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。</p>
-<p>例如：</p>
+            <blockquote>
+<p><strong>导语</strong>：set是ES6中的新增的数据结构，是一种构造函数，类似于数组，但是里面的元素都是唯一的，不重复的。</p>
+</blockquote>
+<h2 id="学习set"><a href="#学习set" class="headerlink" title="学习set"></a>学习set</h2><p>例如：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>].forEach( <span class="function"><span class="params">x</span> =&gt;</span> set.add(x) );</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> set) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 1 2 3 4 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="set的属性"><a href="#set的属性" class="headerlink" title="set的属性"></a>set的属性</h3><p>set的属性包括constructor（set原型）和size（用来记录set的大小）。</p>
 <p>用法：<code>Set.prototype.constructor</code>,<code>Set.prototype.size</code>。</p>
@@ -247,7 +249,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T12:32:44.161Z" itemprop="dateUpdated">2019-03-26 20:32:44</time>
+    Last updated: <time datetime="2019-03-26T14:12:58.601Z" itemprop="dateUpdated">2019-03-26 22:12:58</time>
 </span><br>
 
 
@@ -416,7 +418,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

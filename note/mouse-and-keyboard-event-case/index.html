@@ -21,19 +21,19 @@
     
     
     <meta name="keywords" content="前端案例,表单键盘案例">
-    <meta name="description" content="之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/public/js/gjs.min.js 才可以运行。 1&amp;lt;script src=&quot;https://guanqi.xyz/demo/public/js/gjs.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 鼠标">
+    <meta name="description" content="导语：之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/public/js/gjs.min.js 才可以运行。 1&amp;lt;script src=&quot;https://guanqi.xyz/demo/public/js/gjs.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;">
 <meta name="keywords" content="前端案例,表单键盘案例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="鼠标和键盘事件案例">
 <meta property="og:url" content="https://guanqi.xyz/note/mouse-and-keyboard-event-case/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/public/js/gjs.min.js 才可以运行。 1&amp;lt;script src=&quot;https://guanqi.xyz/demo/public/js/gjs.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 鼠标">
+<meta property="og:description" content="导语：之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/public/js/gjs.min.js 才可以运行。 1&amp;lt;script src=&quot;https://guanqi.xyz/demo/public/js/gjs.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://guanqi.xyz/img/blogimg/drag.png">
-<meta property="og:updated_time" content="2019-03-26T12:42:55.666Z">
+<meta property="og:updated_time" content="2019-03-26T14:16:54.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="鼠标和键盘事件案例">
-<meta name="twitter:description" content="之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/public/js/gjs.min.js 才可以运行。 1&amp;lt;script src=&quot;https://guanqi.xyz/demo/public/js/gjs.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 鼠标">
+<meta name="twitter:description" content="导语：之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。  温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/public/js/gjs.min.js 才可以运行。 1&amp;lt;script src=&quot;https://guanqi.xyz/demo/public/js/gjs.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;">
 <meta name="twitter:image" content="https://guanqi.xyz/img/blogimg/drag.png">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
@@ -121,7 +121,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -188,7 +188,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。</p>
+<p><strong>导语</strong>：之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。</p>
 </blockquote>
 <h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><p>前提是你要引入一个gjs.js文件 <a href="https://guanqi.xyz/demo/public/js/gjs.min.js">https://guanqi.xyz/demo/public/js/gjs.min.js</a> 才可以运行。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://guanqi.xyz/demo/public/js/gjs.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -238,7 +238,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T12:42:55.666Z" itemprop="dateUpdated">2019-03-26 20:42:55</time>
+    Last updated: <time datetime="2019-03-26T14:16:54.899Z" itemprop="dateUpdated">2019-03-26 22:16:54</time>
 </span><br>
 
 
@@ -407,7 +407,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="javascript,events">
-    <meta name="description" content="在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。  事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。 事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进行操作时所，">
+    <meta name="description" content="导语：在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。  事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。 事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进行操作">
 <meta name="keywords" content="javascript,events">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js之事件解读">
 <meta property="og:url" content="https://guanqi.xyz/note/interpretation-of-js-events/index.html">
 <meta property="og:site_name" content="猿七笔记">
-<meta property="og:description" content="在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。  事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。 事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进行操作时所，">
+<meta property="og:description" content="导语：在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。  事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。 事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进行操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-26T12:38:43.177Z">
+<meta property="og:updated_time" content="2019-03-26T14:17:08.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js之事件解读">
-<meta name="twitter:description" content="在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。  事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。 事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进行操作时所，">
+<meta name="twitter:description" content="导语：在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。  事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。 事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进行操作">
     
         <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
     
@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -186,7 +186,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <blockquote>
-<p>在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请<a href="mailto:jcguanqi@126.com" target="_blank" rel="noopener">电邮</a>反馈。</p>
+<p><strong>导语</strong>：在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请<a href="mailto:jcguanqi@126.com" target="_blank" rel="noopener">电邮</a>反馈。</p>
 </blockquote>
 <h2 id="事件的起源"><a href="#事件的起源" class="headerlink" title="事件的起源"></a>事件的起源</h2><p>这节开始说事件的起源，也就是<strong>原始事件模型</strong>。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。</p>
 <h3 id="事件以及事件类型"><a href="#事件以及事件类型" class="headerlink" title="事件以及事件类型"></a>事件以及事件类型</h3><p><strong>事件</strong>就是当用户在用鼠标或者键盘对网页进行操作时所，触发了的网页调用某个方法，反馈给用户的结果。不同的事件类型，生成的事件也不一样，反馈效果也不一样。</p>
@@ -708,7 +708,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2019-03-26T12:38:43.177Z" itemprop="dateUpdated">2019-03-26 20:38:43</time>
+    Last updated: <time datetime="2019-03-26T14:17:08.892Z" itemprop="dateUpdated">2019-03-26 22:17:08</time>
 </span><br>
 
 
@@ -877,7 +877,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
