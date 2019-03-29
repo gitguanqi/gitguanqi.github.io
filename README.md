@@ -2,8 +2,8 @@
 
 The Seven Notes is a technical blog dedicated to web development.
 
-+ [Chinese documentation](README.md)
-+ [English documentation](zh-CN.md)
++ [English documentation](README.md)
++ [Chinese documentation](zh-CN.md)
 
 ## Article Classification
 
