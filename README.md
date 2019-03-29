@@ -1,3 +1,29 @@
-# Front-end study notes
+## Seven Notes
 
-> This blog is mainly to record some of the learning summaries accumulated in the process of learning front-end knowledge.
+The Seven Notes is a technical blog dedicated to web development.
+
++ [Chinese documentation](README.md)
++ [English documentation](zh-CN.md)
+
+## Article Classification
+
+This note is mainly divided into the following sections.
+
++ front end foundation
++ front end frame
++ Front-end engineering
++ Backend Node.js
++ server side linux
++ other
+
+## blog address
+
+Interested friends can visit my blog.
+
+[blog address] (https://guanqi.xyz)
+
+## About the Author
+
+Front end development one ~
+
+Interested to follow [@gitguanqi](https://github.com/gitguanqi)
