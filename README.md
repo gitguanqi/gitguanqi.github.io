@@ -20,7 +20,7 @@ This note is mainly divided into the following sections.
 
 Interested friends can visit my blog.
 
-[blog address] (https://guanqi.xyz)
+[blog address](https://guanqi.xyz)
 
 ## About the Author
 
