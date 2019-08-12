@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="fed">
+    <meta name="description" content="fed">
+<meta name="keywords" content="fed">
+<meta property="og:type" content="website">
+<meta property="og:title" content="猿七笔记">
+<meta property="og:url" content="https://guanqi.xyz/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="fed">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="猿七笔记">
+<meta name="twitter:description" content="fed">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">猿七笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">猿七笔记</h1>
+        <h5 class="subtitle">
+            
+                
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-vue-build-project" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-08-12 21:54:21" datetime="2019-08-12T13:54:21.000Z" itemprop="datePublished">2019-08-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/vue-build-project/">构建vue应用方法总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：踏入前端以后，我接触的第二个js框架就是vuejs，第一个jQuery。vuejs的虚拟dom和数据双向绑定，mvvm设计模式都挺吸引我的，还有那模板编译语法，组件化开发以及路由管理、状态管理，组成了一个生态系统。今天这篇主要是介绍如何构建一个vue应用。
+
+构建方法我认为有以下几个比较好的方法。
+
+原生引入vue
+
+如果你不想使用脚手架，可以使用原生方式构建轻量级vue应用。
+
+V...
+    
+
+        <a href="/note/vue-build-project/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue项目/">vue项目</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-front-end-cross-origin" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-08-12 10:30:21" datetime="2019-08-12T02:30:21.000Z" itemprop="datePublished">2019-08-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端跨域/">前端跨域</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/front-end-cross-origin/">前端跨域知识总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语: 在日常的开发过程中,跨域是一个令人头疼的事情,也在跨域的过程中学到了不少知识,也吃了不少跨域的亏,一直没有时间整理这部分的知识点,现在就我脑海中的跨域知识以及结合开发过程中遇到的坎进行一个系统的总结。
+
+目录
+跨域是什么
+跨域解决方法
+
+跨域是什么说到跨域,就不得不提游览器的同源安全策略。按照MDN所说，同源策略限制了从同一个源加载的文档或者脚本如何和来自另一个源的文档和脚本等资源...
+    
+
+        <a href="/note/front-end-cross-origin/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端跨域/">前端跨域</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-nginx-deployment-vue" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-14 21:40:21" datetime="2019-07-14T13:40:21.000Z" itemprop="datePublished">2019-07-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/nginx-deployment-vue/">Nginx部署vue站点</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：本篇讲解如何使用nginx配置vue打包后的文件站点。
+
+准备工作
+linux centos7操作系统
+ssh软件
+nginx
+node环境
+
+nginx配置vue站点新建nginx配置文件，输入以下内容。
+1vi /etc/nginx/vhost/vue.conf
+在里面输入：
+12345678910111213141516171819server &#123;    listen...
+    
+
+        <a href="/note/nginx-deployment-vue/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-node-installation-and-configuration-in-centos7-system" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-14 20:40:21" datetime="2019-07-14T12:40:21.000Z" itemprop="datePublished">2019-07-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/node-installation-and-configuration-in-centos7-system/">CentOS7系统中node安装配置</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：本篇讲解如何配置node开发环境，让你的node代码可以正常的在网页中运行。
+
+准备工作
+linux centos7操作系统
+ssh软件
+nginx
+
+node资源想要了解更多关于node的内容，请访问：
+
+nodejs官网
+
+安装node本次安装介绍两个版本的安装方法，一个是源码安装,另一个是已编译版本安装，
+
+源码安装
+已编译版本安装
+
+源码安装
+第一步,到官网查看最新源码，并下...
+    
+
+        <a href="/note/node-installation-and-configuration-in-centos7-system/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-vscode-most-plugins" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-14 19:30:21" datetime="2019-07-14T11:30:21.000Z" itemprop="datePublished">2019-07-14</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端工具/">前端工具</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/vscode-most-plugins/">VSCode常用插件汇总</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：这篇博客主要是我使用vscode过程中的插件汇总，使用了这么长时间，总想有个总结，也方便日后查看，这里我将我使用的插件分为基础、框架、工具三个类型。
+
+官网地址VSCode插件官网地址，里面有很多的插件可以使用。
+基础插件这部分插件主要是和html、css、js有关的。
+html CSS Support这个插件支持以下语言，提供基础的语法知识编写辅助。
+这是插件地址
+
+html
+la...
+    
+
+        <a href="/note/vscode-most-plugins/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端工具/">前端工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编辑器/">编辑器</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-linux-server-configuration-free-ssl-certificate" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-07-01 18:36:21" datetime="2019-07-01T10:36:21.000Z" itemprop="datePublished">2019-07-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/linux-server-configuration-free-ssl-certificate/">linxu服务器配置免费ssl证书</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：之前买过一台阿里云服务器，现在想配置一个ssl证书，现在就收集到的资料进行整理归纳，说一下如何配置一个域名ssl证书。
+
+配置环境准备
+一台Linux系统的在线服务器
+一个经过dns解析可以正常访问的http协议的网站
+
+配置方法这里主要介绍的是免费ssl证书配置，付费证书请访问以下网站购买。
+
+沃通
+亚洲诚信
+
+以上两个比较权威。
+下面介绍免费配置方法。
+
+ssl免费证书网
+cer...
+    
+
+        <a href="/note/linux-server-configuration-free-ssl-certificate/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssl/">ssl</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-use-vim-in-linux" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-06-01 09:36:21" datetime="2019-06-01T01:36:21.000Z" itemprop="datePublished">2019-06-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/use-vim-in-linux/">在linux中使用vim</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语:vim是Linux系统中的一个文本编辑器，类似于vscode，记事本等编辑器；是从vi发展继承过来的，是一款广受Linux程序员欢迎的工具。今天，我就一探究竟，揭开vim的神秘面纱。
+
+目录
+环境准备
+安装vim
+常用语法
+实战演练
+
+环境准备
+centos7
+可以联网
+putty或xshell
+
+安装vim要想富，先修路，要想使用vim，先安装包，这是 vim官网。
+开始安装vim...
+    
+
+        <a href="/note/use-vim-in-linux/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-vue-basic-tutorial-components" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-30 21:54:21" datetime="2019-05-30T13:54:21.000Z" itemprop="datePublished">2019-05-30</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/vue-basic-tutorial-components/">Vue基础教程之组件开发</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：今天给大家讲解vue的组件化开发知识，本文参考vue的部分文档知识。
+
+目录
+组件命名
+全局组件
+局部组件
+父子组件通信
+
+组件命名每一个组件都代表不同的含义，有着不同的功能，比如说注册组件就是专门用来做用户注册时候使用的，分页组件就是专门用作表格列表分页使用。所以不同功能的组件都有不同的名字，组件的命名一般有以下两个方法。
+短横线命名法kebab-case，这是官方推荐的方法，也就...
+    
+
+        <a href="/note/vue-basic-tutorial-components/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue基础/">vue基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组件/">组件</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-centos7-system-configuration-gitlab" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-08 20:55:21" datetime="2019-05-08T12:55:21.000Z" itemprop="datePublished">2019-05-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/centos7-system-configuration-gitlab/">CentOS7系统配置gitlab</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：今天介绍的是如何在Linux CentOS7系统中配置gitlab。记得我在工作过程中使用过别的公司搭建的内部代码平台，也是用的gitlab，所以我既然学了这个linux，自然要学会配置搭建一个gitlab平台，这是一件非常有意义的事情。
+
+目录
+环境准备
+安装步骤
+基本设置
+网站预览
+
+环境准备
+linux centos7系统
+ssh软件
+nginx服务器
+mysql数据库
+
+安装...
+    
+
+        <a href="/note/centos7-system-configuration-gitlab/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitlab/">gitlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-npm-release-command" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-01 22:27:21" datetime="2019-05-01T14:27:21.000Z" itemprop="datePublished">2019-05-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/npm-release-command/">Node发布命令</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：之前说的是如何下载、更新、卸载npm包，今天说一下如何发布自己的npm包到npm的平台上，让别人可以作为项目的依赖包来下载安装和使用。本次使用一个拖拽的案例来演示如何操作。
+
+目录
+初始化npm
+登录npm
+发布包
+更新包
+删除包
+
+初始化npm包在初始化之前一定要安装node环境，然后到npm官网查看包名是否存在，如果存在则换一个。这次我使用g-drag来作为本次包名，你也在本地写...
+    
+
+        <a href="/note/npm-release-command/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node命令/">node命令</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/&title=猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/&title=猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=猿七笔记&url=https://guanqi.xyz/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABW0lEQVR42u3aQQ7DMAhEUd//0u62UoQzg22phe9V1aTNyyJAMGPIawbr++jz/OjosQULViHWXK7onOf3OnF9LViwOrOiJ3T919Ht6ejwe1iwYMnpVsfBggXrRoBQkjEsWLBclv6Cqr+OKsX3gVoeFqwSLP0C+5+v9Ldgwfpz1jRXLoXbV4EFqxlLf4Ddhq8bIGDBgrUuXs82fJWtGliwurGU5KqnYak9lOtswYLVhqVvXtpJ10z8sGB1Y+30n9wtFrvBBAtWM5Y7LqBvluy3omDB6sPKjf7oSV1J28YBWLBKs9wG0CmQMQcBC1YbljtkYLyOCgEo7DTDglWadbbkzQWC63MQsGD9PMttGylblXpwyTWwYMGqynKDgltA524AFqyeLLeRtB+HXn4LCxYsk6WEmOTWJixYsFIDr/om6IsBFqyWLKVodkH6zcOCBStX4OYGgMbZBQtWBdYHU6F9tUMqmZIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

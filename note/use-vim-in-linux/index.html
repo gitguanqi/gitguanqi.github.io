@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>在linux中使用vim | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="linux,vim">
+    <meta name="description" content="导语:vim是Linux系统中的一个文本编辑器，类似于vscode，记事本等编辑器；是从vi发展继承过来的，是一款广受Linux程序员欢迎的工具。今天，我就一探究竟，揭开vim的神秘面纱。  目录 环境准备 安装vim 常用语法 实战演练  环境准备 centos7 可以联网 putty或xshell  安装vim要想富，先修路，要想使用vim，先安装包，这是 vim官网。 开始安装vim：">
+<meta name="keywords" content="linux,vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在linux中使用vim">
+<meta property="og:url" content="https://guanqi.xyz/note/use-vim-in-linux/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语:vim是Linux系统中的一个文本编辑器，类似于vscode，记事本等编辑器；是从vi发展继承过来的，是一款广受Linux程序员欢迎的工具。今天，我就一探究竟，揭开vim的神秘面纱。  目录 环境准备 安装vim 常用语法 实战演练  环境准备 centos7 可以联网 putty或xshell  安装vim要想富，先修路，要想使用vim，先安装包，这是 vim官网。 开始安装vim：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://guanqi.xyz/img/article/vim01.jpg">
+<meta property="og:image" content="https://guanqi.xyz/img/article/vim02.jpg">
+<meta property="og:image" content="https://guanqi.xyz/img/article/vim03.jpg">
+<meta property="og:image" content="https://guanqi.xyz/img/article/vim04.jpg">
+<meta property="og:image" content="https://guanqi.xyz/img/article/vim05.jpg">
+<meta property="og:updated_time" content="2019-07-14T07:02:48.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在linux中使用vim">
+<meta name="twitter:description" content="导语:vim是Linux系统中的一个文本编辑器，类似于vscode，记事本等编辑器；是从vi发展继承过来的，是一款广受Linux程序员欢迎的工具。今天，我就一探究竟，揭开vim的神秘面纱。  目录 环境准备 安装vim 常用语法 实战演练  环境准备 centos7 可以联网 putty或xshell  安装vim要想富，先修路，要想使用vim，先安装包，这是 vim官网。 开始安装vim：">
+<meta name="twitter:image" content="https://guanqi.xyz/img/article/vim01.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">在linux中使用vim</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">在linux中使用vim</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-01T01:36:21.000Z" itemprop="datePublished" class="page-time">
+  2019-06-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境准备"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装vim"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装vim</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用语法"><span class="post-toc-number">4.</span> <span class="post-toc-text">常用语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令模式"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">命令模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令大全"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">命令大全</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实战演练"><span class="post-toc-number">5.</span> <span class="post-toc-text">实战演练</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进入创建文件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">进入创建文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入内容"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">输入内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存内容"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">保存内容</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-use-vim-in-linux" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">在linux中使用vim</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-01 09:36:21" datetime="2019-06-01T01:36:21.000Z" itemprop="datePublished">2019-06-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>:vim是Linux系统中的一个文本编辑器，类似于vscode，记事本等编辑器；是从vi发展继承过来的，是一款广受Linux程序员欢迎的工具。今天，我就一探究竟，揭开vim的神秘面纱。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>环境准备</li>
+<li>安装vim</li>
+<li>常用语法</li>
+<li>实战演练</li>
+</ul>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>centos7</li>
+<li>可以联网</li>
+<li>putty或xshell</li>
+</ul>
+<h2 id="安装vim"><a href="#安装vim" class="headerlink" title="安装vim"></a>安装vim</h2><p>要想富，先修路，要想使用<code>vim</code>，先安装包，这是 <strong><a href="https://www.vim.org/" target="_blank" rel="noopener">vim官网</a></strong>。</p>
+<p>开始安装vim：</p>
+<ul>
+<li>检查本机是否安装好vim</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep vim //查看vim命令的软件包</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/vim01.jpg" alt="检测vim" title="">
+                </div>
+                <div class="image-caption">检测vim</div>
+            </figure>
+<ul>
+<li>安装相关软件包</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum  install -y vim*</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/vim02.jpg" alt="查看vim" title="">
+                </div>
+                <div class="image-caption">查看vim</div>
+            </figure>
+<h2 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h2><p>下面这幅图片是一个经典的vim命令图。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/vim03.jpg" alt="vim命令图" title="">
+                </div>
+                <div class="image-caption">vim命令图</div>
+            </figure>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>vim有三种模式：</p>
+<ul>
+<li>命令模式，就是使用vim启动一个文件；可以按下<code>i/a/o</code>进入输入模式。</li>
+<li>输入模式，就是可以编辑文件内容，可以<code>Esc</code>退出输入模式到命令模式。</li>
+<li>底线命令模式，就是按下冒号(英文)<code>:</code>进入底线命令模式。</li>
+</ul>
+<h3 id="命令大全"><a href="#命令大全" class="headerlink" title="命令大全"></a>命令大全</h3><p>下面是常用的一些命令：包括<strong>光标移动、复制、粘贴和搜索、替换、切换模式等</strong>命令。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">h 或 向左箭头键(←)</td>
+<td style="text-align:left">光标向左移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">j 或 向下箭头键(↓)</td>
+<td style="text-align:left">光标向下移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">k 或 向上箭头键(↑)</td>
+<td style="text-align:left">光标向上移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">l 或 向右箭头键(→)</td>
+<td style="text-align:left">光标向右移动一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">[Ctrl] + [f]</td>
+<td style="text-align:left">屏幕『向下』移动一页，相当于 [Page Down]按键 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">[Ctrl] + [b]</td>
+<td style="text-align:left">屏幕『向上』移动一页，相当于 [Page Up] 按键 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">[Ctrl] + [d]</td>
+<td style="text-align:left">屏幕『向下』移动半页</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">[Ctrl] + [u]</td>
+<td style="text-align:left">屏幕『向上』移动半页</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">+</td>
+<td style="text-align:left">光标移动到非空格符的下一行</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">光标移动到非空格符的上一行</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left"><code>n&lt;space&gt;</code></td>
+<td style="text-align:left">那个 n 表示『数字』，例如 20 。按下数字后再按空格键，光标会向右移动这一行的 n 个字符。例如 <code>20&lt;space&gt;</code> 则光标会向后面移动 20 个字符距离。</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">0 或功能键[Home]</td>
+<td style="text-align:left">这是数字『 0 』：移动到这一行的最前面字符处 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">$ 或功能键[End]</td>
+<td style="text-align:left">移动到这一行的最后面字符处(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">H</td>
+<td style="text-align:left">光标移动到这个屏幕的最上方那一行的第一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">光标移动到这个屏幕的中央那一行的第一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">L</td>
+<td style="text-align:left">光标移动到这个屏幕的最下方那一行的第一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">17</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">G</td>
+<td style="text-align:left">移动到这个档案的最后一行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">18</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">nG</td>
+<td style="text-align:left">n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20 行(可配合 :set nu)</td>
+</tr>
+<tr>
+<td style="text-align:center">19</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">gg</td>
+<td style="text-align:left">移动到这个档案的第一行，相当于 1G 啊！ (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:left">移动光标</td>
+<td style="text-align:left">n<code>&lt;Enter&gt;</code></td>
+<td style="text-align:left">n 为数字。光标向下移动 n 行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">21</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left">/word</td>
+<td style="text-align:left">向光标之下寻找一个名称为 word 的字符串。例如要在档案内搜寻 vbird 这个字符串，就输入 /vbird 即可！ (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">22</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left">?word</td>
+<td style="text-align:left">向光标之上寻找一个字符串名称为 word 的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:center">23</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left">n</td>
+<td style="text-align:left">这个 n 是英文按键。代表重复前一个搜寻的动作。举例来说， 如果刚刚我们执行 /vbird 去向下搜寻 vbird 这个字符串，则按下 n 后，会向下继续搜寻下一个名称为 vbird 的字符串。如果是执行 ?vbird 的话，那么按下 n 则会向上继续搜寻名称为 vbird 的字符串！</td>
+</tr>
+<tr>
+<td style="text-align:center">24</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">这个 N 是英文按键。与 n 刚好相反，为『反向』进行前一个搜寻动作。 例如 /vbird 后，按下 N 则表示『向上』搜寻 vbird 。</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left"><code>:n1,n2s/word1/word2/g</code></td>
+<td style="text-align:left">n1 与 n2 为数字。在第 n1 与 n2 行之间寻找 word1 这个字符串，并将该字符串取代为 word2 ！举例来说，在 100 到 200 行之间搜寻 vbird 并取代为 VBIRD 则：<code>『:100,200s/vbird/VBIRD/g』</code>。(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">26</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left"><code>:1,$s/word1/word2/g</code> 或 <code>:%s/word1/word2/g</code></td>
+<td style="text-align:left">从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">27</td>
+<td style="text-align:left">搜索替换</td>
+<td style="text-align:left"><code>:1,$s/word1/word2/gc</code> 或 <code>:%s/word1/word2/gc</code></td>
+<td style="text-align:left">从第一行到最后一行寻找 word1 字符串，并将该字符串取代为 word2 ！且在取代前显示提示字符给用户确认 (confirm) 是否需要取代！(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">28</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">x, X</td>
+<td style="text-align:left">在一行字当中，x 为向后删除一个字符 (相当于 [del] 按键)， X 为向前删除一个字符(相当于 [backspace] 亦即是退格键) (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">29</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">nx</td>
+<td style="text-align:left">n 为数字，连续向后删除 n 个字符。举例来说，我要连续删除 10 个字符， 『10x』。</td>
+</tr>
+<tr>
+<td style="text-align:center">30</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">dd</td>
+<td style="text-align:left">删除游标所在的那一整行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">31</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">ndd</td>
+<td style="text-align:left">n 为数字。删除光标所在的向下 n 行，例如 20dd 则是删除 20 行 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">32</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">d1G</td>
+<td style="text-align:left">删除光标所在到第一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:center">33</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">dG</td>
+<td style="text-align:left">删除光标所在到最后一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">d$</td>
+<td style="text-align:left">删除游标所在处，到该行的最后一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">35</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">d0</td>
+<td style="text-align:left">那个是数字的 0 ，删除游标所在处，到该行的最前面一个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">36</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">yy</td>
+<td style="text-align:left">复制游标所在的那一行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">37</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">nyy</td>
+<td style="text-align:left">n 为数字。复制光标所在的向下 n 行，例如 20yy 则是复制 20 行(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">38</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">y1G</td>
+<td style="text-align:left">复制游标所在行到第一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:center">39</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">yG</td>
+<td style="text-align:left">复制游标所在行到最后一行的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:center">40</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">y0</td>
+<td style="text-align:left">复制光标所在的那个字符到该行行首的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:center">41</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">y$</td>
+<td style="text-align:left">复制光标所在的那个字符到该行行尾的所有数据</td>
+</tr>
+<tr>
+<td style="text-align:center">42</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">p, P</td>
+<td style="text-align:left">p 为将已复制的数据在光标下一行贴上，P 则为贴在游标上一行！ 举例来说，我目前光标在第 20 行，且已经复制了 10 行数据。则按下 p 后， 那 10 行数据会贴在原本的 20 行之后，亦即由 21 行开始贴。但如果是按下 P 呢？ 那么原本的第 20 行会被推到变成 30 行。 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">43</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">J</td>
+<td style="text-align:left">将光标所在行与下一行的数据结合成同一行</td>
+</tr>
+<tr>
+<td style="text-align:center">44</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">c</td>
+<td style="text-align:left">重复删除多个数据，例如向下删除 10 行，[ 10cj ]</td>
+</tr>
+<tr>
+<td style="text-align:center">45</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">u</td>
+<td style="text-align:left">复原前一个动作。(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">46</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">[Ctrl]+r</td>
+<td style="text-align:left">重做上一个动作。(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">47</td>
+<td style="text-align:left">删除、复制与粘贴</td>
+<td style="text-align:left">.</td>
+<td style="text-align:left">不要怀疑！这就是小数点！意思是重复前一个动作的意思。 如果你想要重复删除、重复贴上等等动作，按下小数点『.』就好了！ (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">48</td>
+<td style="text-align:left">切换模式</td>
+<td style="text-align:left">i, I</td>
+<td style="text-align:left">进入输入模式(Insert mode)：i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』。 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">49</td>
+<td style="text-align:left">切换模式</td>
+<td style="text-align:left">a, A</td>
+<td style="text-align:left">进入输入模式(Insert mode)：a 为『从目前光标所在的下一个字符处开始输入』， A 为『从光标所在行的最后一个字符处开始输入』。(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+<td style="text-align:left">切换模式</td>
+<td style="text-align:left">o, O</td>
+<td style="text-align:left">进入输入模式(Insert mode)：这是英文字母 o 的大小写。o 为『在目前光标所在的下一行处输入新的一行』； O 为在目前光标所在处的上一行输入新的一行！(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">51</td>
+<td style="text-align:left">切换模式</td>
+<td style="text-align:left">r, R</td>
+<td style="text-align:left">进入取代模式(Replace mode)：r 只会取代光标所在的那一个字符一次；R会一直取代光标所在的文字，直到按下 ESC 为止；(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">52</td>
+<td style="text-align:left">切换模式</td>
+<td style="text-align:left"><code>[Esc]</code></td>
+<td style="text-align:left">退出编辑模式，回到一般模式中(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">53</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:w</code></td>
+<td style="text-align:left">将编辑的数据写入硬盘档案中(常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">54</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:w!</code></td>
+<td style="text-align:left">若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！</td>
+</tr>
+<tr>
+<td style="text-align:center">55</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:q</code></td>
+<td style="text-align:left">离开 vi (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">56</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:q!</code></td>
+<td style="text-align:left">若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。</td>
+</tr>
+<tr>
+<td style="text-align:center">57</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:wq</code></td>
+<td style="text-align:left">储存后离开，若为 :wq! 则为强制储存后离开 (常用)</td>
+</tr>
+<tr>
+<td style="text-align:center">58</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left">ZZ</td>
+<td style="text-align:left">这是大写的 Z 喔！若档案没有更动，则不储存离开，若档案已经被更动过，则储存后离开！</td>
+</tr>
+<tr>
+<td style="text-align:center">59</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:w [filename]</code></td>
+<td style="text-align:left">将编辑的数据储存成另一个档案（类似另存新档）</td>
+</tr>
+<tr>
+<td style="text-align:center">60</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:r [filename]</code></td>
+<td style="text-align:left">在编辑的数据中，读入另一个档案的数据。亦即将 『filename』 这个档案内容加到游标所在行后面</td>
+</tr>
+<tr>
+<td style="text-align:center">61</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:n1,n2 w [filename]</code></td>
+<td style="text-align:left">将 n1 到 n2 的内容储存成 filename 这个档案。</td>
+</tr>
+<tr>
+<td style="text-align:center">62</td>
+<td style="text-align:left">储存、离开</td>
+<td style="text-align:left"><code>:! command</code></td>
+<td style="text-align:left">暂时离开 vi 到指令行模式下执行 command 的显示结果！例如<code>『:! ls /home』</code>即可在 vi 当中察看 /home 底下以 ls 输出的档案信息！</td>
+</tr>
+<tr>
+<td style="text-align:center">63</td>
+<td style="text-align:left">环境变更</td>
+<td style="text-align:left"><code>:set nu</code></td>
+<td style="text-align:left">显示行号，设定之后，会在每一行的前缀显示该行的行号</td>
+</tr>
+<tr>
+<td style="text-align:center">64</td>
+<td style="text-align:left">环境变更</td>
+<td style="text-align:left"><code>:set nonu</code></td>
+<td style="text-align:left">与 set nu 相反，为取消行号！</td>
+</tr>
+</tbody>
+</table>
+<p><em>注意</em>:数字通常代表重复做几次的意，也有代表去到第几个的意思。</p>
+<h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2><p>学以致用，经过上面的学习，应该或多或少对这个vim工具的命令使用有了了解，下面就是实战演练。</p>
+<p>现在，我创建一个名为<code>gqxyz</code>的文本文件，并且切换模式输入内容，然后保存退出。</p>
+<h3 id="进入创建文件"><a href="#进入创建文件" class="headerlink" title="进入创建文件"></a>进入创建文件</h3><p>打开putty或者xshell，在命令行输入<code>vim gqxyz.txt</code>，便创建并且进入了文件，输入<code>i</code>进入编辑模式。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/vim04.jpg" alt="创建进入vim" title="">
+                </div>
+                <div class="image-caption">创建进入vim</div>
+            </figure>
+<h3 id="输入内容"><a href="#输入内容" class="headerlink" title="输入内容"></a>输入内容</h3><p>按下<code>Insert</code>插入内容。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/vim05.jpg" alt="编辑保存vim" title="">
+                </div>
+                <div class="image-caption">编辑保存vim</div>
+            </figure>
+<h3 id="保存内容"><a href="#保存内容" class="headerlink" title="保存内容"></a>保存内容</h3><p>按下<code>Esc</code>，输入冒号<code>:</code>，输入<code>wq</code>，保存编辑内容并且退出。</p>
+<p>vim的学习就到这里了，以上的内容要勤加练习，方能成功掌握vim工具的使用。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-14T07:02:48.700Z" itemprop="dateUpdated">2019-07-14 15:02:48</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/use-vim-in-linux/" target="_blank" rel="external">https://guanqi.xyz/note/use-vim-in-linux/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/use-vim-in-linux/&title=《在linux中使用vim》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/use-vim-in-linux/&title=《在linux中使用vim》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/use-vim-in-linux/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在linux中使用vim》 — 猿七笔记&url=https://guanqi.xyz/note/use-vim-in-linux/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/use-vim-in-linux/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/linux-server-configuration-free-ssl-certificate/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">linxu服务器配置免费ssl证书</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/vue-basic-tutorial-components/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue基础教程之组件开发</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/use-vim-in-linux/&title=《在linux中使用vim》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/use-vim-in-linux/&title=《在linux中使用vim》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/use-vim-in-linux/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在linux中使用vim》 — 猿七笔记&url=https://guanqi.xyz/note/use-vim-in-linux/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/use-vim-in-linux/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxElEQVR42u3aSw6DMAxFUfa/aTrthHCfTVxU3YwQisJhYvmT48Dr/Frfb/o7jx1Lrly5be65XFd7OLR2/uW35MqVO8hdB5p10OG/cXVmEOzkypX7Yu463Kzfy5Ur9/+4naCWBkq5cuX+lkuKk7TxwdslW2o1uXLlNri8S7nveUt/V65cuSXuGa50iMLfo6/LlSt3hFtLUEjykSZJQSklV67cEW5aivBmKN/PW7Fy5crdzeXlB78w0b/YcZORyZUrd5CbXsNK2x+kKLp5litX7iA3HY2Q/U8NTm66OHLlyt3M5WUMaW3UmiCo+JErV+5mLt+aljEkJaoVXXLlyp3hpp/n+9OmCUqh5MqVO8LlR6xLndoJQfEjV67cQW5KSa9n8fEq+opcuXIHuaSw6XyetEdRS0WuXLmD3M6lin5oC/bLlSt3kJsGIx6wjnAF4xO5cuVu4J7hIilIeqkr+DG5cuWOcGvDzqfmurX0SK5cuTPcTvAiLZLOkFWuXLm/5cYjjcZVjAdqNbly5b6MmwY4XiAFFZtcuXJfxuUlTWegcnmmXLlyB7mk+Kldy6ix0JBVrly527j9g3haw3/ygf6uXLlyK9wPtzIp+EIT4S0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

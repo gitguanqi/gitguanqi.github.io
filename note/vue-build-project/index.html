@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>构建vue应用方法总结 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vuejs,vue项目">
+    <meta name="description" content="导语：踏入前端以后，我接触的第二个js框架就是vuejs，第一个jQuery。vuejs的虚拟dom和数据双向绑定，mvvm设计模式都挺吸引我的，还有那模板编译语法，组件化开发以及路由管理、状态管理，组成了一个生态系统。今天这篇主要是介绍如何构建一个vue应用。  构建方法我认为有以下几个比较好的方法。  原生引入vue  如果你不想使用脚手架，可以使用原生方式构建轻量级vue应用。  Vue-">
+<meta name="keywords" content="vuejs,vue项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建vue应用方法总结">
+<meta property="og:url" content="https://guanqi.xyz/note/vue-build-project/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：踏入前端以后，我接触的第二个js框架就是vuejs，第一个jQuery。vuejs的虚拟dom和数据双向绑定，mvvm设计模式都挺吸引我的，还有那模板编译语法，组件化开发以及路由管理、状态管理，组成了一个生态系统。今天这篇主要是介绍如何构建一个vue应用。  构建方法我认为有以下几个比较好的方法。  原生引入vue  如果你不想使用脚手架，可以使用原生方式构建轻量级vue应用。  Vue-">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-12T13:53:27.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="构建vue应用方法总结">
+<meta name="twitter:description" content="导语：踏入前端以后，我接触的第二个js框架就是vuejs，第一个jQuery。vuejs的虚拟dom和数据双向绑定，mvvm设计模式都挺吸引我的，还有那模板编译语法，组件化开发以及路由管理、状态管理，组成了一个生态系统。今天这篇主要是介绍如何构建一个vue应用。  构建方法我认为有以下几个比较好的方法。  原生引入vue  如果你不想使用脚手架，可以使用原生方式构建轻量级vue应用。  Vue-">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">构建vue应用方法总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">构建vue应用方法总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-12T13:54:21.000Z" itemprop="datePublished" class="page-time">
+  2019-08-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#构建方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">构建方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原生引入vue"><span class="post-toc-number">2.</span> <span class="post-toc-text">原生引入vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vue-cli脚手架"><span class="post-toc-number">3.</span> <span class="post-toc-text">Vue-cli脚手架</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装node和npm"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装node和npm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装vue-cli"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">全局安装vue-cli</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建启动vue项目"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">创建启动vue项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自建脚手架开发"><span class="post-toc-number">4.</span> <span class="post-toc-text">自建脚手架开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化项目"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">初始化项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装依赖包"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">安装依赖包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动运行"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">启动运行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打包"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">打包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue-build-project" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">构建vue应用方法总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-12 21:54:21" datetime="2019-08-12T13:54:21.000Z" itemprop="datePublished">2019-08-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：踏入前端以后，我接触的第二个js框架就是vuejs，第一个jQuery。vuejs的虚拟dom和数据双向绑定，mvvm设计模式都挺吸引我的，还有那模板编译语法，组件化开发以及路由管理、状态管理，组成了一个生态系统。今天这篇主要是介绍如何构建一个vue应用。</p>
+</blockquote>
+<h2 id="构建方法"><a href="#构建方法" class="headerlink" title="构建方法"></a>构建方法</h2><p>我认为有以下几个比较好的方法。</p>
+<ul>
+<li>原生引入<a href="https://cn.vuejs.org" target="_blank" rel="noopener">vue</a></li>
+</ul>
+<p>如果你不想使用脚手架，可以使用原生方式构建轻量级vue应用。</p>
+<ul>
+<li>Vue-cli脚手架</li>
+</ul>
+<p>这种是伴随着nodejs的和前端工程化的迅猛发展，还有webpack等构建工具的诞生，有了脚手架开发这一非常便捷的开发方式。</p>
+<ul>
+<li>自建脚手架开发</li>
+</ul>
+<p>vuejs官方开发的脚手架固然好用，但是仍要了解如何搭建一款自己的webpack脚手架开发工具。</p>
+<h2 id="原生引入vue"><a href="#原生引入vue" class="headerlink" title="原生引入vue"></a>原生引入vue</h2><p>这种方法是属于比较简单的页面开发方式，不需要webpack打包工具，不需要下载很大包，只需要引入必要的css和js即可实现简单项目开发。</p>
+<ul>
+<li>引入vuejs，vue-router,vuex</li>
+</ul>
+<p>可以本地引入，也可以使用cdn。</p>
+<p>推荐几个比较不错的cdn服务网站。</p>
+<ul>
+<li><a href="https://www.bootcdn.cn/" target="_blank" rel="noopener">bootcdn</a></li>
+<li><a href="http://lib.sinaapp.com/" target="_blank" rel="noopener">新浪cdn</a></li>
+<li><a href="http://jscdn.upai.com/" target="_blank" rel="noopener">又拍云cdn</a></li>
+<li><a href="http://cdnjs.net/" target="_blank" rel="noopener">cdnjs.net</a></li>
+<li><a href="https://cdnjs.com/" target="_blank" rel="noopener">cdnjs.com</a></li>
+<li><a href="http://staticfile.org/" target="_blank" rel="noopener">七牛云cdn</a></li>
+<li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsdelivr</a></li>
+<li><a href="https://unpkg.com" target="_blank" rel="noopener">unpkg</a></li>
+</ul>
+<p>在网页的head里面加入以下js。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//本地引入</span></span><br><span class="line">&lt;script src=<span class="string">"js/vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"js/vue-router.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"js/vuex.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用cdn(bootcdn)</span></span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/vue/2.6.10/vue.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/vue-router/3.0.7/vue-router.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/vuex/3.1.1/vuex.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>在body里面写vuejs的模板内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>, <span class="comment">//vue模板id</span></span><br><span class="line">  data: &#123; <span class="comment">// 数据对象</span></span><br><span class="line">    title: <span class="string">'hello, vuejs'</span>, <span class="comment">//定义的变量</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123; <span class="comment">//方法</span></span><br><span class="line">    print () &#123;</span><br><span class="line">      <span class="comment">// some things</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 。。。</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我认为这就是一个简单的vue应用，里面是一个vue实例，还可以注册全局和内部组件，多个页面就组成一个简单的站点。如果你想写单页面应用，可以使用vue的路由管理，只写一个页面，然后定义不同的组件，注册到vm的实例里面使用。</p>
+<h2 id="Vue-cli脚手架"><a href="#Vue-cli脚手架" class="headerlink" title="Vue-cli脚手架"></a>Vue-cli脚手架</h2><p>这种方法是比较常用的广泛使用的，下面说一下使用方法，确保你的电脑上一定要装node和npm环境。</p>
+<ul>
+<li>安装node和npm</li>
+<li>全局安装vue-cli</li>
+<li>创建启动vue项目</li>
+</ul>
+<h3 id="安装node和npm"><a href="#安装node和npm" class="headerlink" title="安装node和npm"></a>安装node和npm</h3><p>打开<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs官网</a>,选择适合你电脑的软件包，下载安装到电脑上。</p>
+<p>打开cmd，输入以下命令，有输出版本号即是安装成功。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">v10.15.3</span><br><span class="line"></span><br><span class="line">npm -v</span><br><span class="line">6.4.1</span><br></pre></td></tr></table></figure>
+<h3 id="全局安装vue-cli"><a href="#全局安装vue-cli" class="headerlink" title="全局安装vue-cli"></a>全局安装vue-cli</h3><p>这里使用3.x版本的脚手架。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局安装</span></span><br><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">vue -V</span><br><span class="line">3.6.3</span><br></pre></td></tr></table></figure>
+<p>如果你想使用2.x版本的脚手架，可以这样安装。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装旧版本</span></span><br><span class="line">npm install -g @vue/cli-init</span><br></pre></td></tr></table></figure>
+<h3 id="创建启动vue项目"><a href="#创建启动vue项目" class="headerlink" title="创建启动vue项目"></a>创建启动vue项目</h3><ul>
+<li>3.x启动项目</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用命令行创建项目</span></span><br><span class="line">vue create myapp</span><br><span class="line"><span class="comment"># 使用图形界面创建项目</span></span><br><span class="line">vue ui</span><br><span class="line"><span class="comment"># 启动项目</span></span><br><span class="line">npm run serve</span><br><span class="line"><span class="comment"># 打包项目</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.x启动项目</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 你熟悉的方法</span></span><br><span class="line">vue init webpack myapp</span><br><span class="line"><span class="comment"># 启动项目</span></span><br><span class="line">npm run dev</span><br><span class="line"><span class="comment"># 打包项目</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<h2 id="自建脚手架开发"><a href="#自建脚手架开发" class="headerlink" title="自建脚手架开发"></a>自建脚手架开发</h2><p>这种方法就比较广泛了，不仅适用于vue，也适用于其他框架，这次使用webpack来进行搭建脚手架。如果你不熟悉webpack，可以读<a href="https://guanqi.xyz/note/first-knowledge-of-webpack/">这篇文章</a>了解一下。示例在github上面，可以参考一下。<a href="https://github.com/gitguanqi/febuild-cli" target="_blank" rel="noopener">febuild-cli</a>。</p>
+<ul>
+<li>初始化项目</li>
+<li>安装依赖包</li>
+<li>配置文件</li>
+<li>启动运行</li>
+<li>打包</li>
+</ul>
+<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><p>使用npm命令建一个私有包。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -y表示一路回车</span></span><br><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<h3 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h3><p>包很多，我就不一一阐述了,这里直接上json文件。复制到你的json文件中，执行<code>npm install</code>安装所有用到的依赖包。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"my-cli"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"my cli"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="attr">"dev:vue"</span>: <span class="string">"webpack-dev-server --open --config ./build/webpack.config.js"</span>,</span><br><span class="line">    <span class="attr">"build:vue"</span>: <span class="string">"webpack --config ./build/webpack.base.js"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"keywords"</span>: [],</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"@babel/core"</span>: <span class="string">"^7.4.4"</span>,</span><br><span class="line">    <span class="attr">"@babel/preset-env"</span>: <span class="string">"^7.4.4"</span>,</span><br><span class="line">    <span class="attr">"babel-loader"</span>: <span class="string">"^8.0.6"</span>,</span><br><span class="line">    <span class="attr">"clean-webpack-plugin"</span>: <span class="string">"^2.0.2"</span>,</span><br><span class="line">    <span class="attr">"css-loader"</span>: <span class="string">"^2.1.1"</span>,</span><br><span class="line">    <span class="attr">"csv-loader"</span>: <span class="string">"^3.0.2"</span>,</span><br><span class="line">    <span class="attr">"express"</span>: <span class="string">"^4.16.4"</span>,</span><br><span class="line">    <span class="attr">"extract-text-webpack-plugin"</span>: <span class="string">"^3.0.2"</span>,</span><br><span class="line">    <span class="attr">"file-loader"</span>: <span class="string">"^3.0.1"</span>,</span><br><span class="line">    <span class="attr">"html-webpack-plugin"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="attr">"less-loader"</span>: <span class="string">"^5.0.0"</span>,</span><br><span class="line">    <span class="attr">"mini-css-extract-plugin"</span>: <span class="string">"^0.6.0"</span>,</span><br><span class="line">    <span class="attr">"node-sass"</span>: <span class="string">"^4.12.0"</span>,</span><br><span class="line">    <span class="attr">"postcss-loader"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">    <span class="attr">"raw-loader"</span>: <span class="string">"^2.0.0"</span>,</span><br><span class="line">    <span class="attr">"sass-loader"</span>: <span class="string">"^7.1.0"</span>,</span><br><span class="line">    <span class="attr">"style-loader"</span>: <span class="string">"^0.23.1"</span>,</span><br><span class="line">    <span class="attr">"ts-loader"</span>: <span class="string">"^6.0.0"</span>,</span><br><span class="line">    <span class="attr">"uglifyjs-webpack-plugin"</span>: <span class="string">"^2.1.2"</span>,</span><br><span class="line">    <span class="attr">"webpack"</span>: <span class="string">"^4.31.0"</span>,</span><br><span class="line">    <span class="attr">"webpack-cli"</span>: <span class="string">"^3.3.2"</span>,</span><br><span class="line">    <span class="attr">"webpack-dev-middleware"</span>: <span class="string">"^3.6.2"</span>,</span><br><span class="line">    <span class="attr">"webpack-dev-server"</span>: <span class="string">"^3.3.1"</span>,</span><br><span class="line">    <span class="attr">"webpack-merge"</span>: <span class="string">"^4.2.1"</span>,</span><br><span class="line">    <span class="attr">"xml-loader"</span>: <span class="string">"^1.2.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"axios"</span>: <span class="string">"^0.18.0"</span>,</span><br><span class="line">    <span class="attr">"lodash"</span>: <span class="string">"^4.17.11"</span>,</span><br><span class="line">    <span class="attr">"url-loader"</span>: <span class="string">"^1.1.2"</span>,</span><br><span class="line">    <span class="attr">"vue"</span>: <span class="string">"^2.6.10"</span>,</span><br><span class="line">    <span class="attr">"vue-loader"</span>: <span class="string">"^15.7.0"</span>,</span><br><span class="line">    <span class="attr">"vue-router"</span>: <span class="string">"^3.0.6"</span>,</span><br><span class="line">    <span class="attr">"vue-style-loader"</span>: <span class="string">"^4.1.2"</span>,</span><br><span class="line">    <span class="attr">"vue-template-compiler"</span>: <span class="string">"^2.6.10"</span>,</span><br><span class="line">    <span class="attr">"vuex"</span>: <span class="string">"^3.1.1"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>接着写配置文件，创建三个webpack的配置文件，放在build文件夹下。</p>
+<ul>
+<li>基础配置文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保存为webpack.common.js</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> cleanHtmlPlugin = <span class="built_in">require</span>(<span class="string">'clean-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> MiniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">'mini-css-extract-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">const</span> VueloaderPlugin = <span class="built_in">require</span>(<span class="string">'vue-loader/lib/plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'development'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'static/js/[name].[hash].js'</span>,</span><br><span class="line">    publicPath: <span class="string">'/'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.m?js$/</span>,</span><br><span class="line">        exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">        use: &#123;</span><br><span class="line">          loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">          options: &#123;</span><br><span class="line">            presets: [<span class="string">'@babel/preset-env'</span>]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          &#123;</span><br><span class="line">            loader: MiniCssExtractPlugin.loader,</span><br><span class="line">            options: &#123;</span><br><span class="line">              publicPath: <span class="string">'/'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">'css-loader'</span>,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.scss$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          &#123;</span><br><span class="line">            loader: MiniCssExtractPlugin.loader,</span><br><span class="line">            options: &#123;</span><br><span class="line">              publicPath: <span class="string">'/'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">'style-loader'</span>,</span><br><span class="line">          <span class="string">'css-loader'</span>,</span><br><span class="line">          <span class="string">'sass-loader'</span></span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(png|svg|jpg|gif)$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          &#123;</span><br><span class="line">            loader: <span class="string">'file-loader'</span>,</span><br><span class="line">            options: &#123;</span><br><span class="line">              limit: <span class="number">50000</span>,</span><br><span class="line">              outputPath: <span class="string">'static/image/'</span>,</span><br><span class="line">              filename: <span class="string">'[name].[ext]'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;,</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(woff|woff2|eot|ttf|otf)$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          &#123;</span><br><span class="line">            loader: <span class="string">'file-loader'</span>,</span><br><span class="line">            options: &#123;</span><br><span class="line">              limit: <span class="number">50000</span>,</span><br><span class="line">              filename: <span class="string">'static/fonts/[name].[ext]'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;,</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.(csv|tsv)$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'csv-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.xml$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'xml-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'vue-loader'</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> cleanHtmlPlugin(),</span><br><span class="line">    <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">      template: <span class="string">'./index.html'</span></span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> webpack.NamedModulesPlugin(),</span><br><span class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</span><br><span class="line">    <span class="keyword">new</span> MiniCssExtractPlugin(&#123;</span><br><span class="line">      filename: <span class="string">'static/css/[name].[hash].css'</span>,</span><br><span class="line">      chunkFilename: <span class="string">'[id].css'</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> VueloaderPlugin()</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>开发环境配置文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保存为webpack.base.js</span></span><br><span class="line"><span class="comment">// 开发环境配置</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>);</span><br><span class="line"><span class="keyword">const</span> common =<span class="built_in">require</span>(<span class="string">'./webpack.common.js'</span>);</span><br><span class="line"><span class="keyword">const</span> ASSET_PATH = process.env.ASSET_PATH || <span class="string">'/'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = merge(common, &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/vue/main.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'../dist'</span>),</span><br><span class="line">    publicPath: ASSET_PATH</span><br><span class="line">  &#125;,</span><br><span class="line">  devtool: <span class="string">'inline-source-map'</span>,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: path.join(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    hot: <span class="literal">true</span>,</span><br><span class="line">    compress: <span class="literal">true</span>,</span><br><span class="line">    port: <span class="number">8090</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成环境配置文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//保存为webpack.config.js</span></span><br><span class="line"><span class="comment">// 生产环境配置</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>);</span><br><span class="line"><span class="keyword">const</span> common = <span class="built_in">require</span>(<span class="string">'./webpack.common.js'</span>);</span><br><span class="line"><span class="keyword">const</span> uglifyjsWebpackPlugin = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> ASSET_PATH = process.env.ASSET_PATH || <span class="string">'/febuild-cli/'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = merge(common, &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/vue/main.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'../docs'</span>),</span><br><span class="line">    publicPath: ASSET_PATH</span><br><span class="line">  &#125;,</span><br><span class="line">  devtool: <span class="string">'source-map'</span>,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> uglifyjsWebpackPlugin(&#123;</span><br><span class="line">      sourceMap: <span class="literal">true</span></span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">'process.env.NODE_ENV'</span>: <span class="built_in">JSON</span>.stringify(<span class="string">'production'</span>),</span><br><span class="line">      <span class="string">'process.env.ASSET_PATH'</span>: <span class="built_in">JSON</span>.stringify(ASSET_PATH)</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="启动运行"><a href="#启动运行" class="headerlink" title="启动运行"></a>启动运行</h3><p>在启动之前，先创建几个文件夹，用来编写vue文件。</p>
+<p>目录如下：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+ </span>src</span><br><span class="line">  + components</span><br><span class="line"><span class="code">    - hello.vue</span></span><br><span class="line">  + router</span><br><span class="line"><span class="code">    - index.js</span></span><br><span class="line">  - App.vue</span><br><span class="line">  - main.js</span><br></pre></td></tr></table></figure>
+<p>运行npm命令启动项目。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev:vue</span><br></pre></td></tr></table></figure>
+<p>在游览器打开<code>http://localhost:8090</code>或者是<code>http://127.0.0.1:8090</code>，即可访问站点。</p>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>这个就不仅简单了，直接运行命令<code>npm run build:vue</code>。  </p>
+<p>安装http服务插件，在游览器打开<code>http://localhost:8090/dist/</code>或者是<code>http://127.0.0.1:8090/dist/</code>，即可访问站点。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>以上就是我日常开发过程中的vue应用搭建方法总结，有欠缺之处，还请各位大佬指正，谢谢，以上项目代码仅供学习交流使用，转载请注明出处。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-08-12T13:53:27.997Z" itemprop="dateUpdated">2019-08-12 21:53:27</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/vue-build-project/" target="_blank" rel="external">https://guanqi.xyz/note/vue-build-project/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue项目/">vue项目</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/vue-build-project/&title=《构建vue应用方法总结》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/vue-build-project/&title=《构建vue应用方法总结》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/vue-build-project/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《构建vue应用方法总结》 — 猿七笔记&url=https://guanqi.xyz/note/vue-build-project/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/vue-build-project/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/front-end-cross-origin/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">前端跨域知识总结</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/vue-build-project/&title=《构建vue应用方法总结》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/vue-build-project/&title=《构建vue应用方法总结》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/vue-build-project/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《构建vue应用方法总结》 — 猿七笔记&url=https://guanqi.xyz/note/vue-build-project/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/vue-build-project/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABv0lEQVR42u3ay07DMBAF0P7/T5ctEiK5dxxbBR2vUJu4xyxG8/DrFa93sH4++f2T3/Z87Vi4uLjL3BZxjVs/5G/P4OLinudeB5oc1P4L6mCHi4v7kdyVTAoXF/e/cq/fvU561vfHxcU9yW3TkSQktW89XKvh4uIucJ9KTVb+3tLfxcXFHXHf5bo+QN5mHf46Li7uEW4eUPLRaR4KZ7+Li4t7hpsEoxaR4NrxDC4u7nluu1H+1so4NkLj4uJu484KmHYkk6dNN8EUFxd3M7ctadoLWyuDk5taDRcXdxu3HbXOEHkbZVir4eLiPsRtGxZJiEkOMJur4uLinuTO2pd5azUfst7sjIuLe4T7VJBqy6TZFQ1cXNzz3DyQzYqiduhy8yQuLu5mbjICSXBJEpMUQjc74+LiHue249XZOCS/qFEMWXFxcbdxk0/aA7zKVd8aw8XFfZT7Ltes3bk0+8XFxT3OHQ4740Fs237N38XFxd3NzVui622RB0IhLi7uQe5sApMnRm3qU3+Ni4v7AdyV9mgSLnFxcf8W96lmaFs+4eLinufOEpT2mdlhcHFxz3Nng882tM0udC71d3FxcSfcLyLpFOMKdehDAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>es6之块级作用域 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="es6,块级作用域">
+    <meta name="description" content="导语：今天，来探讨一下ES6中的块级作用域。  全局作用域和函数作用域在ES5中，只全局作用域和函数作用域。这会导致函数作用域覆盖了全局作用域；亦或者循环中的变量泄露为全局变量。 例如： 123456789101112131415//  1.函数作用域覆盖了全局作用域,发生了变量提升，函数声明大于var声明的变量，因此函数里面的a提到了前面，在打印a，初始化一个undefined给a,所以打印出">
+<meta name="keywords" content="es6,块级作用域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6之块级作用域">
+<meta property="og:url" content="https://guanqi.xyz/note/block-level-scope-of-es6/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：今天，来探讨一下ES6中的块级作用域。  全局作用域和函数作用域在ES5中，只全局作用域和函数作用域。这会导致函数作用域覆盖了全局作用域；亦或者循环中的变量泄露为全局变量。 例如： 123456789101112131415//  1.函数作用域覆盖了全局作用域,发生了变量提升，函数声明大于var声明的变量，因此函数里面的a提到了前面，在打印a，初始化一个undefined给a,所以打印出">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-07T09:39:47.784Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6之块级作用域">
+<meta name="twitter:description" content="导语：今天，来探讨一下ES6中的块级作用域。  全局作用域和函数作用域在ES5中，只全局作用域和函数作用域。这会导致函数作用域覆盖了全局作用域；亦或者循环中的变量泄露为全局变量。 例如： 123456789101112131415//  1.函数作用域覆盖了全局作用域,发生了变量提升，函数声明大于var声明的变量，因此函数里面的a提到了前面，在打印a，初始化一个undefined给a,所以打印出">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">es6之块级作用域</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">es6之块级作用域</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-23T13:30:21.000Z" itemprop="datePublished" class="page-time">
+  2019-01-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/es6/">es6</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局作用域和函数作用域"><span class="post-toc-number">1.</span> <span class="post-toc-text">全局作用域和函数作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ES6的块级作用域"><span class="post-toc-number">2.</span> <span class="post-toc-text">ES6的块级作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#块级作用域和和函数声明"><span class="post-toc-number">3.</span> <span class="post-toc-text">块级作用域和和函数声明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">最后总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-block-level-scope-of-es6" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">es6之块级作用域</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-23 21:30:21" datetime="2019-01-23T13:30:21.000Z" itemprop="datePublished">2019-01-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/es6/">es6</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：今天，来探讨一下ES6中的块级作用域。</p>
+</blockquote>
+<h2 id="全局作用域和函数作用域"><a href="#全局作用域和函数作用域" class="headerlink" title="全局作用域和函数作用域"></a>全局作用域和函数作用域</h2><p>在ES5中，只全局作用域和函数作用域。这会导致函数作用域覆盖了全局作用域；亦或者循环中的变量泄露为全局变量。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//  1.函数作用域覆盖了全局作用域,发生了变量提升，函数声明大于var声明的变量，因此函数里面的a提到了前面，在打印a，初始化一个undefined给a,所以打印出了undefined。</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'1'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">3</span>&lt;<span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> a  = <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn(); <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// 2.循环中的变量泄露为全局变量</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i); <span class="comment">// 5;</span></span><br></pre></td></tr></table></figure>
+<h2 id="ES6的块级作用域"><a href="#ES6的块级作用域" class="headerlink" title="ES6的块级作用域"></a>ES6的块级作用域</h2><p>用let命令新增了块级作用域，外层作用域无法获取到内层作用域，非常安全明了。即使外层和内层都使用相同变量名，也都互不干扰。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1.外层作用域无法获取到内层作用域</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">41</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">1</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> a = <span class="number">3</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>,a); <span class="comment">// 2 3</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>,a); <span class="comment">// 1 41</span></span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br><span class="line"></span><br><span class="line">&#123;  </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">let</span> food = <span class="string">'apple'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(food); <span class="comment">// Uncaught ReferenceError: food is not defined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;  </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">let</span> food = <span class="string">'apple'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(food); <span class="comment">// Uncaught ReferenceError: food is not defined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 外层和内层都使用相同变量名，也都互不干扰</span></span><br><span class="line">&#123;  </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">let</span> food = <span class="string">'apple'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(food); <span class="comment">// apple</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> food = <span class="string">'orange'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(food); <span class="comment">// orange</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="块级作用域和和函数声明"><a href="#块级作用域和和函数声明" class="headerlink" title="块级作用域和和函数声明"></a>块级作用域和和函数声明</h2><p>在ES5中，函数只能在顶级作用域和函数作用域中声明，不能在块级作用域中声明。但是在ES6中，函数可以在块级作用域中声明。</p>
+<p>但是会有一定的问题，因为函数声明会被提到代码的最前面。所以会报错，最好在ES6中用函数表达式来表示一个函数。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//1.函数声明报错</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">4</span> &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'我在函数里面！'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn(); <span class="comment">// Uncaught TypeError: fn is not a function</span></span><br><span class="line"><span class="comment">//2.函数表达式没错</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> fa = <span class="string">'111'</span>;</span><br><span class="line">    <span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'我在函数里面！'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(fa,fn); <span class="comment">// 111 ƒ () &#123; console.log('我在函数里面！');&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong>ES6中允许函数在块级作用域中可以声明的条件是必须在大括号里面，否则就会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.报错的情况</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">4</span>&gt;<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.报错的情况</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">4</span>&gt;<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;; <span class="comment">// Uncaught SyntaxError: Lexical declaration cannot appear in a single-statement context</span></span><br></pre></td></tr></table></figure>
+<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>今天就将这些，下次再会。期待再更新。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-07T09:39:47.784Z" itemprop="dateUpdated">2019-07-07 17:39:47</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/block-level-scope-of-es6/" target="_blank" rel="external">https://guanqi.xyz/note/block-level-scope-of-es6/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/块级作用域/">块级作用域</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/block-level-scope-of-es6/&title=《es6之块级作用域》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/block-level-scope-of-es6/&title=《es6之块级作用域》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/block-level-scope-of-es6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6之块级作用域》 — 猿七笔记&url=https://guanqi.xyz/note/block-level-scope-of-es6/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/block-level-scope-of-es6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/es6-const-command/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">es6之const命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/es6-set-data-structure/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">es6之set数据结构</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/block-level-scope-of-es6/&title=《es6之块级作用域》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/block-level-scope-of-es6/&title=《es6之块级作用域》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/block-level-scope-of-es6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《es6之块级作用域》 — 猿七笔记&url=https://guanqi.xyz/note/block-level-scope-of-es6/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/block-level-scope-of-es6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aS26kQBAFQN//0vZ2pBH4vSzaElXBqoW7gWCRzt/XV3x8P3RcXfPqzMMHBgbGaxnJjWeP9e/5/z/fP0P+bBgYGOcwri599Z11dnKv5NkwMDAw7hl54pgkhRgYGBjPMu7Pt2nfA/fFwMA4gJGkeknAzRPHPPg+XItjYGC8kJF33f/+80fmGxgYGK9irAwg11tmTw1KMTAw9mbMCtHkVysJ3+x5MDAw9mYkoXOl6d+G6fuCuQjiGBgYWzDah1uplfPr12NUDAyMrRkrZeT9pWft+xkPAwPjHEZboLaLEW2WOlwBwcDA2I6xvpg1W6Roi9XivwQGBsamjLbRP0v4WnARlDEwMA5gPLu6mpfEbXC/DMQYGBgHMPICdWU5rA3cxW8xMDAOY+QFZPsK2iSynmZgYGAcwGjDa94ae2qN9ZedEQwMjK0ZSZE5K1ZnL6VOQzEwMLZm5KnerMV/Hzo/sdKKgYGxN6MtR9vFiHb5NT+DgYFxAiNP3WblaFvKtmwMDIxzGG1p2iZw+V2GAwMMDIzDGLNWVxtw89Fm9FoxMDA2ZXyXx1Nt/WTMmSeXGBgYezPWg11eZOavpm3wYWBgnMCYNctWUr18PFCUtRgYGAcwZjdrxwZt8E3SSgwMDIyVELkCaEcRGBgYGO1IctZomw0hMDAwzmEkRWzSvk+CZvLND9biGBgYL2SslI750thTf10aZGJgYLyP8QObDyy6FL7wUgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

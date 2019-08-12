@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="fed">
+    <meta name="description" content="fed">
+<meta name="keywords" content="fed">
+<meta property="og:type" content="website">
+<meta property="og:title" content="猿七笔记">
+<meta property="og:url" content="https://guanqi.xyz/page/2/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="fed">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="猿七笔记">
+<meta name="twitter:description" content="fed">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">猿七笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">猿七笔记</h1>
+        <h5 class="subtitle">
+            
+                
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-learning-react-tutorial" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-04-19 14:16:21" datetime="2019-04-19T06:16:21.000Z" itemprop="datePublished">2019-04-19</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/learning-react-tutorial/">react学习总结</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：最近react非常火，所以我就简单跟着学了几个简单的知识点，在这里做一个学习总结。网址收藏：React官网，React的Github，React的中文文档
+
+react是什么React起源于Facebook的内部项目，因为该公司对市场上所有的Javascript MVC框架都不满意，决定自己写一套，用来架设Instargm的网站。做完以后，发现很好用，就在2013年5月开源。
+安装r...
+    
+
+        <a href="/note/learning-react-tutorial/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-centos7-system-configuration-phpmyadmin" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-04-01 17:46:21" datetime="2019-04-01T09:46:21.000Z" itemprop="datePublished">2019-04-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/centos7-system-configuration-phpmyadmin/">CentOS7系统配置phpMyAdmin</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：今天介绍的是如何在Linux CentOS7系统中配置phpMyAdmin。
+
+目录
+环境准备
+安装包
+基本设置
+网站预览
+
+环境准备
+linux centos7系统
+ssh软件
+php语言环境
+mysql数据库
+
+安装包phpMyAdmin官网下载
+安装前，请使用xshell连接远程服务器。
+这次使用wget进行下载安装。
+
+首先，进入下载文件夹。
+
+这里是你存放下载包的地方。
+1...
+    
+
+        <a href="/note/centos7-system-configuration-phpmyadmin/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phpmyadmin/">phpmyadmin</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-php-installation-and-configuration-in-centos7-system" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-26 16:40:21" datetime="2019-03-26T08:40:21.000Z" itemprop="datePublished">2019-03-26</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/php-installation-and-configuration-in-centos7-system/">CentOS7系统中php安装配置</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：本篇讲解如何配置php开发环境，让你的php代码可以正常的在网页中运行。
+
+准备工作
+linux centos7操作系统
+ssh软件
+nginx
+
+php资源想要了解更多关于php的内容，请访问：
+
+php官网
+
+安装php本次安装介绍两个版本的安装方法，一个是广泛应用的5.x,另一个是最新版的7.2。
+
+安装php5.4+
+安装php7.2
+
+安装php5.x第一步,使用yum安装...
+    
+
+        <a href="/note/php-installation-and-configuration-in-centos7-system/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-centos7-system-configuration-nginx-server" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-26 16:36:21" datetime="2019-03-26T08:36:21.000Z" itemprop="datePublished">2019-03-26</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/centos7-system-configuration-nginx-server/">CentOS7系统配置nginx服务器</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：作为一个以服务器为主要市场的操作系统，主要就是对客户端的请求进行响应，进行处理的。在经历过系统镜像安装和本地配置好ssh功能后，接下来进行服务器的安装，这里我以nginx为主，介绍一下如何安装nginx和配置站点，
+
+安装要求
+linux centos7系统
+ssh软件
+
+nginx简介nginx官网
+nginx作者是伊戈尔·赛索耶夫，最初是为一个俄罗斯访问量第二大的网站开发的服务器...
+    
+
+        <a href="/note/centos7-system-configuration-nginx-server/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-usage-of-ssh-in-centos7-system" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-26 16:36:21" datetime="2019-03-26T08:36:21.000Z" itemprop="datePublished">2019-03-26</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/usage-of-ssh-in-centos7-system/">CentOS7系统中ssh的用法</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语:大家都知道，公司买上服务器，不可能实时在线操作虚拟机，也没有那个时间和精力登录到公司的云服务商官网进行操作，一来不安全，二来也效率不高。
+
+如果是购买的虚拟主机，你可以使用ftp进行本地程序文件传输和从虚拟主机下载文件到本地。但是对于云服务器来说这种操作方法就显得落后许多了。
+今天主要是重点讲解如何使用ssh来操作Linux系统，还是以centos7为蓝本。
+安装要求
+linux c...
+    
+
+        <a href="/note/usage-of-ssh-in-centos7-system/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mysql8-installation-configuration-in-centos7-system" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-26 16:36:21" datetime="2019-03-26T08:36:21.000Z" itemprop="datePublished">2019-03-26</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/mysql8-installation-configuration-in-centos7-system/">CentOS7系统中mysql8安装配置</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：mysql是世界上最流行的关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司所有。今天我将记录一下如何在Linux centos7系统上安装和配置MySQL。
+
+目录
+环境准备
+安装包
+基本设置
+语法操作
+
+环境准备
+linux centos7操作系统
+ssh软件
+MySQL官网
+
+安装包第一步：进入下载文件夹，就是你要存放安装包的文件夹。
+1cd /ho...
+    
+
+        <a href="/note/mysql8-installation-configuration-in-centos7-system/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-linux-system-exploration" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-03-25 18:36:21" datetime="2019-03-25T10:36:21.000Z" itemprop="datePublished">2019-03-25</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/linux/">linux</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/linux-system-exploration/">linux系统探索</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：想着用着微软家的windows系统很多年了，也想尝试一下其他的操作系统。很快的就想到了Linux操作系统，它不是面向用户的，而是面向服务器的，在服务器端的市场中占了很大的市场份额，备受好评。
+
+目录
+Linux特点
+特别说明
+yum常用命令
+程序相关命令
+防火墙相关命令
+
+Linux特点基于以下几点，我决定探究一下Linux系统。
+
+Linux系统是全世界少有的免费、开源的、自由传播...
+    
+
+        <a href="/note/linux-system-exploration/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-form-input-verification-case" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-02-01 16:33:21" datetime="2019-02-01T08:33:21.000Z" itemprop="datePublished">2019-02-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端案例/">前端案例</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/form-input-verification-case/">表单输入验证案例</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下表单的案例。
+
+案例步骤
+1.建好表单结构和样式；
+2.获取输入内容进行验证；
+3.不正确进行文字提示；
+4.输入成功后提交表单
+
+代码展示12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152...
+    
+
+        <a href="/note/form-input-verification-case/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端案例/">前端案例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/表单验证/">表单验证</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-mouse-and-keyboard-event-case" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-02-01 10:33:21" datetime="2019-02-01T02:33:21.000Z" itemprop="datePublished">2019-02-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端案例/">前端案例</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/mouse-and-keyboard-event-case/">鼠标和键盘事件案例</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：之前已经说过了事件的来龙去脉和属性以及方法，今天就说一下鼠标和键盘事件的案例。
+
+温馨提示前提是你要引入一个gjs.js文件 https://guanqi.xyz/demo/assets/scripts/gjs.min.js 才可以运行。
+1&lt;script src="https://guanqi.xyz/demo/assets/scripts/gjs.min.js"&gt;&l...
+    
+
+        <a href="/note/mouse-and-keyboard-event-case/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端案例/">前端案例</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/表单键盘案例/">表单键盘案例</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-interpretation-of-js-events" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-01-31 10:33:21" datetime="2019-01-31T02:33:21.000Z" itemprop="datePublished">2019-01-31</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/note/interpretation-of-js-events/">js之事件解读</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+导语：在js中，具有交互性程序的是事件驱动。它可以很好的和用户进行互动，增强网页的趣味性和互动效果，提高更好的用户体验。今天我分享一篇有关事件驱动的文章，讲诉事件的来龙去脉，文章有不妥之处，还请电邮反馈。
+
+事件的起源这节开始说事件的起源，也就是原始事件模型。这是最初始的事件处理模式，通常把它当作0级DOM的一部分，所有游览器都支持。
+事件以及事件类型事件就是当用户在用鼠标或者键盘对网页进...
+    
+
+        <a href="/note/interpretation-of-js-events/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/events/">events</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/page/2/&title=猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/page/2/&title=猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/page/2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=猿七笔记&url=https://guanqi.xyz/page/2/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/page/2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABU0lEQVR42u3aQZKEIBBEUe9/aWfbExNT/qRw0dRnZbQGPBeUdMJ14XZ/NP773+vNTZasg1h32epn/uutJqLeZMkayaoHqCc8eRk+lixZsvjntkbzV5IlS1aHRYqFLFmyUhZZNKPuAHHzWl6WrCNYPNXpX7+Sb8mS9eWsO2z9v7VoFFmyhrH4BA66WyoQsmRNZvGNkE60RLZYfj0jS9ZIFp/kBLpWGi6yVyNL1qGsNPRJP+QbnpclawCrDmrTuJbcReVDlqxhLF4m1pbC/ShKlqw5rHqwvaFSsGiWJWs8Kz0c0AE9nIOQJWska9ehgTRCevgTK0vW0azOgYO0TAR3ZckaxkonPN8+eaPoyJJ1NqsT/XBKXCBkyRrJ6gyzVoGCtbwsWbJIF5gbb23KkiUrLBAciriyZI1k8fCIREu8NDxsrsiSNYa1tsDt5D/bmixZJ7B+AG4yxW0ktQAJAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

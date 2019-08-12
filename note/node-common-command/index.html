@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Node常用命令 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="nodejs,node命令">
+    <meta name="description" content="导语：现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。&amp;gt; node package manager ,Node 的包管理器。  目录 安装node bower安装命令 npm初始化  安装node验证是否安装node。 12node -vnpm -v 安装包 安装到当前目录  1npm install &amp;lt;">
+<meta name="keywords" content="nodejs,node命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node常用命令">
+<meta property="og:url" content="https://guanqi.xyz/note/node-common-command/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。&amp;gt; node package manager ,Node 的包管理器。  目录 安装node bower安装命令 npm初始化  安装node验证是否安装node。 12node -vnpm -v 安装包 安装到当前目录  1npm install &amp;lt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-14T07:19:40.452Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node常用命令">
+<meta name="twitter:description" content="导语：现今的包管理器有很多，包括npm,yard,bower,今天介绍两个包管理器，分别是npm和bower,本篇采用git工具安装。&amp;gt; node package manager ,Node 的包管理器。  目录 安装node bower安装命令 npm初始化  安装node验证是否安装node。 12node -vnpm -v 安装包 安装到当前目录  1npm install &amp;lt;">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Node常用命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Node常用命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-21T07:27:21.000Z" itemprop="datePublished" class="page-time">
+  2017-12-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装node"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装node</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装包"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索包"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看包的版本信息"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">查看包的版本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看安装的包列表"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">查看安装的包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新包"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">更新包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载包"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bower安装命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">bower安装命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bower安装包"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">bower安装包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bower查看包的信息"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">bower查看包的信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bower搜索包"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">bower搜索包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bower包列表"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">bower包列表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bower卸载包"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">bower卸载包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm初始化"><span class="post-toc-number">4.</span> <span class="post-toc-text">npm初始化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装并添加依赖"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装并添加依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局安装"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">全局安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node-common-command" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Node常用命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-21 15:27:21" datetime="2017-12-21T07:27:21.000Z" itemprop="datePublished">2017-12-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/nodejs/">nodejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：现今的包管理器有很多，包括<code>npm</code>,<code>yard</code>,<code>bower</code>,今天介绍两个包管理器，分别是<code>npm</code>和<code>bower</code>,本篇采用<code>git</code>工具安装。&gt; node package manager ,Node 的包管理器。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>安装node</li>
+<li>bower安装命令</li>
+<li>npm初始化</li>
+</ul>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>验证是否安装node。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><ul>
+<li>安装到当前目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<p>出现error network 重新安装</p>
+<ul>
+<li>安装指定版本</li>
+</ul>
+<p>在cmd中:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;包名&gt;@版本号</span><br><span class="line">npm install jquery@1.12.4</span><br></pre></td></tr></table></figure>
+<h3 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm search &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看包的版本信息"><a href="#查看包的版本信息" class="headerlink" title="查看包的版本信息"></a>查看包的版本信息</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看安装的包列表"><a href="#查看安装的包列表" class="headerlink" title="查看安装的包列表"></a>查看安装的包列表</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ls</span><br></pre></td></tr></table></figure>
+<h3 id="更新包"><a href="#更新包" class="headerlink" title="更新包"></a>更新包</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update &lt;包名&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall jquery</span><br></pre></td></tr></table></figure>
+<h2 id="bower安装命令"><a href="#bower安装命令" class="headerlink" title="bower安装命令"></a>bower安装命令</h2><h3 id="bower安装包"><a href="#bower安装包" class="headerlink" title="bower安装包"></a>bower安装包</h3><p><code>bower install &lt;包名&gt; --save</code>,在当前目录安装包，并将版本信息添加到bower.json中</p>
+<p><code>bower install &lt;包名&gt;@版本号</code>，安装指定的版本号</p>
+<h3 id="bower查看包的信息"><a href="#bower查看包的信息" class="headerlink" title="bower查看包的信息"></a>bower查看包的信息</h3><p><code>bower info &lt;包名&gt;</code> 查看包的详细信息</p>
+<h3 id="bower搜索包"><a href="#bower搜索包" class="headerlink" title="bower搜索包"></a>bower搜索包</h3><p><code>bower search &lt;包名&gt;</code></p>
+<h3 id="bower包列表"><a href="#bower包列表" class="headerlink" title="bower包列表"></a>bower包列表</h3><p><code>bower list</code></p>
+<h3 id="bower卸载包"><a href="#bower卸载包" class="headerlink" title="bower卸载包"></a>bower卸载包</h3><p><code>bower uninstall &lt;包名&gt;</code></p>
+<h2 id="npm初始化"><a href="#npm初始化" class="headerlink" title="npm初始化"></a>npm初始化</h2><p><code>npm init</code> 会生成一个packagejson的文件，项目的配置信息。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "name": "day06", //项目名</span><br><span class="line">  "version": "1.0.0", //版本号</span><br><span class="line">  "description": "this is a npm project", //项目的描述</span><br><span class="line">  "main": "index.js", //程序的入口文件</span><br><span class="line">  "dependencies": &#123; //项目依赖的包!!!重要的</span><br><span class="line">    "jquery": "^1.12.4",</span><br><span class="line">    "zepto": "^1.2.0"</span><br><span class="line">  &#125;,</span><br><span class="line">  "devDependencies": &#123;&#125;, //开发阶段依赖的包!!!重要的</span><br><span class="line">  "scripts": &#123; //命令</span><br><span class="line">    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"</span><br><span class="line">  &#125;,</span><br><span class="line">  "keywords": [ //关键词</span><br><span class="line">    <span class="string">"npm"</span></span><br><span class="line">  ],</span><br><span class="line">  "author": "guanqi", //作者</span><br><span class="line">  "license": "ISC" //协议</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装并添加依赖"><a href="#安装并添加依赖" class="headerlink" title="安装并添加依赖"></a>安装并添加依赖</h3><p><code>npm install &lt;包名&gt; --save</code> 会将当前目录下的安装包，并将包的信息，添加到package.json中的<strong>dependencies</strong>选项中</p>
+<p><code>npm install &lt;包名&gt; --save-dev</code>安装开发阶段用的工具包，并不是项目必须有的。这个命令会将包安装到当前目录下的安装包，并将包的版本信息，添加到package.json中的<strong>devDependencies</strong>选项中</p>
+<h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><p><code>npm install &lt;包&gt; -g</code> , -g代表全局安装，不会在package.json中看到</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>心动不如行动，快练习一下巩固知识。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-14T07:19:40.452Z" itemprop="dateUpdated">2019-07-14 15:19:40</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/node-common-command/" target="_blank" rel="external">https://guanqi.xyz/note/node-common-command/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node命令/">node命令</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/node-common-command/&title=《Node常用命令》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/node-common-command/&title=《Node常用命令》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/node-common-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node常用命令》 — 猿七笔记&url=https://guanqi.xyz/note/node-common-command/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/node-common-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/node-connection-mysql/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">node连接mysql</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/introduction-to-node/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node简介</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/node-common-command/&title=《Node常用命令》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/node-common-command/&title=《Node常用命令》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/node-common-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node常用命令》 — 猿七笔记&url=https://guanqi.xyz/note/node-common-command/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/node-common-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACH0lEQVR42u3aQU7EMAwFUO5/6bJFgin/OwVpkpcV0sw0eV0YO/bHR7yuF+vrp9+/+f0Jr555/9vHFgYGxtsyrtvVMpJd7vHJvj/siIGBcQDj1cZ5uMxJydHzs2FgYGDMkr824cPAwMD464CbJHbtrzAwMDBmB5qFyPvic1Y8Y2BgnMbIC87///tP+hsYGBhvxbjKlbQkV5qU12hhYGDszZg1INtjrRS9eUMUAwPjBEZeZM5CZJ50zoI7BgbGrox8g5Xgm7cKZs0JDAyMvRnJ0fODJuz2Um/2ojEwMHZirAe+WVE6HKdIpkUwMDC2Y6yPSqynkm3YxcDAOI3x7GjXSgMgD68//AoDA+Ngxv32+UVYO2DRBnEMDIxzGPmF2nAY4vbTdsjslxYmBgbGRowk/CVBeb0N8MDMCAYGxgGMZJzr2ZGv9b5rNOOGgYHx5oz1CF30Hx4qXzEwME5j5Bdt7TfbZLG9aCuiOwYGxhaM9WbkyuhGkj62SSQGBsZ+jDaMzpK59nquHtHAwMA4gJGE17w0nYXstuWJgYFxGqMuFB8itU+LanEMDIyNGFe5VkrT/MXVoRkDA2NrxizYta3HohC9Pe4D/xgwMDDeljELsu1B26fV6SMGBsYBjORwKyVrzp6dFgMDA2M901wJu8WlGwYGBkaZSiYvog3lRQsTAwNjO8b6sdYPmrc5MTAwTmPMSsc2sZs9IW9qYmBgbMr4BPCA5PNH1QRsAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

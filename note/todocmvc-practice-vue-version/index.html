@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>todocmvc练习vue版 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="todomvc">
+    <meta name="description" content="导语：todomvc是一个练习各大框架的网站,你可以在上面用各种框架练习这个demo,这里使用vue框架进行练习。  目录 安装依赖 引入vue 功能实现  安装依赖安装依赖的css，js。 1npm install 引入vue1&amp;lt;script src=&quot;js/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 功能实现下面是一些常用的方法。 定义初始化数据在app.js中，实例化Vue">
+<meta name="keywords" content="todomvc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="todocmvc练习vue版">
+<meta property="og:url" content="https://guanqi.xyz/note/todocmvc-practice-vue-version/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：todomvc是一个练习各大框架的网站,你可以在上面用各种框架练习这个demo,这里使用vue框架进行练习。  目录 安装依赖 引入vue 功能实现  安装依赖安装依赖的css，js。 1npm install 引入vue1&amp;lt;script src=&quot;js/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 功能实现下面是一些常用的方法。 定义初始化数据在app.js中，实例化Vue">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-14T07:11:04.810Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="todocmvc练习vue版">
+<meta name="twitter:description" content="导语：todomvc是一个练习各大框架的网站,你可以在上面用各种框架练习这个demo,这里使用vue框架进行练习。  目录 安装依赖 引入vue 功能实现  安装依赖安装依赖的css，js。 1npm install 引入vue1&amp;lt;script src=&quot;js/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 功能实现下面是一些常用的方法。 定义初始化数据在app.js中，实例化Vue">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">todocmvc练习vue版</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">todocmvc练习vue版</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-23T06:42:21.000Z" itemprop="datePublished" class="page-time">
+  2017-10-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装依赖"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引入vue"><span class="post-toc-number">3.</span> <span class="post-toc-text">引入vue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">功能实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义初始化数据"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">定义初始化数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绑定假数据到li上"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">绑定假数据到li上</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#双向数据绑定"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">双向数据绑定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回车输入数据"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">回车输入数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示总计"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">显示总计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示隐藏completed"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">显示隐藏completed</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#completed删除选中项"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">completed删除选中项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除当前项"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">删除当前项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全选全不选"><span class="post-toc-number">4.9.</span> <span class="post-toc-text">全选全不选</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">最后总结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-todocmvc-practice-vue-version" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">todocmvc练习vue版</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-10-23 14:42:21" datetime="2017-10-23T06:42:21.000Z" itemprop="datePublished">2017-10-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：<a href="http://todomvc.com/" target="_blank" rel="noopener">todomvc</a>是一个练习各大框架的网站,你可以在上面用各种框架练习这个demo,这里使用vue框架进行练习。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#安装依赖">安装依赖</a></li>
+<li><a href="#引入vue">引入vue</a></li>
+<li><a href="#功能实现">功能实现</a></li>
+</ul>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>安装依赖的css，js。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="引入vue"><a href="#引入vue" class="headerlink" title="引入vue"></a>引入vue</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><p>下面是一些常用的方法。</p>
+<h3 id="定义初始化数据"><a href="#定义初始化数据" class="headerlink" title="定义初始化数据"></a>定义初始化数据</h3><p>在app.js中，实例化Vue，然后定义初始化数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    datas: [</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">121</span>,<span class="attr">title</span>: <span class="string">'html5'</span>,<span class="attr">isCompleted</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">122</span>,<span class="attr">title</span>: <span class="string">'css3'</span>,<span class="attr">isCompleted</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">id</span>: <span class="number">123</span>,<span class="attr">title</span>: <span class="string">'js6'</span>,<span class="attr">isCompleted</span>: <span class="literal">false</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="绑定假数据到li上"><a href="#绑定假数据到li上" class="headerlink" title="绑定假数据到li上"></a>绑定假数据到li上</h3><p>如果当前的isCompleted是true,就是显示选中状态</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">:class</span>=<span class="string">"&#123;completed: isCom&#125;"</span> <span class="attr">v-for</span>=<span class="string">"(item,index) in datas"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"view"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"toggle"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span>&#123;&#123; item.title &#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"destroy"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"edit"</span> <span class="attr">value</span>=<span class="string">"Create a TodoMVC template"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"new-todo"</span> <span class="attr">placeholder</span>=<span class="string">"What needs to be done?"</span> <span class="attr">v-model</span>=<span class="string">"val"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val: <span class="string">''</span>, <span class="comment">//显式声明 输入框数据</span></span><br></pre></td></tr></table></figure>
+<h3 id="回车输入数据"><a href="#回车输入数据" class="headerlink" title="回车输入数据"></a>回车输入数据</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"new-todo"</span> <span class="attr">placeholder</span>=<span class="string">"What needs to be done?"</span> @<span class="attr">keyup.enter</span>=<span class="string">"addItem"</span> <span class="attr">v-model</span>=<span class="string">"val"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  addItem()&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.val)&#123; <span class="comment">//val存在或者非空的时候才会去添加</span></span><br><span class="line">      <span class="keyword">this</span>.datas.push(&#123;</span><br><span class="line">      <span class="comment">//console.log(new Date().getTime());</span></span><br><span class="line">       id: <span class="keyword">new</span> <span class="built_in">Date</span>().getTime(), <span class="comment">//为了保持id的唯一</span></span><br><span class="line">       title: <span class="keyword">this</span>.val,</span><br><span class="line">       isCompleted: <span class="literal">false</span>,</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">this</span>.val = <span class="string">''</span>; <span class="comment">//填完数据以后清空输入框的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="显示总计"><a href="#显示总计" class="headerlink" title="显示总计"></a>显示总计</h3><p>通过一个方法来计算数组数据的长度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  addItem()&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.val)&#123; <span class="comment">//val存在或者非空的时候才会去添加</span></span><br><span class="line">      <span class="keyword">this</span>.datas.push(&#123;</span><br><span class="line">      <span class="comment">//console.log(new Date().getTime());</span></span><br><span class="line">        id: <span class="keyword">new</span> <span class="built_in">Date</span>().getTime(), <span class="comment">//为了保持id的唯一</span></span><br><span class="line">        title: <span class="keyword">this</span>.val,</span><br><span class="line">        isCompleted: <span class="literal">false</span>,</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="keyword">this</span>.val = <span class="string">''</span>; <span class="comment">//填完数据以后清空输入框的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  clearCompleted()&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [];</span><br><span class="line">    <span class="comment">//遍历datas,如果当前选项是未选中,就把它留下</span></span><br><span class="line">    <span class="keyword">this</span>.datas.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(!elem.isCompleted)&#123;</span><br><span class="line">        arr.push(elem);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,<span class="keyword">this</span>)</span><br><span class="line">    <span class="keyword">this</span>.datas = arr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>绑定计算属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"todo-count"</span>&gt;</span><span class="tag">&lt;<span class="name">strong</span>&gt;</span>&#123;&#123; legTotal &#125;&#125;<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> item left<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="显示隐藏completed"><a href="#显示隐藏completed" class="headerlink" title="显示隐藏completed"></a>显示隐藏completed</h3><p>通过v-show来控制显示隐藏</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"clear-completed"</span> <span class="attr">v-show</span>=<span class="string">"isShowClear"</span>&gt;</span>Clear completed<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在计算属性中</span></span><br><span class="line">compluted：&#123;</span><br><span class="line">  isShowClear()&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.datas.length;i++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.datas[i].isCompleted)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="completed删除选中项"><a href="#completed删除选中项" class="headerlink" title="completed删除选中项"></a>completed删除选中项</h3><p>绑定点击事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"clear-completed"</span> <span class="attr">v-show</span>=<span class="string">"isShowClear"</span> @<span class="attr">click</span>=<span class="string">"clearCompleted"</span>&gt;</span>Clear completed<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在方法中写这个点击事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clearCompleted()&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = [];</span><br><span class="line">  <span class="comment">//遍历datas,如果当前选项是未选中,就把它留下</span></span><br><span class="line">  <span class="keyword">this</span>.datas.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!elem.isCompleted)&#123;</span><br><span class="line">      arr.push(elem);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,<span class="keyword">this</span>)</span><br><span class="line">  <span class="keyword">this</span>.datas = arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除当前项"><a href="#删除当前项" class="headerlink" title="删除当前项"></a>删除当前项</h3><p>添加点击事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"destroy"</span> @<span class="attr">click</span>=<span class="string">"removeCurrent(index)"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">removeCurrent(index)&#123;</span><br><span class="line">  <span class="keyword">this</span>.datas.splice(index,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="全选全不选"><a href="#全选全不选" class="headerlink" title="全选全不选"></a>全选全不选</h3><p>点击全选如果是true,让数据全部变成非选中状态;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"toggle-all"</span> <span class="attr">class</span>=<span class="string">"toggle-all"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>  @<span class="attr">click</span>=<span class="string">"checkedAll"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在方法中</span></span><br><span class="line">checkedAll()&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.isCheckedAll)&#123; <span class="comment">//全部选中</span></span><br><span class="line">    <span class="keyword">this</span>.datas.forEach(<span class="function"><span class="params">elem</span>=&gt;</span>&#123;</span><br><span class="line">      elem.isCompleted = <span class="literal">false</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.datas.forEach(<span class="function"><span class="params">elem</span>=&gt;</span>&#123;</span><br><span class="line">      elem.isCompleted = <span class="literal">true</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.isCheckedAll = !<span class="keyword">this</span>.isCheckedAll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>这是一个练习，是用vue写的，各方面都练习到了。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-14T07:11:04.810Z" itemprop="dateUpdated">2019-07-14 15:11:04</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/todocmvc-practice-vue-version/" target="_blank" rel="external">https://guanqi.xyz/note/todocmvc-practice-vue-version/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todomvc/">todomvc</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/todocmvc-practice-vue-version/&title=《todocmvc练习vue版》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/todocmvc-practice-vue-version/&title=《todocmvc练习vue版》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/todocmvc-practice-vue-version/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《todocmvc练习vue版》 — 猿七笔记&url=https://guanqi.xyz/note/todocmvc-practice-vue-version/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/todocmvc-practice-vue-version/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/introduction-to-node/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Node简介</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/use-hexo-coding-to-build-a-personal-blog/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用hexo+coding搭建个人博客</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/todocmvc-practice-vue-version/&title=《todocmvc练习vue版》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/todocmvc-practice-vue-version/&title=《todocmvc练习vue版》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/todocmvc-practice-vue-version/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《todocmvc练习vue版》 — 猿七笔记&url=https://guanqi.xyz/note/todocmvc-practice-vue-version/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/todocmvc-practice-vue-version/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQZICIQwFUO9/aecAMzr/h9aqhsfKslrg9SKGhMcjHs9g/H7y9wyvZn7/28sGBgbGbRmzzbVLvn8+WffVMxgYGOcwklCYbC5aMl4r2RsGBgZGnsDNgu+rF4GBgYHxCcbsySQBxcDAwMgPsXl6lxxQ8+B78VkcAwPjhow8mfv+54/0NzAwMG7FeJajLcm15bbZwMDA2JvRpn3XlvtX0j4MDIwzGe3UszJZW24rkkUMDIxNGUlid1W4bF9KsUMMDIwDGO/D2fqSK6lktDcMDIytGe9DYV5Km6WV+QuK0kQMDIwDGDlspXmQr5sklBgYGCcwZmlfm9jNAnoRoDEwMLZmJMfF9oibk1aua/zTwsTAwNia0aZxswsZScsz/y0GBsYJjDzhaw+6j3Lkly0wMDDOYbQJXFsIy6+OLV1Ew8DAOIDRAtrQPAuywykwMDC2Y6z0Aa9qTObfRIEeAwNja0YeENvLGe3MSQI6PItjYGDclpGHyLYo1jYjZ0EZAwPjHMbs2kQeQPNC26yBioGBcQJjVgKblfJnJbYL/jcwMDBuyHiWI6nG1yldHIKjpBADA2M7xncajW1DNN/6BbVDDAyMmzDyKxd5Y6ANuG2T8p+zOAYGxqaMNvDN0rtk/jZ8Y2BgYMy2mDcvVy55XBZwMTAwtmPkjc826cx3+MfqGBgYBzDyg+jsgle7rfw1YWBgnMBYOTq2V8FmRf+VYI2BgXFzxg/QmCy6HPTOKAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

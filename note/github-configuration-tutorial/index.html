@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>github配置教程 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="git,github配置">
+    <meta name="description" content="导语：github这个远程代码托管工具目前是世界上流行的,今天介绍一下如何配置GitHub。  目录 配置ssh 添加ssh key到GItHub Github新建项目  配置ssh检查本机是否有ssh key设置12//如果没有则提示： No such file or directory//如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件) 使用Git Bash生成新的s">
+<meta name="keywords" content="git,github配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github配置教程">
+<meta property="og:url" content="https://guanqi.xyz/note/github-configuration-tutorial/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：github这个远程代码托管工具目前是世界上流行的,今天介绍一下如何配置GitHub。  目录 配置ssh 添加ssh key到GItHub Github新建项目  配置ssh检查本机是否有ssh key设置12//如果没有则提示： No such file or directory//如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件) 使用Git Bash生成新的s">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://guanqi.xyz/img/article/git001.png">
+<meta property="og:image" content="https://guanqi.xyz/img/article/git002.png">
+<meta property="og:image" content="https://guanqi.xyz/img/article/git003.png">
+<meta property="og:updated_time" content="2019-07-14T07:30:46.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="github配置教程">
+<meta name="twitter:description" content="导语：github这个远程代码托管工具目前是世界上流行的,今天介绍一下如何配置GitHub。  目录 配置ssh 添加ssh key到GItHub Github新建项目  配置ssh检查本机是否有ssh key设置12//如果没有则提示： No such file or directory//如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件) 使用Git Bash生成新的s">
+<meta name="twitter:image" content="https://guanqi.xyz/img/article/git001.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">github配置教程</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">github配置教程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-18T14:16:21.000Z" itemprop="datePublished" class="page-time">
+  2018-11-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置ssh"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置ssh</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查本机是否有ssh-key设置"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">检查本机是否有ssh key设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用Git-Bash生成新的ssh-key"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">使用Git Bash生成新的ssh key</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加ssh-key到GItHub"><span class="post-toc-number">3.</span> <span class="post-toc-text">添加ssh key到GItHub</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录GitHub系统"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">登录GitHub系统</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#复制id-rsa-pub的公钥内容"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">复制id_rsa.pub的公钥内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置账户"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">配置账户</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试ssh-keys是否设置成功"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">测试ssh keys是否设置成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github项目"><span class="post-toc-number">4.</span> <span class="post-toc-text">Github项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Github新建项目"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Github新建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意项目名（必须是：github的用户名-github-io）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">注意项目名（必须是：github的用户名.github.io）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将项目clone到本地"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">将项目clone到本地</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将index-html推送到远程github仓库中"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">将index.html推送到远程github仓库中</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在最后"><span class="post-toc-number">5.</span> <span class="post-toc-text">写在最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-github-configuration-tutorial" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">github配置教程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-18 22:16:21" datetime="2018-11-18T14:16:21.000Z" itemprop="datePublished">2018-11-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：github这个远程代码托管工具目前是世界上流行的,今天介绍一下如何配置GitHub。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>配置ssh</li>
+<li>添加ssh key到GItHub</li>
+<li>Github新建项目</li>
+</ul>
+<h2 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h2><h3 id="检查本机是否有ssh-key设置"><a href="#检查本机是否有ssh-key设置" class="headerlink" title="检查本机是否有ssh key设置"></a>检查本机是否有ssh key设置</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//如果没有则提示： No such file or directory</span><br><span class="line">//如果有则进入~/.ssh路径下（ls查看当前路径文件，rm删除所有文件)</span><br></pre></td></tr></table></figure>
+<h3 id="使用Git-Bash生成新的ssh-key"><a href="#使用Git-Bash生成新的ssh-key" class="headerlink" title="使用Git Bash生成新的ssh key"></a>使用Git Bash生成新的ssh key</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~  <span class="comment">#保证当前路径在”~”下</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"xxxxxx@yy.com"</span>  <span class="comment">#建议填写自己真实有效的邮箱地址</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/c/Users/xxxx_000/.ssh/id_rsa):   <span class="comment">#不填直接回车</span></span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):   <span class="comment">#输入密码（可以为空）</span></span><br><span class="line">Enter same passphrase again:   <span class="comment">#再次确认密码（可以为空）</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /c/Users/xxxx_000/.ssh/id_rsa.   <span class="comment">#生成的密钥</span></span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /c/Users/xxxx_000/.ssh/id_rsa.pub. <span class="comment">#生成的公钥</span></span><br><span class="line">The key fingerprint is:</span><br><span class="line">e3:51:33:xx:xx:xx:xx:xxx:61:28:83:e2:81 xxxxxx@yy.com</span><br><span class="line"></span><br><span class="line">//本机已完成ssh key设置，其存放路径为：c:/Users/xxxx_000/.ssh/下。</span><br><span class="line">//可生成ssh key自定义名称的密钥，默认id_rsa。</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"邮箱地址"</span> -f ~/.ssh/githug_blog_keys <span class="comment">#生成ssh key的名称为githug_blog_keys，慎用容易出现其它异常。</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加ssh-key到GItHub"><a href="#添加ssh-key到GItHub" class="headerlink" title="添加ssh key到GItHub"></a>添加ssh key到GItHub</h2><h3 id="登录GitHub系统"><a href="#登录GitHub系统" class="headerlink" title="登录GitHub系统"></a>登录GitHub系统</h3><p>点击右上角账号头像的“▼”→Settings→SSH kyes→Add SSH key。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/git001.png" alt="key" title="">
+                </div>
+                <div class="image-caption">key</div>
+            </figure>
+<h3 id="复制id-rsa-pub的公钥内容"><a href="#复制id-rsa-pub的公钥内容" class="headerlink" title="复制id_rsa.pub的公钥内容"></a>复制id_rsa.pub的公钥内容</h3><p>1) 进入c:/Users/xxxx_000/.ssh/目录下，打开id_rsa.pub文件，全选复制公钥内容。<br>2) Title自定义，将公钥粘贴到GitHub中Add an SSH key的key输入框，最后“AddKey”。</p>
+<h3 id="配置账户"><a href="#配置账户" class="headerlink" title="配置账户"></a>配置账户</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name “your_username” <span class="comment">#设置用户名</span></span><br><span class="line">git config --global user.email “your_registered_github_Email” <span class="comment">#设置邮箱地址(建议用注册giuhub的邮箱)</span></span><br></pre></td></tr></table></figure>
+<h3 id="测试ssh-keys是否设置成功"><a href="#测试ssh-keys是否设置成功" class="headerlink" title="测试ssh keys是否设置成功"></a>测试ssh keys是否设置成功</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">The authenticity of host <span class="string">'github.com(192.30.252.129)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is16:27:xx:xx:xx:xx:xx:4d:eb:df:a6:48.</span></span><br><span class="line"><span class="string">Are you sure you want to continueconnecting (yes/no)? yes #确认你是否继续联系，输入yes</span></span><br><span class="line"><span class="string">Warning: Permanently added'</span>github.com,192.30.252.129<span class="string">' (RSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">Enter passphrase for key'</span>/c/Users/xxxx_000/.ssh/id_rsa<span class="string">': #生成sshkye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span></span><br><span class="line"><span class="string">Hi xxx! You'</span>ve successfullyauthenticated, but GitHub does not provide shell access. <span class="comment">#出现词句话，说明设置成功。</span></span><br></pre></td></tr></table></figure>
+<h2 id="Github项目"><a href="#Github项目" class="headerlink" title="Github项目"></a>Github项目</h2><h3 id="Github新建项目"><a href="#Github新建项目" class="headerlink" title="Github新建项目"></a>Github新建项目</h3><p>点击按钮</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/git002.png" alt="新建" title="">
+                </div>
+                <div class="image-caption">新建</div>
+            </figure>
+<h3 id="注意项目名（必须是：github的用户名-github-io）"><a href="#注意项目名（必须是：github的用户名-github-io）" class="headerlink" title="注意项目名（必须是：github的用户名.github.io）"></a>注意项目名（必须是：github的用户名.github.io）</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="../../img/article/git003.png" alt="新建" title="">
+                </div>
+                <div class="image-caption">新建</div>
+            </figure>
+<h3 id="将项目clone到本地"><a href="#将项目clone到本地" class="headerlink" title="将项目clone到本地"></a>将项目clone到本地</h3><p><code>git clone https://github.com/&lt;你的用户名&gt;/&lt;仓库名字&gt;.git</code></p>
+<p>然后输入命令，回车，等待clone完成。</p>
+<h3 id="将index-html推送到远程github仓库中"><a href="#将index-html推送到远程github仓库中" class="headerlink" title="将index.html推送到远程github仓库中"></a>将index.html推送到远程github仓库中</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"这里是注释信息，自己写"</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>git的配置就到这里。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-14T07:30:46.880Z" itemprop="dateUpdated">2019-07-14 15:30:46</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/github-configuration-tutorial/" target="_blank" rel="external">https://guanqi.xyz/note/github-configuration-tutorial/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github配置/">github配置</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/github-configuration-tutorial/&title=《github配置教程》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/github-configuration-tutorial/&title=《github配置教程》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/github-configuration-tutorial/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《github配置教程》 — 猿七笔记&url=https://guanqi.xyz/note/github-configuration-tutorial/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/github-configuration-tutorial/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/summary-of-yahoo-military-regulations/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">雅虎军规总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/compile-es6-with-gulp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用gulp编译es6</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/github-configuration-tutorial/&title=《github配置教程》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/github-configuration-tutorial/&title=《github配置教程》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/github-configuration-tutorial/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《github配置教程》 — 猿七笔记&url=https://guanqi.xyz/note/github-configuration-tutorial/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/github-configuration-tutorial/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS27jQAwFQN//0h4gqyzSAh/ZwcTdpZUhO5JKC4a/16t8vL+O58/fz6zOP/9y9bfbDgwMjI9lvB+P3uOuHmV1/edX9vxsGBgY9zDql0tv9vxq0te3PI+BgYFRSNfqKV3lpWBgYGBMAm799r3SFwMDA2NSxE5Sw8lr2lyLY2BgfCBj12DgNz7/h/kGBgbGH2P02mR1ai9ZjJ8KAwPjaMZzSTmPbEEJ2hpIvCrbHBgYGEcw0oyrElLTIUFvpQwDA+MGxrwCrrfJ0vFAMCjFwMA4mlEJc71L722rVYIyBgbGqYxeQJyPMOuvppTbYmBgHM3Y1eJPb1/5tlfcYmBgnMdIE7VKkO2NASpPsoRhYGBcxpiPD+tLqJMGHAYGxj2MdNqZpn1pw6639oGBgXEDo57Y9dYvesVwvC2CgYFxMSNtlsUT1HJJXFoOw8DAOJpRD7LpLyfziqCoxsDAOJqRNsV6Lba0GZeOCjAwMO5h1B8iHXn2CtR4WwQDA+M4xmRJtFf0pu220oGBgXEBI02/KmExHWqmw04MDIx7GPUgmK5z9Vr/6b+HZdcQAwPjIMY7PNLljN7aRGUU8cMeLgYGxqGMXXVi5WaTseiukI2BgfG5jHSI2FtRraeVzYIWAwPjAsZkqFkJxGnRGyeXGBgYGOEaxHy9rLm6ioGBgTEeJOxa7FgWsRgYGEcz5sOAesI3H2EuAy4GBsahjF4BWU8i64VoPR3cMN/AwMD4DMY/fQidO6NiqOYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

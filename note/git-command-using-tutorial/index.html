@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>git命令使用教程 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="git,git命令">
+    <meta name="description" content="导语：这是一个学习git-bash以及命令的教程!  目录 常用命令 分支 标签 其他  常用命令git add &amp;quot;&amp;lt;filename&amp;gt;&amp;quot;含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot;含义：这是将暂存区的文件提交到当前">
+<meta name="keywords" content="git,git命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git命令使用教程">
+<meta property="og:url" content="https://guanqi.xyz/note/git-command-using-tutorial/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：这是一个学习git-bash以及命令的教程!  目录 常用命令 分支 标签 其他  常用命令git add &amp;quot;&amp;lt;filename&amp;gt;&amp;quot;含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot;含义：这是将暂存区的文件提交到当前">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-14T07:24:58.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git命令使用教程">
+<meta name="twitter:description" content="导语：这是一个学习git-bash以及命令的教程!  目录 常用命令 分支 标签 其他  常用命令git add &amp;quot;&amp;lt;filename&amp;gt;&amp;quot;含义：这是将文件从本地文件夹提交到git storage (暂存区)。 例如：git add test.txt git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot;含义：这是将暂存区的文件提交到当前">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">git命令使用教程</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">git命令使用教程</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-25T09:30:21.000Z" itemprop="datePublished" class="page-time">
+  2018-09-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-add-quot-lt-filename-gt-quot"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">git add &quot;&lt;filename&gt;&quot;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-commit-m-quot-lt-message-gt-quot"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">git commit -m &quot;&lt;message&gt;&quot;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-pull-origin-lt-branch-name-gt"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">git pull origin &lt;branch name&gt;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git-push-origin-lt-branch-name-gt"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">git push origin &lt;branch name&gt;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支"><span class="post-toc-number">3.</span> <span class="post-toc-text">分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建分支"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">创建分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换到指定分支"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">切换到指定分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建并且切换到指定分支"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">创建并且切换到指定分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除分支"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">删除分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#强制删除分支"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">强制删除分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合并分支"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">合并分支</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标签"><span class="post-toc-number">4.</span> <span class="post-toc-text">标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建标签"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">创建标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看所有标签"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">查看所有标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看标签信息"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">查看标签信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建带有说明的标签"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">创建带有说明的标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除标签"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">删除标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推送标签到远程仓库"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">推送标签到远程仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程仓库标签"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">删除远程仓库标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#忽略其他文件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">忽略其他文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后"><span class="post-toc-number">6.</span> <span class="post-toc-text">最后</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-git-command-using-tutorial" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">git命令使用教程</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-25 17:30:21" datetime="2018-09-25T09:30:21.000Z" itemprop="datePublished">2018-09-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：这是一个学习git-bash以及命令的教程!</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>常用命令</li>
+<li>分支</li>
+<li>标签</li>
+<li>其他</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="git-add-quot-lt-filename-gt-quot"><a href="#git-add-quot-lt-filename-gt-quot" class="headerlink" title="git add &quot;&lt;filename&gt;&quot;"></a><code>git add &quot;&lt;filename&gt;&quot;</code></h3><p><strong>含义</strong>：这是将文件从本地文件夹提交到git storage (暂存区)。</p>
+<p>例如：<code>git add test.txt</code></p>
+<h3 id="git-commit-m-quot-lt-message-gt-quot"><a href="#git-commit-m-quot-lt-message-gt-quot" class="headerlink" title="git commit -m &quot;&lt;message&gt;&quot;"></a><code>git commit -m &quot;&lt;message&gt;&quot;</code></h3><p><strong>含义</strong>：这是将暂存区的文件提交到当前分支(master)。</p>
+<p>例如： <code>git commit -m &quot;add files&quot;</code></p>
+<h3 id="git-pull-origin-lt-branch-name-gt"><a href="#git-pull-origin-lt-branch-name-gt" class="headerlink" title="git pull origin &lt;branch name&gt;"></a><code>git pull origin &lt;branch name&gt;</code></h3><p><strong>含义</strong>： 这是将远程仓库的git文件拉到本地。</p>
+<p>例如：<code>git pull origin master</code></p>
+<h3 id="git-push-origin-lt-branch-name-gt"><a href="#git-push-origin-lt-branch-name-gt" class="headerlink" title="git push origin &lt;branch name&gt;"></a><code>git push origin &lt;branch name&gt;</code></h3><p><strong>含义</strong>： 这是将本地分支的git文件推送到远程仓库。</p>
+<p>例如：<code>git push origin master</code></p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p><code>git branch &lt;分支名字&gt;</code></p>
+<p>例如：<code>git branch dev</code></p>
+<h3 id="切换到指定分支"><a href="#切换到指定分支" class="headerlink" title="切换到指定分支"></a>切换到指定分支</h3><p><code>git checkout dev</code></p>
+<h3 id="创建并且切换到指定分支"><a href="#创建并且切换到指定分支" class="headerlink" title="创建并且切换到指定分支"></a>创建并且切换到指定分支</h3><p><code>git branch -b &lt;分支名字&gt;</code></p>
+<p>例如：<code>git branch -b dev</code></p>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p><code>git branch -d &lt;分支名字&gt;</code></p>
+<p>例如：<code>git branch -d dev</code></p>
+<h3 id="强制删除分支"><a href="#强制删除分支" class="headerlink" title="强制删除分支"></a>强制删除分支</h3><p><code>git branch -D &lt;分支名字&gt;</code></p>
+<p>例如：<code>git branch -D dev</code></p>
+<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><p><code>git push origin -D &lt;分支名字&gt;</code></p>
+<p>例如：<code>git push origin -D dev</code></p>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><p><code>git merge &lt;分支名称&gt;</code></p>
+<p>例如：<code>git merge dev</code></p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h3><p><code>git tag &lt;标签名字&gt;</code></p>
+<p>例如: <code>git tag v0.1</code></p>
+<h3 id="查看所有标签"><a href="#查看所有标签" class="headerlink" title="查看所有标签"></a>查看所有标签</h3><p><code>git tag</code></p>
+<h3 id="查看标签信息"><a href="#查看标签信息" class="headerlink" title="查看标签信息"></a>查看标签信息</h3><p><code>git show v0.1</code></p>
+<h3 id="创建带有说明的标签"><a href="#创建带有说明的标签" class="headerlink" title="创建带有说明的标签"></a>创建带有说明的标签</h3><p><code>git tag -a v0.1 -m &quot;add tags&quot;</code></p>
+<h3 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h3><p><code>git tag -d &lt;标签名字&gt;</code></p>
+<h3 id="推送标签到远程仓库"><a href="#推送标签到远程仓库" class="headerlink" title="推送标签到远程仓库"></a>推送标签到远程仓库</h3><ul>
+<li>推送本地全部标签：<code>git push origin --tags</code></li>
+<li>推送特定标签：<code>git push origin v0.1</code></li>
+</ul>
+<h3 id="删除远程仓库标签"><a href="#删除远程仓库标签" class="headerlink" title="删除远程仓库标签"></a>删除远程仓库标签</h3><p><code>git push origin :refs/tags/v0.1</code></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="忽略其他文件"><a href="#忽略其他文件" class="headerlink" title="忽略其他文件"></a>忽略其他文件</h3><blockquote>
+<p>有时候我们并不希望一些东西在我们的提交内容里面，比如node_moundle</p>
+</blockquote>
+<p>在文件夹下面创建<code>.gitignore</code>就可以忽略不希望提交的内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># windows</span><br><span class="line">Desktop.ini</span><br></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这一期的git讲解就到这里。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-14T07:24:58.809Z" itemprop="dateUpdated">2019-07-14 15:24:58</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/git-command-using-tutorial/" target="_blank" rel="external">https://guanqi.xyz/note/git-command-using-tutorial/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git命令/">git命令</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/git-command-using-tutorial/&title=《git命令使用教程》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/git-command-using-tutorial/&title=《git命令使用教程》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/git-command-using-tutorial/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git命令使用教程》 — 猿七笔记&url=https://guanqi.xyz/note/git-command-using-tutorial/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/git-command-using-tutorial/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/compile-es6-with-gulp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">使用gulp编译es6</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/vue-basic-tutorial/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue基础教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/git-command-using-tutorial/&title=《git命令使用教程》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/git-command-using-tutorial/&title=《git命令使用教程》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/git-command-using-tutorial/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git命令使用教程》 — 猿七笔记&url=https://guanqi.xyz/note/git-command-using-tutorial/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/git-command-using-tutorial/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACO0lEQVR42u3awY6DMAxF0f7/TzPbGbWE+2w6UsxlVQlKclLJjWO/Xvg6fl3ru+9Pku+SJ2+4ZMiQsS3jWF5nA5zdfZ/E2bfWc+BzkyFDxnMYJBRyABoYL9B6bjJkyJBRI623eoQtQ4YMGXcx1m/gQZkEXxkyZMggSSw/huNv48nzbbm4DBkyNmTwU/f///yV+oYMGTK2Yhzh1Qmp987kz4gyZMgYzagNwxPgdDvIt30yZMh4DqMWLkk7RW1p+GJ9+B1kyJAxlJE2b3USztpWMi5IyJAhYygjbYmobRZrh3p8QWXIkDGb0QmdNTBZApIey5Ah48mMdEIpLw3xwWZUhgwZQxm8LSxtGusc6qWLKEOGjKmMTomRb+/W6Sh/5qKEKUOGjNGMNOCmR3JpKwaZevCPIUOGjHGMtGBJBusc5LV6RmTIkDGCkTY3pE1a/HiuVrD88JvIkCFjNINPJW2PSN+fBmgZMmTMZtSKkXyi/VLlDZtCGTJkbM7ohFReKuAFgxt+ExkyZIxmEFJ6rJ9OPU1xL3JxGTJkjGPwF/EGi3Rbmd4Nus9kyJAxiMEPvDqH+GlpE4VgGTJkDGUc4ZUWA2qxkY/7SnNrGTJkbMjoB7v0uI0nwLWmNBkyZExl1IJsbeA0HAcbUBkyZDyAQYqO/Jm0MMn/AS6aLWTIkCEDFxd5G0d6V4YMGTJ4wOVFys7BHG/mkCFDxhMYJIkld/khHSkVBIsiQ4aM0YxO6kgG42VLMnqrkClDhoz9GD87EYmHwc+vCAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Nginx部署vue站点 | 猿七笔记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="nginx,vuejs">
+    <meta name="description" content="导语：本篇讲解如何使用nginx配置vue打包后的文件站点。  准备工作 linux centos7操作系统 ssh软件 nginx node环境  nginx配置vue站点新建nginx配置文件，输入以下内容。 1vi /etc/nginx/vhost/vue.conf 在里面输入： 12345678910111213141516171819server &amp;#123;    listen">
+<meta name="keywords" content="nginx,vuejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx部署vue站点">
+<meta property="og:url" content="https://guanqi.xyz/note/nginx-deployment-vue/index.html">
+<meta property="og:site_name" content="猿七笔记">
+<meta property="og:description" content="导语：本篇讲解如何使用nginx配置vue打包后的文件站点。  准备工作 linux centos7操作系统 ssh软件 nginx node环境  nginx配置vue站点新建nginx配置文件，输入以下内容。 1vi /etc/nginx/vhost/vue.conf 在里面输入： 12345678910111213141516171819server &amp;#123;    listen">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-14T10:42:54.757Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx部署vue站点">
+<meta name="twitter:description" content="导语：本篇讲解如何使用nginx配置vue打包后的文件站点。  准备工作 linux centos7操作系统 ssh软件 nginx node环境  nginx配置vue站点新建nginx配置文件，输入以下内容。 1vi /etc/nginx/vhost/vue.conf 在里面输入： 12345678910111213141516171819server &amp;#123;    listen">
+    
+        <link rel="alternate" type="application/atom+xml" title="猿七笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">猿七</h5>
+          <a href="mailto:jcguanqi@126.com" title="jcguanqi@126.com" class="mail">jcguanqi@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                首页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/gitguanqi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Nginx部署vue站点</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Nginx部署vue站点</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-14T13:40:21.000Z" itemprop="datePublished" class="page-time">
+  2019-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nginx配置vue站点"><span class="post-toc-number">2.</span> <span class="post-toc-text">nginx配置vue站点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上传文件"><span class="post-toc-number">3.</span> <span class="post-toc-text">上传文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#scp命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">scp命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#预览"><span class="post-toc-number">5.</span> <span class="post-toc-text">预览</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-nginx-deployment-vue" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Nginx部署vue站点</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-14 21:40:21" datetime="2019-07-14T13:40:21.000Z" itemprop="datePublished">2019-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vuejs/">vuejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p><strong>导语</strong>：本篇讲解如何使用nginx配置vue打包后的文件站点。</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>linux centos7操作系统</li>
+<li>ssh软件</li>
+<li>nginx</li>
+<li>node环境</li>
+</ul>
+<h2 id="nginx配置vue站点"><a href="#nginx配置vue站点" class="headerlink" title="nginx配置vue站点"></a>nginx配置vue站点</h2><p>新建nginx配置文件，输入以下内容。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/vhost/vue.conf</span><br></pre></td></tr></table></figure>
+<p>在里面输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">server &#123;  </span><br><span class="line">  listen   8080;  # 监听端口</span><br><span class="line">  server_name  localhost vue.example.org; # 访问域名  </span><br><span class="line">  access_log  /var/www/vue/access.log; # 成功日志</span><br><span class="line">  error_log  /var/www/vue/error.log; # 错误日志</span><br><span class="line">  root /var/www/vue;</span><br><span class="line">  index index.html;</span><br><span class="line">  location / &#123;</span><br><span class="line">   try_files $uri $uri/ @router;</span><br><span class="line">   index index.html;</span><br><span class="line">  &#125;</span><br><span class="line">  location @router &#123;</span><br><span class="line">   rewrite ^.*$ /index.html last;</span><br><span class="line">  &#125;</span><br><span class="line">  error_page 500 502 503 504 /50x.html;</span><br><span class="line">  location = /50x.html &#123;</span><br><span class="line">   root html;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打开8080端口。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --add-port=8080/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>配置完了以后重载重启nginx。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl reload nginx</span><br><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
+<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><p>然后创建一个vue文件，上传文件访问地址，便可以看到输出结果。</p>
+<ul>
+<li>创建目录：<code>mkdir /var/www/vue</code></li>
+<li>上传文件: <code>scp -P 8080 dist/* root@192.168.1.123:/var/www/vue</code></li>
+</ul>
+<h2 id="scp命令"><a href="#scp命令" class="headerlink" title="scp命令"></a>scp命令</h2><p>scp命令用于Linux系统之间复制文件和目录。scp是 secure copy的缩写。</p>
+<p>-1： 强制scp命令使用协议ssh1<br>-2： 强制scp命令使用协议ssh2<br>-4： 强制scp命令只使用IPv4寻址<br>-6： 强制scp命令只使用IPv6寻址<br>-B： 使用批处理模式（传输过程中不询问传输口令或短语）<br>-C： 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）<br>-p：保留原文件的修改时间，访问时间和访问权限。<br>-q： 不显示传输进度条。<br>-r： 递归复制整个目录。<br>-v：详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。<br>-c cipher： 以cipher将数据传输进行加密，这个选项将直接传递给ssh。<br>-F ssh_config： 指定一个替代的ssh配置文件，此参数直接传递给ssh。<br>-i identity_file： 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。<br>-l limit： 限定用户所能使用的带宽，以Kbit/s为单位。<br>-o ssh_option： 如果习惯于使用ssh_config(5)中的参数传递方式，<br>-P port：注意是大写的P, port是指定数据传输用到的端口号<br>-S program： 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</p>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p>在本地<strong>hosts</strong>文件增加解析记录,这里的ip就是你远程服务器的ip地址了。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.123 vue.example.org</span><br></pre></td></tr></table></figure>
+<p>打开游览器，输入<code>http://vue.example.org</code>或者访问<code>192.168.1.123:8080</code>就可以看到之前编辑的站点的vue文件内容了。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-14T10:42:54.757Z" itemprop="dateUpdated">2019-07-14 18:42:54</time>
+</span><br>
+
+
+        
+        猿七笔记,专注于前端开发文章分享，原文链接：<a href="/note/nginx-deployment-vue/" target="_blank" rel="external">https://guanqi.xyz/note/nginx-deployment-vue/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://guanqi.xyz">
+            <img src="/img/avatar.jpg" alt="猿七">
+            猿七
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/nginx-deployment-vue/&title=《Nginx部署vue站点》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/nginx-deployment-vue/&title=《Nginx部署vue站点》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/nginx-deployment-vue/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nginx部署vue站点》 — 猿七笔记&url=https://guanqi.xyz/note/nginx-deployment-vue/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/nginx-deployment-vue/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/note/front-end-cross-origin/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">前端跨域知识总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/note/node-installation-and-configuration-in-centos7-system/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CentOS7系统中node安装配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'gitguanqi',
+            repo: 'gitguanqi.github.io',
+            oauth: {
+                client_id: '3f307cc6e4383787db4c',
+                client_secret: 'c0ce9c89e7ce345c0297e1ae7f0c7b708a1c145d',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>猿七 &copy; 2017 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://guanqi.xyz/note/nginx-deployment-vue/&title=《Nginx部署vue站点》 — 猿七笔记&pic=https://guanqi.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://guanqi.xyz/note/nginx-deployment-vue/&title=《Nginx部署vue站点》 — 猿七笔记&source=fed" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://guanqi.xyz/note/nginx-deployment-vue/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nginx部署vue站点》 — 猿七笔记&url=https://guanqi.xyz/note/nginx-deployment-vue/&via=https://guanqi.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://guanqi.xyz/note/nginx-deployment-vue/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3awXKDMAxFUf7/p9OZblPgPslkGvl61Qk0+LBQZD8fBx6v38Gvnn3yPs6uHk8MGTJkfC3jdTnep3V9lUyL30/mJkOGjH0Y12X0etJpJTy7yp8lQ4YMGbzIkpau85pkyJAh44nHXH9brQ2VIUOGDP7VfFmblu+0rMuQIWM3RhoMfPLvB/MNGTJkfAnjtWjwOLMWANw8XYYMGaMZvLGrFWK+PZc2ozdlV4YMGYMY/NhE7Q3VogIeNvzxuyFDhoxxjE7cSFpDHgCs/RmQIUPGVEba5HUCAFJqeWAgQ4aMHRh8ovwesohNV6CoHZQhQ8Y4Bj+YxRvB4P2FscHpPTJkyNiAkR6qSFeRpOHjgNNdQxkyZAxl9GPIp/8r2BaUIUPGaAZv5moBZ7+IL1jQypAhYwQjfXDazPGjFQvYMmTIGMeoHcaqFWgeKvBCL0OGjB0Y/Q16Tk2PiKWfy5AhYzajdpyi01CubUllyJAxm1ErrE+HCrw9lSFDxp6M66Ujjwc6C910gS1DhowdGJ2tt9paMi3rNy9ahgwZoxm81SOFOG0Keb7aKr4yZMj4WkZtE58vSmsb/fybZciQsQODjzhhaGQUnYBBhgwZUxm1wxBpkJm+sniTToYMGRswOuWSTHctr9V1ypAhYwMGbxx5Z5o2iAsKrgwZMoYy0nattnEWB5YyZMjYhpHGkPyAaZ9dXPvKkCFjEKMTDPBFJr+fh6bL8g0ZMmT8X8YPFHZqmOf55VYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
